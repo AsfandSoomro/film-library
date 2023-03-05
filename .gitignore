@@ -1,2 +1,3 @@
-./FilmLibrary/obj/*
-./FilmLibrary/bin/*
+.vs/*
+FilmLibrary/obj/*
+FilmLibrary/bin/*
