@@ -16,5 +16,26 @@ namespace FilmLibrary
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            UCStartPage uc = new UCStartPage();
+            this.panelMain.Controls.Clear();
+            this.panelMain.Controls.Add(uc);
+        }
+
+        private void btnSignIn_Click(object sender, EventArgs e)
+        {
+            UCLogin uc = new UCLogin();
+            this.panelMain.Controls.Clear();
+            this.panelMain.Controls.Add(uc);
+        }
+
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            UCSignUp uc = new UCSignUp();
+            this.panelMain.Controls.Clear();
+            this.panelMain.Controls.Add(uc);
+        }
     }
 }
