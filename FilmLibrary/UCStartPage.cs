@@ -33,7 +33,7 @@ namespace FilmLibrary
                     string q = reader.ReadLine();
                     string cover_path = reader.ReadLine(); // Cover path line after each insert
 
-                    byte[] arr = ImageToByte(new Bitmap(Directory.GetParent(Directory.GetParent(Directory.GetParent(Application.StartupPath).FullName).FullName).FullName + @"\other" + @cover_path.Replace('/', '\\')));
+                    byte[] arr = ImageToByte(new Bitmap(@cover_path.Replace('/', '\\')));
                     
                     SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"F:\\Uni Class Stuff\\Part IV\\7th Semester\\Visual Programming\\Project\\FilmLibrary\\FilmLibrary\\Database1.mdf\";Integrated Security=True");
                     conn.Open();
@@ -46,6 +46,7 @@ namespace FilmLibrary
                 lblWelcome.Text = "Successfully read from a file!";
             }
             */
+            
         }
 
         public static byte[] ImageToByte(Image img)
