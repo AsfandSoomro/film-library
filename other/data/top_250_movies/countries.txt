@@ -1,0 +1,17 @@
+INSERT INTO Countries (country_id, country_code, name) VALUES(0, 'us', 'United States');
+INSERT INTO Countries (country_id, country_code, name) VALUES(1, 'gb', 'United Kingdom');
+INSERT INTO Countries (country_id, country_code, name) VALUES(2, 'nz', 'New Zealand');
+INSERT INTO Countries (country_id, country_code, name) VALUES(3, 'it', 'Italy');
+INSERT INTO Countries (country_id, country_code, name) VALUES(4, 'es', 'Spain');
+INSERT INTO Countries (country_id, country_code, name) VALUES(5, 'xwg', 'West Germany');
+INSERT INTO Countries (country_id, country_code, name) VALUES(6, 'au', 'Australia');
+INSERT INTO Countries (country_id, country_code, name) VALUES(7, 'jp', 'Japan');
+INSERT INTO Countries (country_id, country_code, name) VALUES(8, 'br', 'Brazil');
+INSERT INTO Countries (country_id, country_code, name) VALUES(9, 'fr', 'France');
+INSERT INTO Countries (country_id, country_code, name) VALUES(10, 'ca', 'Canada');
+INSERT INTO Countries (country_id, country_code, name) VALUES(11, 'pl', 'Poland');
+INSERT INTO Countries (country_id, country_code, name) VALUES(12, 'kr', 'South Korea');
+INSERT INTO Countries (country_id, country_code, name) VALUES(13, 'mt', 'Malta');
+INSERT INTO Countries (country_id, country_code, name) VALUES(14, 'ma', 'Morocco');
+INSERT INTO Countries (country_id, country_code, name) VALUES(15, 'hk', 'Hong Kong');
+INSERT INTO Countries (country_id, country_code, name) VALUES(16, 'in', 'India');

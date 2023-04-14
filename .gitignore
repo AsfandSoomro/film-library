@@ -1,3 +1,5 @@
 .vs/*
 FilmLibrary/obj/*
 FilmLibrary/bin/*
+*.pyc
+*mp4

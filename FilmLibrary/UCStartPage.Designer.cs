@@ -29,33 +29,75 @@ namespace FilmLibrary
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCStartPage));
+            this.lblWelcome2 = new System.Windows.Forms.Label();
+            this.lblWelcome = new System.Windows.Forms.Label();
+            this.pbPosters = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPosters)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lblWelcome2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(131, 177);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "I am main page";
+            this.lblWelcome2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblWelcome2.AutoSize = true;
+            this.lblWelcome2.BackColor = System.Drawing.Color.Transparent;
+            this.lblWelcome2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(239)))));
+            this.lblWelcome2.Location = new System.Drawing.Point(22, 169);
+            this.lblWelcome2.Name = "lblWelcome2";
+            this.lblWelcome2.Size = new System.Drawing.Size(910, 104);
+            this.lblWelcome2.TabIndex = 2;
+            this.lblWelcome2.Text = resources.GetString("lblWelcome2.Text");
+            this.lblWelcome2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblWelcome
+            // 
+            this.lblWelcome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.BackColor = System.Drawing.Color.Transparent;
+            this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(239)))));
+            this.lblWelcome.Location = new System.Drawing.Point(223, 121);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(489, 36);
+            this.lblWelcome.TabIndex = 1;
+            this.lblWelcome.Text = "Welcome to Asfand\'s Film Library";
+            // 
+            // pbPosters
+            // 
+            this.pbPosters.Image = ((System.Drawing.Image)(resources.GetObject("pbPosters.Image")));
+            this.pbPosters.Location = new System.Drawing.Point(0, 3);
+            this.pbPosters.Name = "pbPosters";
+            this.pbPosters.Size = new System.Drawing.Size(970, 413);
+            this.pbPosters.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbPosters.TabIndex = 3;
+            this.pbPosters.TabStop = false;
             // 
             // UCStartPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblWelcome);
+            this.Controls.Add(this.lblWelcome2);
+            this.Controls.Add(this.pbPosters);
             this.Name = "UCStartPage";
-            this.Size = new System.Drawing.Size(969, 661);
+            this.Size = new System.Drawing.Size(973, 661);
+            this.Load += new System.EventHandler(this.UCStartPage_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbPosters)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblWelcome2;
+        private System.Windows.Forms.Label lblWelcome;
+        private System.Windows.Forms.PictureBox pbPosters;
     }
 }
