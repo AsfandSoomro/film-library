@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
 
+
 namespace FilmLibrary
 {
     public partial class UCStartPage : UserControl
@@ -33,9 +34,9 @@ namespace FilmLibrary
                     string q = reader.ReadLine();
                     string cover_path = reader.ReadLine(); // Cover path line after each insert
 
-                    byte[] arr = ImageToByte(new Bitmap(@cover_path.Replace('/', '\\')));
+                    byte[] arr = Utils.ImageToByte(new Bitmap(@cover_path.Replace('/', '\\')));
                     
-                    SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"F:\\Uni Class Stuff\\Part IV\\7th Semester\\Visual Programming\\Project\\FilmLibrary\\FilmLibrary\\Database1.mdf\";Integrated Security=True");
+                    SqlConnection conn = new SqlConnection(Program.DatabasePath);
                     conn.Open();
                     SqlCommand cmd = new SqlCommand(@q, conn);
 
@@ -47,19 +48,6 @@ namespace FilmLibrary
             }
             */
             
-        }
-
-        public static byte[] ImageToByte(Image img)
-        {
-            ImageConverter converter = new ImageConverter();
-            return (byte[])converter.ConvertTo(img, typeof(byte[]));
-        }
-
-        public Image ByteToImage(byte[] byteArrayIn)
-        {
-            MemoryStream ms = new MemoryStream(byteArrayIn);
-            Image returnImage = Image.FromStream(ms);
-            return returnImage;
         }
 
     }
