@@ -39,7 +39,7 @@ namespace FilmLibrary
                 DataRow movie = this.movies.Rows[this.currentDisplayedMovies];
 
                 // Create a new movie picture box the movie
-                MoviePictureBox pbMovie = new MoviePictureBox(Utils.ByteToImage((Byte[])movie["cover"]));
+                MoviePictureBox pbMovie = new MoviePictureBox(movie);
                 this.flPanelMovies.Controls.Add(pbMovie);
 
                 i++;

@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace FilmLibrary
 {
@@ -12,6 +14,7 @@ namespace FilmLibrary
     {
         private static string DefaultMovieImagePath = @"F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\Project\FilmLibrary\images\Braveheart.jpg";
         private Image OriginalImage;
+        private DataRow movie;
 
         public MoviePictureBox()
         {
@@ -28,11 +31,13 @@ namespace FilmLibrary
 
             this.MouseHover += new EventHandler(this.MoviePictureBox_MouseHover);
             this.MouseLeave += new EventHandler(this.MoviePictureBox_MouseLeave);
+            this.Click += new EventHandler(this.MoviePictureBox_MouseClick);
         }
 
-        public MoviePictureBox(Image cover) : this()
+        public MoviePictureBox(DataRow movie) : this()
         {
-            this.Image = cover;
+            this.movie = movie;
+            this.Image = (Image)Utils.ByteToImage((Byte[])movie["cover"]);
             this.OriginalImage = this.Image;
         }
 
@@ -43,11 +48,24 @@ namespace FilmLibrary
             this.Image = Utils.ZoomIn((Bitmap)this.Image, 80);
         }
 
-        // Default Mouves Leave Event
+        // Default Mouse Leave Event
         private void MoviePictureBox_MouseLeave(object sender, EventArgs e)
         {
             this.Image = OriginalImage;
             this.BorderStyle = BorderStyle.FixedSingle;
+        }
+
+        // Default Mouse Click Event
+        private void MoviePictureBox_MouseClick(object sender, EventArgs e)
+        {
+            Form form = this.FindForm();
+            Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
+            Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
+           
+            UCMovie uc = new UCMovie(this.movie);
+            uc.Dock = DockStyle.Fill;
+            mainPanel.Controls.Clear();
+            mainPanel.Controls.Add(uc);
         }
     }
 }

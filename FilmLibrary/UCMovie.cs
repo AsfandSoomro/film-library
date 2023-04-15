@@ -11,14 +11,25 @@ using System.Data.SqlClient;
 
 namespace FilmLibrary
 {
-    public partial class Form2 : Form
+    public partial class UCMovie : UserControl
     {
-        public Form2()
+        private DataRow movie;
+        public UCMovie(DataRow movie)
         {
             InitializeComponent();
+
+            this.movie = movie;
         }
-        
-        private void Form2_Load(object sender, EventArgs e)
+
+        private void UCMovie_Load(object sender, EventArgs e)
+        {
+            this.pbMovieCover.Image = (Image)Utils.ByteToImage((Byte[])movie["cover"]);
+            this.lblMovieTitle.Text = (string)movie["title"];
+            this.lblMovieYear.Text = "(" + (int)movie["release_year"] + ")";
+            this.lblPlotOutline.Text = (string)movie["plot_outline"];
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
         {
             using (SqlConnection conn = new SqlConnection(Program.MyConnectionString))
             {
@@ -33,9 +44,14 @@ namespace FilmLibrary
 
                 DataTable dataTable = dataSet.Tables["Movies"];
 
+                Form form = this.FindForm();
+                Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
+                Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
+
                 UCMovies uc = new UCMovies((DataTable)dataTable);
                 uc.Dock = DockStyle.Fill;
-                this.panelMain.Controls.Add(uc);
+                mainPanel.Controls.Clear();
+                mainPanel.Controls.Add(uc);
             }
         }
     }
