@@ -31,28 +31,7 @@ namespace FilmLibrary
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            using (SqlConnection conn = new SqlConnection(Program.MyConnectionString))
-            {
-                conn.Open();
-
-                string query = @"SELECT * FROM Movies";
-                SqlCommand command = new SqlCommand(query, conn);
-
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                DataSet dataSet = new DataSet();
-                adapter.Fill(dataSet, "Movies");
-
-                DataTable dataTable = dataSet.Tables["Movies"];
-
-                Form form = this.FindForm();
-                Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
-                Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
-
-                UCMovies uc = new UCMovies((DataTable)dataTable);
-                uc.Dock = DockStyle.Fill;
-                mainPanel.Controls.Clear();
-                mainPanel.Controls.Add(uc);
-            }
+            Helpers.ShowDashboard();
         }
     }
 }

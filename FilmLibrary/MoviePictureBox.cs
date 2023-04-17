@@ -14,6 +14,7 @@ namespace FilmLibrary
     {
         private static string DefaultMovieImagePath = @"F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\Project\FilmLibrary\images\Braveheart.jpg";
         private Image OriginalImage;
+        private int movie_id;
         private DataRow movie;
 
         public MoviePictureBox()
@@ -31,13 +32,13 @@ namespace FilmLibrary
 
             this.MouseHover += new EventHandler(this.MoviePictureBox_MouseHover);
             this.MouseLeave += new EventHandler(this.MoviePictureBox_MouseLeave);
-            this.Click += new EventHandler(this.MoviePictureBox_MouseClick);
+            this.Click += new EventHandler(this.MoviePictureBox_Click);
         }
 
-        public MoviePictureBox(DataRow movie) : this()
+        public MoviePictureBox(int movie_id, Byte[] cover) : this() // movie parameter might only get id and cover photo
         {
-            this.movie = movie;
-            this.Image = (Image)Utils.ByteToImage((Byte[])movie["cover"]);
+            this.movie_id = (int)movie_id;
+            this.Image = (Image)Utils.ByteToImage(cover);
             this.OriginalImage = this.Image;
         }
 
@@ -56,14 +57,21 @@ namespace FilmLibrary
         }
 
         // Default Mouse Click Event
-        private void MoviePictureBox_MouseClick(object sender, EventArgs e)
+        private void MoviePictureBox_Click(object sender, EventArgs e)
         {
+            // Get the movie data and store in move attribute
+            string query = String.Format("SELECT * FROM Movies WHERE movie_id = {0}", this.movie_id.ToString());
+            this.movie = (DataRow)Queries.GetDataTable("Movies", query).Rows[0];
+
+            // Finds the opened instance of Form2
             Form form = this.FindForm();
             Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
             Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
            
+            // Initialize the Movie UserControl and pass it the movie data clearing the current content
             UCMovie uc = new UCMovie(this.movie);
             uc.Dock = DockStyle.Fill;
+            foreach (Control control in mainPanel.Controls) control.Dispose();
             mainPanel.Controls.Clear();
             mainPanel.Controls.Add(uc);
         }
