@@ -16,24 +16,25 @@ namespace FilmLibrary
         private string theQuery;
         private string query;
         private int currentDisplayedMovies = 0;
-        private int[] displayMoviesRange = { 0, 17 };
+        private int limit = 18;
+        private int lastDisplayedMovieId = 0;
+        private bool ScrollDisplayMoviesLock = false;
 
         public UCMovies(string query) // movies parameter only gets movie_id and cover photo
         {
             InitializeComponent();
 
             this.theQuery = query;
-            this.query = query.Replace("@range", String.Format("movie_id >= {0} and movie_id <= {1}", this.displayMoviesRange[0], this.displayMoviesRange[1]));
+            this.query = query.Replace("@LIMIT", String.Format("TOP {0}", this.limit));
+            this.query = this.query.Replace("@CONDITIONS", String.Format("1 = 1"));
 
             this.StartDisplayMovies();
         }
 
-        private void UpdateRangeAndQuery()
+        private void UpdateQuery()
         {
-            this.displayMoviesRange[0] += 18;
-            this.displayMoviesRange[1] += 18;
-
-            this.query = this.theQuery.Replace("@range", String.Format("movie_id >= {0} and movie_id <= {1}", this.displayMoviesRange[0], this.displayMoviesRange[1]));
+            this.query = theQuery.Replace("@LIMIT", String.Format("TOP {0}", this.limit));
+            this.query = this.query.Replace("@CONDITIONS", String.Format("movie_id > {0}", this.lastDisplayedMovieId));
         }
 
         private async void StartDisplayMovies()
@@ -53,7 +54,8 @@ namespace FilmLibrary
 
                 this.currentDisplayedMovies += 1;
             }
-            this.UpdateRangeAndQuery();
+            this.lastDisplayedMovieId = (int)movies.Rows[(int)movies.Rows.Count - 1]["movie_id"];
+            this.UpdateQuery();
         }
 
         private async void flPanelMovies_Scroll(object sender, ScrollEventArgs e)
@@ -61,8 +63,15 @@ namespace FilmLibrary
             // If end of scroll
             if (flPanelMovies.VerticalScroll.Value == flPanelMovies.VerticalScroll.Maximum - flPanelMovies.VerticalScroll.LargeChange + 1)
             {
-                // Display 18 more movies
-                this.DisplayMovies(await Task.Run(() => Queries.GetDataTable("Movies", this.query)));
+                if (this.ScrollDisplayMoviesLock == false)
+                {
+                    // Lock to avoid same movies fetched more than once
+                    this.ScrollDisplayMoviesLock = true;
+                    // Display 18 more movies
+                    this.DisplayMovies(await Task.Run(() => Queries.GetDataTable("Movies", this.query)));
+                    // Unlock to let the user display more movies via scroll 
+                    this.ScrollDisplayMoviesLock = false;
+                }
             }
         }
     }

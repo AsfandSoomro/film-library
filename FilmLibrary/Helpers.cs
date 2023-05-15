@@ -17,7 +17,7 @@ namespace FilmLibrary
             Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
             Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
 
-            UCMovies uc = new UCMovies("SELECT movie_id, cover FROM Movies WHERE @range");
+            UCMovies uc = new UCMovies("SELECT @LIMIT movie_id, cover FROM Movies WHERE @CONDITIONS");
             uc.Dock = DockStyle.Fill;
             mainPanel.Controls.Clear();
             mainPanel.Controls.Add(uc);
