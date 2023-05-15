@@ -16,7 +16,7 @@ namespace FilmLibrary
         private string theQuery;
         private string query;
         private int currentDisplayedMovies = 0;
-        private int[] displayMoviesRange = {0, 17};
+        private int[] displayMoviesRange = { 0, 17 };
 
         public UCMovies(string query) // movies parameter only gets movie_id and cover photo
         {
@@ -25,7 +25,7 @@ namespace FilmLibrary
             this.theQuery = query;
             this.query = query.Replace("@range", String.Format("movie_id >= {0} and movie_id <= {1}", this.displayMoviesRange[0], this.displayMoviesRange[1]));
 
-            this.DisplayMovies(Queries.GetDataTable("Movies", this.query));
+            this.StartDisplayMovies();
         }
 
         private void UpdateRangeAndQuery()
@@ -35,6 +35,12 @@ namespace FilmLibrary
 
             this.query = this.theQuery.Replace("@range", String.Format("movie_id >= {0} and movie_id <= {1}", this.displayMoviesRange[0], this.displayMoviesRange[1]));
         }
+
+        private async void StartDisplayMovies()
+        {
+            this.DisplayMovies(await Task.Run(() => Queries.GetDataTable("Movies", this.query)));
+        }
+
         private void DisplayMovies(DataTable movies)
         {
             // Loop over each movie
@@ -50,13 +56,13 @@ namespace FilmLibrary
             this.UpdateRangeAndQuery();
         }
 
-        private void flPanelMovies_Scroll(object sender, ScrollEventArgs e)
+        private async void flPanelMovies_Scroll(object sender, ScrollEventArgs e)
         {
             // If end of scroll
             if (flPanelMovies.VerticalScroll.Value == flPanelMovies.VerticalScroll.Maximum - flPanelMovies.VerticalScroll.LargeChange + 1)
             {
                 // Display 18 more movies
-                this.DisplayMovies(Queries.GetDataTable("Movies", this.query));
+                this.DisplayMovies(await Task.Run(() => Queries.GetDataTable("Movies", this.query)));
             }
         }
     }

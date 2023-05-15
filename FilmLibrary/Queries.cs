@@ -10,11 +10,11 @@ namespace FilmLibrary
 {
     class Queries
     {
-        public static DataTable GetDataTable(string tableName, string query)
+        public async static Task<DataTable> GetDataTable(string tableName, string query)
         {
             using (SqlConnection conn = new SqlConnection(Program.MyConnectionString))
             {
-                conn.Open();
+                await conn.OpenAsync();
 
                 SqlCommand command = new SqlCommand(query, conn);
 

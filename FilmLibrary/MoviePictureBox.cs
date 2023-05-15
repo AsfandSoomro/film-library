@@ -57,11 +57,11 @@ namespace FilmLibrary
         }
 
         // Default Mouse Click Event
-        private void MoviePictureBox_Click(object sender, EventArgs e)
+        private async void MoviePictureBox_Click(object sender, EventArgs e)
         {
             // Get the movie data and store in move attribute
             string query = String.Format("SELECT * FROM Movies WHERE movie_id = {0}", this.movie_id.ToString());
-            this.movie = (DataRow)Queries.GetDataTable("Movies", query).Rows[0];
+            this.movie = (DataRow)(await Queries.GetDataTable("Movies", query)).Rows[0];
 
             // Finds the opened instance of Form2
             Form form = this.FindForm();

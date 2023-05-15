@@ -39,11 +39,11 @@ namespace FilmLibrary
             }
         }
 
-        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+        private async void txtSearch_KeyDown(object sender, KeyEventArgs e)
         {
             FlowLayoutPanel flp = this.CreateSearchedMoviesContainerFlowLayoutPanel();
 
-            DataTable movies = Queries.GetDataTable("Movies", String.Format("SELECT TOP 7 movie_id, cover, title, release_year FROM Movies WHERE LOWER(title) LIKE '%{0}%'", this.txtSearch.Text.ToLower()));
+            DataTable movies = await Task.Run(() => Queries.GetDataTable("Movies", String.Format("SELECT TOP 7 movie_id, cover, title, release_year FROM Movies WHERE LOWER(title) LIKE '{0}%'", this.txtSearch.Text.ToLower())));
             foreach(DataRow movie in movies.Rows)
             {
                 UCSearchedMovie uc = new UCSearchedMovie((int)movie["movie_id"], (string)movie["title"], (int)movie["release_year"], (Image)Utils.ByteToImage((byte[])movie["cover"]));
