@@ -30,14 +30,11 @@ namespace FilmLibrary
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            this.panelMenu = new System.Windows.Forms.Panel();
+            this.panelSideBar = new System.Windows.Forms.Panel();
+            this.panelSideBarLogo = new System.Windows.Forms.Panel();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
             this.flpSearchedMoviesContainer = new System.Windows.Forms.FlowLayoutPanel();
-            this.panelSearchBar = new System.Windows.Forms.Panel();
-            this.panelBtnSearch = new System.Windows.Forms.Panel();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.panelSearchedMovie = new System.Windows.Forms.Panel();
             this.flpTitleAndYear = new System.Windows.Forms.FlowLayoutPanel();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -53,11 +50,14 @@ namespace FilmLibrary
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panelSearchBar = new System.Windows.Forms.Panel();
+            this.panelBtnSearch = new System.Windows.Forms.Panel();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.panelSideBar.SuspendLayout();
             this.panelContainer.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.flpSearchedMoviesContainer.SuspendLayout();
-            this.panelSearchBar.SuspendLayout();
-            this.panelBtnSearch.SuspendLayout();
             this.panelSearchedMovie.SuspendLayout();
             this.flpTitleAndYear.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCover)).BeginInit();
@@ -67,16 +67,29 @@ namespace FilmLibrary
             this.panel2.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panelSearchBar.SuspendLayout();
+            this.panelBtnSearch.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panelMenu
+            // panelSideBar
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(182)))), ((int)(((byte)(157)))), ((int)(((byte)(116)))));
-            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(160, 723);
-            this.panelMenu.TabIndex = 0;
+            this.panelSideBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(182)))), ((int)(((byte)(157)))), ((int)(((byte)(116)))));
+            this.panelSideBar.Controls.Add(this.panelSideBarLogo);
+            this.panelSideBar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelSideBar.Location = new System.Drawing.Point(0, 0);
+            this.panelSideBar.Name = "panelSideBar";
+            this.panelSideBar.Size = new System.Drawing.Size(160, 723);
+            this.panelSideBar.TabIndex = 0;
+            this.panelSideBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelSideBar_MouseDown);
+            // 
+            // panelSideBarLogo
+            // 
+            this.panelSideBarLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSideBarLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelSideBarLogo.Name = "panelSideBarLogo";
+            this.panelSideBarLogo.Size = new System.Drawing.Size(160, 87);
+            this.panelSideBarLogo.TabIndex = 0;
+            this.panelSideBarLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelSideBarLogo_MouseDown);
             // 
             // panelContainer
             // 
@@ -87,6 +100,7 @@ namespace FilmLibrary
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Size = new System.Drawing.Size(809, 723);
             this.panelContainer.TabIndex = 1;
+            this.panelContainer.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelContainer_MouseDown);
             // 
             // panelMain
             // 
@@ -96,6 +110,7 @@ namespace FilmLibrary
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(809, 660);
             this.panelMain.TabIndex = 1;
+            this.panelMain.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseDown);
             // 
             // flpSearchedMoviesContainer
             // 
@@ -111,52 +126,6 @@ namespace FilmLibrary
             this.flpSearchedMoviesContainer.Size = new System.Drawing.Size(558, 266);
             this.flpSearchedMoviesContainer.TabIndex = 3;
             this.flpSearchedMoviesContainer.Visible = false;
-            // 
-            // panelSearchBar
-            // 
-            this.panelSearchBar.Controls.Add(this.panelBtnSearch);
-            this.panelSearchBar.Controls.Add(this.txtSearch);
-            this.panelSearchBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSearchBar.Location = new System.Drawing.Point(0, 0);
-            this.panelSearchBar.Name = "panelSearchBar";
-            this.panelSearchBar.Size = new System.Drawing.Size(809, 63);
-            this.panelSearchBar.TabIndex = 0;
-            // 
-            // panelBtnSearch
-            // 
-            this.panelBtnSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelBtnSearch.Controls.Add(this.btnSearch);
-            this.panelBtnSearch.Location = new System.Drawing.Point(576, 21);
-            this.panelBtnSearch.Name = "panelBtnSearch";
-            this.panelBtnSearch.Size = new System.Drawing.Size(31, 26);
-            this.panelBtnSearch.TabIndex = 2;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Location = new System.Drawing.Point(3, 3);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(20, 18);
-            this.btnSearch.TabIndex = 2;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
-            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.ForeColor = System.Drawing.Color.White;
-            this.txtSearch.Location = new System.Drawing.Point(49, 21);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(530, 26);
-            this.txtSearch.TabIndex = 0;
-            this.txtSearch.Text = "Search";
-            this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
-            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
-            this.txtSearch.Leave += new System.EventHandler(this.txtSearch_Leave);
             // 
             // panelSearchedMovie
             // 
@@ -308,6 +277,54 @@ namespace FilmLibrary
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
+            // panelSearchBar
+            // 
+            this.panelSearchBar.Controls.Add(this.panelBtnSearch);
+            this.panelSearchBar.Controls.Add(this.txtSearch);
+            this.panelSearchBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSearchBar.Location = new System.Drawing.Point(0, 0);
+            this.panelSearchBar.Name = "panelSearchBar";
+            this.panelSearchBar.Size = new System.Drawing.Size(809, 63);
+            this.panelSearchBar.TabIndex = 0;
+            this.panelSearchBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelSearchBar_MouseDown);
+            // 
+            // panelBtnSearch
+            // 
+            this.panelBtnSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelBtnSearch.Controls.Add(this.btnSearch);
+            this.panelBtnSearch.Location = new System.Drawing.Point(576, 21);
+            this.panelBtnSearch.Name = "panelBtnSearch";
+            this.panelBtnSearch.Size = new System.Drawing.Size(31, 26);
+            this.panelBtnSearch.TabIndex = 2;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Location = new System.Drawing.Point(3, 3);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(20, 18);
+            this.btnSearch.TabIndex = 2;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
+            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.ForeColor = System.Drawing.Color.White;
+            this.txtSearch.Location = new System.Drawing.Point(49, 21);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(530, 26);
+            this.txtSearch.TabIndex = 0;
+            this.txtSearch.Text = "Search";
+            this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
+            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
+            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
+            this.txtSearch.Leave += new System.EventHandler(this.txtSearch_Leave);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -315,19 +332,18 @@ namespace FilmLibrary
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
             this.ClientSize = new System.Drawing.Size(969, 723);
             this.Controls.Add(this.panelContainer);
-            this.Controls.Add(this.panelMenu);
+            this.Controls.Add(this.panelSideBar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Film Library";
             this.Load += new System.EventHandler(this.Form2_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseDown);
+            this.panelSideBar.ResumeLayout(false);
             this.panelContainer.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
             this.flpSearchedMoviesContainer.ResumeLayout(false);
-            this.panelSearchBar.ResumeLayout(false);
-            this.panelSearchBar.PerformLayout();
-            this.panelBtnSearch.ResumeLayout(false);
             this.panelSearchedMovie.ResumeLayout(false);
             this.flpTitleAndYear.ResumeLayout(false);
             this.flpTitleAndYear.PerformLayout();
@@ -340,13 +356,16 @@ namespace FilmLibrary
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panelSearchBar.ResumeLayout(false);
+            this.panelSearchBar.PerformLayout();
+            this.panelBtnSearch.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panelMenu;
+        private System.Windows.Forms.Panel panelSideBar;
         private System.Windows.Forms.Panel panelContainer;
         private System.Windows.Forms.Panel panelSearchBar;
         private System.Windows.Forms.Panel panelMain;
@@ -369,5 +388,6 @@ namespace FilmLibrary
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panelSideBarLogo;
     }
 }

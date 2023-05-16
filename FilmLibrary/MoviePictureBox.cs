@@ -63,17 +63,7 @@ namespace FilmLibrary
             string query = String.Format("SELECT * FROM Movies WHERE movie_id = {0}", this.movie_id.ToString());
             this.movie = (DataRow)(await Queries.GetDataTable("Movies", query)).Rows[0];
 
-            // Finds the opened instance of Form2
-            Form form = this.FindForm();
-            Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
-            Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
-           
-            // Initialize the Movie UserControl and pass it the movie data clearing the current content
-            UCMovie uc = new UCMovie(this.movie);
-            uc.Dock = DockStyle.Fill;
-            foreach (Control control in mainPanel.Controls) control.Dispose();
-            mainPanel.Controls.Clear();
-            mainPanel.Controls.Add(uc);
+            Helpers.OpenMoviePage(this.FindForm(), this.movie);
         }
     }
 }

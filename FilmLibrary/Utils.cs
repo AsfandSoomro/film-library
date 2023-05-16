@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Windows.Forms;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 
@@ -43,6 +44,23 @@ namespace FilmLibrary
             g.DrawImage(img, new Rectangle(0, 0, newWidth, newHeight), srcRect, GraphicsUnit.Pixel);
 
             return dst;
+        }
+
+        public static bool IsClickedWithinBounds(Control control, Point location)
+        {
+            // Check if the location is within the bounds of the control or any of its child controls
+            Rectangle panelBounds = control.RectangleToScreen(control.ClientRectangle);
+            if (panelBounds.Contains(location))
+                return true;
+
+            // Check child controls recursively
+            foreach (Control child in control.Controls)
+            {
+                if (IsClickedWithinBounds(child, location))
+                    return true;
+            }
+
+            return false;
         }
     }
 }

@@ -49,6 +49,7 @@ namespace FilmLibrary
             this.panelSearchedMovie.Name = "panelSearchedMovie";
             this.panelSearchedMovie.Size = new System.Drawing.Size(547, 82);
             this.panelSearchedMovie.TabIndex = 5;
+            this.panelSearchedMovie.Click += new System.EventHandler(this.panelSearchedMovie_Click);
             this.panelSearchedMovie.MouseEnter += new System.EventHandler(this.panelSearchedMovie_MouseEnter);
             this.panelSearchedMovie.MouseLeave += new System.EventHandler(this.panelSearchedMovie_MouseLeave);
             // 

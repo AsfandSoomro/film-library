@@ -74,6 +74,7 @@ namespace FilmLibrary
             this.flPanelMovies.Size = new System.Drawing.Size(809, 660);
             this.flPanelMovies.TabIndex = 2;
             this.flPanelMovies.Scroll += new System.Windows.Forms.ScrollEventHandler(this.flPanelMovies_Scroll);
+            this.flPanelMovies.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flPanelMovies_MouseDown);
             // 
             // moviePictureBox1
             // 

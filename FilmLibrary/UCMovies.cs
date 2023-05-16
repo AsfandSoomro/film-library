@@ -74,5 +74,23 @@ namespace FilmLibrary
                 }
             }
         }
+
+        private void flPanelMovies_MouseDown(object sender, MouseEventArgs e)
+        {
+            Form form = this.FindForm();
+
+            // Finds the searched movies flow container
+            FlowLayoutPanel searchedMoviesContainerPanel = form.Controls.Find("flpSearchedMoviesContainerRuntime", true).FirstOrDefault() as FlowLayoutPanel;
+
+            // Check if the mouse is not over search movies container when it is clicked
+            if (searchedMoviesContainerPanel != null && !Utils.IsClickedWithinBounds(searchedMoviesContainerPanel, e.Location))
+            {
+                // Clear search textbox
+                TextBox txtSearch = form.Controls.Find("txtSearch", true).FirstOrDefault() as TextBox;
+                if (txtSearch.Text != "Search")
+                    txtSearch.Text = "Search";
+                Helpers.DisposeSearchedMoviesContainerFlowLayoutPanel(form);
+            }
+        }
     }
 }

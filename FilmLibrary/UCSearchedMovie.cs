@@ -12,9 +12,13 @@ namespace FilmLibrary
 {
     public partial class UCSearchedMovie : UserControl
     {
+        private int movie_id;
+
         public UCSearchedMovie(int movie_id, string title, int release_year, Image cover)
         {
             InitializeComponent();
+
+            this.movie_id = movie_id;
 
             this.lblTitle.Text = title;
             this.lblReleaseYear.Text = "(" + release_year.ToString() + ")";
@@ -37,11 +41,20 @@ namespace FilmLibrary
 
         private void MakeChildControlsInheritEvents()
         {
-            foreach(Control control in this.panelSearchedMovie.Controls)
+            foreach (Control control in this.panelSearchedMovie.Controls)
             {
                 control.MouseEnter += this.panelSearchedMovie_MouseEnter;
                 control.MouseLeave += this.panelSearchedMovie_MouseLeave;
             }
+        }
+
+        private async void panelSearchedMovie_Click(object sender, EventArgs e)
+        {
+            // Get the movie data and store in move attribute
+            string query = String.Format("SELECT * FROM Movies WHERE movie_id = {0}", this.movie_id.ToString());
+            DataRow movie = (DataRow)(await Queries.GetDataTable("Movies", query)).Rows[0];
+
+            Helpers.OpenMoviePage(this.FindForm(), movie);
         }
     }
 }
