@@ -13,9 +13,12 @@ namespace FilmLibrary
 {
     public partial class Form2 : Form
     {
-        public Form2()
+        private DataRow user;
+        public Form2(DataRow user)
         {
             InitializeComponent();
+
+            this.user = user;
         }
         
         private void Form2_Load(object sender, EventArgs e)

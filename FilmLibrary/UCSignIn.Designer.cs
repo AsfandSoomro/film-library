@@ -97,7 +97,6 @@ namespace FilmLibrary
             this.Controls.Add(this.txtUsername);
             this.Name = "UCSignIn";
             this.Size = new System.Drawing.Size(969, 661);
-            this.Load += new System.EventHandler(this.UCSignIn_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
