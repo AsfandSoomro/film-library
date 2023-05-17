@@ -29,6 +29,7 @@ namespace FilmLibrary
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCSignUp));
             this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.lblDOB = new System.Windows.Forms.Label();
             this.btnSignUp2 = new System.Windows.Forms.Button();
@@ -157,6 +158,7 @@ namespace FilmLibrary
             // pbProfilePicSU
             // 
             this.pbProfilePicSU.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbProfilePicSU.Image = ((System.Drawing.Image)(resources.GetObject("pbProfilePicSU.Image")));
             this.pbProfilePicSU.Location = new System.Drawing.Point(405, 62);
             this.pbProfilePicSU.Name = "pbProfilePicSU";
             this.pbProfilePicSU.Size = new System.Drawing.Size(158, 143);

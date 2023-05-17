@@ -12,11 +12,12 @@ namespace FilmLibrary
 {
     public class CircularPictureBox : PictureBox
     {
-        private static string DefaultProfilePicImagePath = @"F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\Project\FilmLibrary\images\profile_picture_default.jpg";
+        /*private static string DefaultProfilePicImagePath = @"F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\Project\FilmLibrary\images\profile_picture_default.jpg";
         private Image image;
 
         public event EventHandler ImageChanged;
 
+        //To Overried default Image property
         [Browsable(true)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public new Image Image
@@ -32,10 +33,15 @@ namespace FilmLibrary
                 }
             }
         }
+        
+        protected virtual void OnImageChanged(EventArgs e)
+        {
+            ImageChanged?.Invoke(this, e);
+        } */
 
         public CircularPictureBox()
         {
-            this.Image = new Bitmap(DefaultProfilePicImagePath);
+
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -48,11 +54,6 @@ namespace FilmLibrary
                 e.Graphics.SetClip(path);
                 base.OnPaint(e);
             }
-        }
-
-        protected virtual void OnImageChanged(EventArgs e)
-        {
-            ImageChanged?.Invoke(this, e);
         }
     }
 }

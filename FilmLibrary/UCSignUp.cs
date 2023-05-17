@@ -21,7 +21,6 @@ namespace FilmLibrary
 
         private void UCSignUp_Load(object sender, EventArgs e)
         {
-            pbProfilePicSU.ImageChanged += pbProfilePicSU_ImageChanged;
             this.isUserImageUploaded = false;
         }
 
@@ -86,23 +85,20 @@ namespace FilmLibrary
             try
             {
                 OpenFileDialog choose_image = new OpenFileDialog();
-                choose_image.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+                choose_image.Filter = "Image Files(*.jpg; *.jpeg; *.png; *.bmp)|*.jpg; *.jpeg; *.png; *.bmp";
                 if (choose_image.ShowDialog() == DialogResult.OK)
                 {
                     Image img = new Bitmap(choose_image.FileName);
                     pbProfilePicSU.Image = img;
                     choose_image.RestoreDirectory = true;
+
+                    this.isUserImageUploaded = true;
                 }
             }
             catch (Exception)
             {
                 MessageBox.Show("Cannot upload image.", "File Upload Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void pbProfilePicSU_ImageChanged(object sender, EventArgs e)
-        {
-            this.isUserImageUploaded = true;
         }
     }
 }
