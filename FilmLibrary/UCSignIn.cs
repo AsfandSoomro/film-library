@@ -17,53 +17,11 @@ namespace FilmLibrary
             InitializeComponent();
         }
 
-        private void txtUsername_Enter(object sender, EventArgs e)
-        {
-            if(txtUsername.Text == "Username")
-            {
-                txtUsername.Text = "";
-            }
-            txtUsername.BackColor = Color.FromArgb(255, 245, 245, 239);
-            txtUsername.ForeColor = Color.Black;
-        }
-
-        private void txtUsername_Leave(object sender, EventArgs e)
-        {
-            if(txtUsername.Text == "")
-            {
-                txtUsername.Text = "Username";
-            }
-            txtUsername.BackColor = Color.FromArgb(255, 31, 40, 57);
-            txtUsername.ForeColor = Color.FromArgb(255, 245, 245, 239);
-        }
-
-        private void txtPassword_Enter(object sender, EventArgs e)
-        {
-            if (txtPassword.Text == "Password")
-            {
-                txtPassword.Text = "";
-            }
-            txtPassword.BackColor = Color.FromArgb(255, 245, 245, 239);
-            txtPassword.ForeColor = Color.Black;
-            txtPassword.PasswordChar = '*';
-        }
-
-        private void txtPassword_Leave(object sender, EventArgs e)
-        {
-            if (txtPassword.Text == "")
-            {
-                txtPassword.Text = "Password";
-                txtPassword.PasswordChar = '\0';
-            }
-            txtPassword.BackColor = Color.FromArgb(255, 31, 40, 57);
-            txtPassword.ForeColor = Color.FromArgb(255, 245, 245, 239);
-        }
-
         private void txtUsernameAndPassword_KeyUp(object sender, KeyEventArgs e)
         {
             // Check if both username field and password is filled with user's input
             if (
-                (txtUsername.Text != "Username" && txtPassword.Text != "Password") &&
+                (txtUsername.Text != txtUsername.OriginalText && txtPassword.Text != txtPassword.OriginalText) &&
                 (!string.IsNullOrEmpty(txtUsername.Text) && !string.IsNullOrEmpty(txtPassword.Text))
                 )
             {

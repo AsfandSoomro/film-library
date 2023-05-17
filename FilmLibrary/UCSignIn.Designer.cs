@@ -29,44 +29,10 @@ namespace FilmLibrary
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnSignIn2 = new System.Windows.Forms.Button();
+            this.txtUsername = new FilmLibrary.MyTextBox();
+            this.txtPassword = new FilmLibrary.MyTextBox();
             this.SuspendLayout();
-            // 
-            // txtUsername
-            // 
-            this.txtUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
-            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(239)))));
-            this.txtUsername.Location = new System.Drawing.Point(372, 257);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(228, 26);
-            this.txtUsername.TabIndex = 0;
-            this.txtUsername.Text = "Username";
-            this.txtUsername.Enter += new System.EventHandler(this.txtUsername_Enter);
-            this.txtUsername.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtUsernameAndPassword_KeyUp);
-            this.txtUsername.Leave += new System.EventHandler(this.txtUsername_Leave);
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
-            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(239)))));
-            this.txtPassword.Location = new System.Drawing.Point(372, 303);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(228, 26);
-            this.txtPassword.TabIndex = 1;
-            this.txtPassword.Text = "Password";
-            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
-            this.txtPassword.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtUsernameAndPassword_KeyUp);
-            this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 
             // btnSignIn2
             // 
@@ -87,14 +53,42 @@ namespace FilmLibrary
             this.btnSignIn2.UseVisualStyleBackColor = false;
             this.btnSignIn2.Click += new System.EventHandler(this.btnSignIn2_Click);
             // 
+            // txtUsername
+            // 
+            this.txtUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
+            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(239)))));
+            this.txtUsername.IsPassword = false;
+            this.txtUsername.Location = new System.Drawing.Point(372, 257);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.OriginalText = "Username";
+            this.txtUsername.Size = new System.Drawing.Size(228, 26);
+            this.txtUsername.TabIndex = 3;
+            this.txtUsername.Text = "Username";
+            this.txtUsername.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtUsernameAndPassword_KeyUp);
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(239)))));
+            this.txtPassword.IsPassword = true;
+            this.txtPassword.Location = new System.Drawing.Point(372, 303);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.OriginalText = "Password";
+            this.txtPassword.Size = new System.Drawing.Size(228, 26);
+            this.txtPassword.TabIndex = 4;
+            this.txtPassword.Text = "Password";
+            this.txtPassword.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtUsernameAndPassword_KeyUp);
+            // 
             // UCSignIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
-            this.Controls.Add(this.btnSignIn2);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.btnSignIn2);
             this.Name = "UCSignIn";
             this.Size = new System.Drawing.Size(969, 661);
             this.ResumeLayout(false);
@@ -103,9 +97,8 @@ namespace FilmLibrary
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnSignIn2;
+        private MyTextBox txtUsername;
+        private MyTextBox txtPassword;
     }
 }
