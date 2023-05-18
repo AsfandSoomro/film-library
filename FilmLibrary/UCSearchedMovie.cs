@@ -14,10 +14,13 @@ namespace FilmLibrary
     {
         private int movie_id;
 
-        public UCSearchedMovie(int movie_id, string title, int release_year, Image cover)
+        public UCSearchedMovie()
         {
             InitializeComponent();
+        }
 
+        public UCSearchedMovie(int movie_id, string title, int release_year, Image cover) : this()
+        {
             this.movie_id = movie_id;
 
             this.lblTitle.Text = title;

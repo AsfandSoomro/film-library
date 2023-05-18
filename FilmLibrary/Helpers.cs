@@ -47,6 +47,22 @@ namespace FilmLibrary
             mainPanel.Controls.Add(uc);
         }
 
+        public async static void ShowSearchedMovies(string searchQuery)
+        {
+            Form2.currentMainPage = String.Format("Search result for - \"{0}\"", searchQuery);
+            UpdateMainPageHeading();
+
+            Form form = Application.OpenForms.OfType<Form2>().FirstOrDefault();
+            Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
+            Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
+
+            DataTable movies = await Task.Run(() => Queries.GetDataTable("Movies", String.Format("SELECT movie_id, cover, title, release_year FROM Movies WHERE LOWER(title) LIKE '{0}%'", searchQuery.ToLower())));
+            UCSearchedMoviesAll uc = new UCSearchedMoviesAll(movies);
+            uc.Dock = DockStyle.Fill;
+            mainPanel.Controls.Clear();
+            mainPanel.Controls.Add(uc);
+        }
+
         public static void OpenMoviePage(Form form, DataRow movie)
         {
             // Finds the panels in the given opened instance of Form2

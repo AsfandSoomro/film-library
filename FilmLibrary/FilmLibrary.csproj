@@ -131,6 +131,12 @@
     <Compile Include="UCSearchedMovie.Designer.cs">
       <DependentUpon>UCSearchedMovie.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCSearchedMoviesAll.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSearchedMoviesAll.Designer.cs">
+      <DependentUpon>UCSearchedMoviesAll.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCSignIn.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -173,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCSearchedMovie.resx">
       <DependentUpon>UCSearchedMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCSearchedMoviesAll.resx">
+      <DependentUpon>UCSearchedMoviesAll.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCSignIn.resx">
       <DependentUpon>UCSignIn.cs</DependentUpon>

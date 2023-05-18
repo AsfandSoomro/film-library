@@ -75,6 +75,16 @@ namespace FilmLibrary
                 Helpers.CreateGenreButtons(panelGenresContainer);
         }
 
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            // Dispose searched movies container first if there already is
+            Helpers.DisposeSearchedMoviesContainerFlowLayoutPanel(this);
+
+            Helpers.ShowSearchedMovies(txtSearch.Text);
+
+            txtSearch.Text = "Search";
+        }
+
         private void txtSearch_Enter(object sender, EventArgs e)
         {
             if (txtSearch.Text == "Search")
@@ -95,6 +105,13 @@ namespace FilmLibrary
         {
             // Dispose searched movies container first if there already is
             Helpers.DisposeSearchedMoviesContainerFlowLayoutPanel(this);
+
+            if(e.KeyCode == Keys.Enter)
+            {
+                Helpers.ShowSearchedMovies(txtSearch.Text);
+                txtSearch.Text = "Search";
+                return;
+            }
 
             FlowLayoutPanel flp = Helpers.CreateSearchedMoviesContainerFlowLayoutPanel(this);
             flp.Name = "flpSearchedMoviesContainerRuntime";
