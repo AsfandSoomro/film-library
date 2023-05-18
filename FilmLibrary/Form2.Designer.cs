@@ -32,6 +32,14 @@ namespace FilmLibrary
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.panelSideBar = new System.Windows.Forms.Panel();
+            this.flpManage = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblManage = new System.Windows.Forms.Label();
+            this.flpSettings = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblSettings = new System.Windows.Forms.Label();
+            this.btnFAQ = new System.Windows.Forms.Button();
+            this.btnHelp = new System.Windows.Forms.Button();
+            this.btnTerms = new System.Windows.Forms.Button();
+            this.btnPrivacy = new System.Windows.Forms.Button();
             this.flpMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.lblMenu = new System.Windows.Forms.Label();
             this.btnHome = new System.Windows.Forms.Button();
@@ -48,7 +56,6 @@ namespace FilmLibrary
             this.lblUsername = new System.Windows.Forms.Label();
             this.panelBtnSearch = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.panelProfileComboBoxcontainer = new System.Windows.Forms.Panel();
             this.cbProfile = new System.Windows.Forms.ComboBox();
             this.panelContainer = new System.Windows.Forms.Panel();
@@ -69,9 +76,12 @@ namespace FilmLibrary
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.txtSearch = new FilmLibrary.MyTextBox();
             this.pbProfilePic = new FilmLibrary.CircularPictureBox();
             this.genreButton1 = new FilmLibrary.GenreButton();
             this.panelSideBar.SuspendLayout();
+            this.flpManage.SuspendLayout();
+            this.flpSettings.SuspendLayout();
             this.flpMenu.SuspendLayout();
             this.panelGenresContainer.SuspendLayout();
             this.panelSideBarLogo.SuspendLayout();
@@ -95,15 +105,149 @@ namespace FilmLibrary
             // 
             // panelSideBar
             // 
+            this.panelSideBar.AutoScroll = true;
             this.panelSideBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(157)))), ((int)(((byte)(116)))));
+            this.panelSideBar.Controls.Add(this.flpManage);
+            this.panelSideBar.Controls.Add(this.flpSettings);
             this.panelSideBar.Controls.Add(this.flpMenu);
             this.panelSideBar.Controls.Add(this.panelSideBarLogo);
+            this.panelSideBar.Cursor = System.Windows.Forms.Cursors.Default;
             this.panelSideBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideBar.Location = new System.Drawing.Point(0, 0);
             this.panelSideBar.Name = "panelSideBar";
             this.panelSideBar.Size = new System.Drawing.Size(160, 723);
             this.panelSideBar.TabIndex = 0;
             this.panelSideBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelSideBar_MouseDown);
+            // 
+            // flpManage
+            // 
+            this.flpManage.AutoSize = true;
+            this.flpManage.Controls.Add(this.lblManage);
+            this.flpManage.Cursor = System.Windows.Forms.Cursors.Default;
+            this.flpManage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flpManage.Location = new System.Drawing.Point(0, 568);
+            this.flpManage.Name = "flpManage";
+            this.flpManage.Size = new System.Drawing.Size(160, 49);
+            this.flpManage.TabIndex = 3;
+            // 
+            // lblManage
+            // 
+            this.lblManage.AutoSize = true;
+            this.lblManage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblManage.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblManage.Location = new System.Drawing.Point(3, 10);
+            this.lblManage.Margin = new System.Windows.Forms.Padding(3, 10, 3, 15);
+            this.lblManage.Name = "lblManage";
+            this.lblManage.Size = new System.Drawing.Size(85, 24);
+            this.lblManage.TabIndex = 12;
+            this.lblManage.Text = "Manage";
+            // 
+            // flpSettings
+            // 
+            this.flpSettings.AutoSize = true;
+            this.flpSettings.Controls.Add(this.lblSettings);
+            this.flpSettings.Controls.Add(this.btnFAQ);
+            this.flpSettings.Controls.Add(this.btnHelp);
+            this.flpSettings.Controls.Add(this.btnTerms);
+            this.flpSettings.Controls.Add(this.btnPrivacy);
+            this.flpSettings.Cursor = System.Windows.Forms.Cursors.Default;
+            this.flpSettings.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flpSettings.Location = new System.Drawing.Point(0, 367);
+            this.flpSettings.Name = "flpSettings";
+            this.flpSettings.Size = new System.Drawing.Size(160, 201);
+            this.flpSettings.TabIndex = 2;
+            // 
+            // lblSettings
+            // 
+            this.lblSettings.AutoSize = true;
+            this.lblSettings.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSettings.Location = new System.Drawing.Point(3, 10);
+            this.lblSettings.Margin = new System.Windows.Forms.Padding(3, 10, 3, 15);
+            this.lblSettings.Name = "lblSettings";
+            this.lblSettings.Size = new System.Drawing.Size(84, 24);
+            this.lblSettings.TabIndex = 11;
+            this.lblSettings.Text = "Settings";
+            // 
+            // btnFAQ
+            // 
+            this.btnFAQ.BackColor = System.Drawing.Color.Transparent;
+            this.btnFAQ.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFAQ.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnFAQ.FlatAppearance.BorderSize = 0;
+            this.btnFAQ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFAQ.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFAQ.Image = ((System.Drawing.Image)(resources.GetObject("btnFAQ.Image")));
+            this.btnFAQ.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFAQ.Location = new System.Drawing.Point(3, 49);
+            this.btnFAQ.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.btnFAQ.Name = "btnFAQ";
+            this.btnFAQ.Size = new System.Drawing.Size(160, 38);
+            this.btnFAQ.TabIndex = 13;
+            this.btnFAQ.Text = "FAQ";
+            this.btnFAQ.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFAQ.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFAQ.UseVisualStyleBackColor = false;
+            // 
+            // btnHelp
+            // 
+            this.btnHelp.BackColor = System.Drawing.Color.Transparent;
+            this.btnHelp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHelp.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHelp.FlatAppearance.BorderSize = 0;
+            this.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHelp.Image = ((System.Drawing.Image)(resources.GetObject("btnHelp.Image")));
+            this.btnHelp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHelp.Location = new System.Drawing.Point(3, 87);
+            this.btnHelp.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(160, 38);
+            this.btnHelp.TabIndex = 14;
+            this.btnHelp.Text = "Help Center";
+            this.btnHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHelp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHelp.UseVisualStyleBackColor = false;
+            // 
+            // btnTerms
+            // 
+            this.btnTerms.BackColor = System.Drawing.Color.Transparent;
+            this.btnTerms.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTerms.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTerms.FlatAppearance.BorderSize = 0;
+            this.btnTerms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTerms.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTerms.Image = ((System.Drawing.Image)(resources.GetObject("btnTerms.Image")));
+            this.btnTerms.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTerms.Location = new System.Drawing.Point(3, 125);
+            this.btnTerms.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.btnTerms.Name = "btnTerms";
+            this.btnTerms.Size = new System.Drawing.Size(160, 38);
+            this.btnTerms.TabIndex = 15;
+            this.btnTerms.Text = "Terms of Use";
+            this.btnTerms.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTerms.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTerms.UseVisualStyleBackColor = false;
+            // 
+            // btnPrivacy
+            // 
+            this.btnPrivacy.BackColor = System.Drawing.Color.Transparent;
+            this.btnPrivacy.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrivacy.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPrivacy.FlatAppearance.BorderSize = 0;
+            this.btnPrivacy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrivacy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrivacy.Image = ((System.Drawing.Image)(resources.GetObject("btnPrivacy.Image")));
+            this.btnPrivacy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPrivacy.Location = new System.Drawing.Point(3, 163);
+            this.btnPrivacy.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.btnPrivacy.Name = "btnPrivacy";
+            this.btnPrivacy.Size = new System.Drawing.Size(160, 38);
+            this.btnPrivacy.TabIndex = 16;
+            this.btnPrivacy.Text = "Privacy";
+            this.btnPrivacy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPrivacy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPrivacy.UseVisualStyleBackColor = false;
             // 
             // flpMenu
             // 
@@ -114,6 +258,7 @@ namespace FilmLibrary
             this.flpMenu.Controls.Add(this.btnPublicWatchlists);
             this.flpMenu.Controls.Add(this.btnGenres);
             this.flpMenu.Controls.Add(this.panelGenresContainer);
+            this.flpMenu.Cursor = System.Windows.Forms.Cursors.Default;
             this.flpMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.flpMenu.Location = new System.Drawing.Point(0, 63);
             this.flpMenu.Name = "flpMenu";
@@ -134,7 +279,8 @@ namespace FilmLibrary
             // 
             // btnHome
             // 
-            this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(157)))), ((int)(((byte)(116)))));
+            this.btnHome.BackColor = System.Drawing.Color.Transparent;
+            this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHome.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnHome.FlatAppearance.BorderSize = 0;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -154,7 +300,8 @@ namespace FilmLibrary
             // 
             // btnMyWatchlists
             // 
-            this.btnMyWatchlists.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(157)))), ((int)(((byte)(116)))));
+            this.btnMyWatchlists.BackColor = System.Drawing.Color.Transparent;
+            this.btnMyWatchlists.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMyWatchlists.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMyWatchlists.FlatAppearance.BorderSize = 0;
             this.btnMyWatchlists.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -173,7 +320,8 @@ namespace FilmLibrary
             // 
             // btnPublicWatchlists
             // 
-            this.btnPublicWatchlists.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(157)))), ((int)(((byte)(116)))));
+            this.btnPublicWatchlists.BackColor = System.Drawing.Color.Transparent;
+            this.btnPublicWatchlists.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPublicWatchlists.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnPublicWatchlists.FlatAppearance.BorderSize = 0;
             this.btnPublicWatchlists.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -192,7 +340,8 @@ namespace FilmLibrary
             // 
             // btnGenres
             // 
-            this.btnGenres.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(157)))), ((int)(((byte)(116)))));
+            this.btnGenres.BackColor = System.Drawing.Color.Transparent;
+            this.btnGenres.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGenres.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnGenres.FlatAppearance.BorderSize = 0;
             this.btnGenres.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -225,6 +374,7 @@ namespace FilmLibrary
             // panelSideBarLogo
             // 
             this.panelSideBarLogo.Controls.Add(this.lblTitle2);
+            this.panelSideBarLogo.Cursor = System.Windows.Forms.Cursors.Default;
             this.panelSideBarLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSideBarLogo.Location = new System.Drawing.Point(0, 0);
             this.panelSideBarLogo.Name = "panelSideBarLogo";
@@ -250,12 +400,12 @@ namespace FilmLibrary
             // 
             // panelSearchBar
             // 
+            this.panelSearchBar.Controls.Add(this.txtSearch);
             this.panelSearchBar.Controls.Add(this.lblMainPageHeading);
             this.panelSearchBar.Controls.Add(this.btnMenu);
             this.panelSearchBar.Controls.Add(this.lblUsername);
             this.panelSearchBar.Controls.Add(this.pbProfilePic);
             this.panelSearchBar.Controls.Add(this.panelBtnSearch);
-            this.panelSearchBar.Controls.Add(this.txtSearch);
             this.panelSearchBar.Controls.Add(this.panelProfileComboBoxcontainer);
             this.panelSearchBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSearchBar.Location = new System.Drawing.Point(0, 0);
@@ -278,6 +428,7 @@ namespace FilmLibrary
             // btnMenu
             // 
             this.btnMenu.BackColor = System.Drawing.Color.Transparent;
+            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMenu.FlatAppearance.BorderSize = 0;
             this.btnMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(80)))), ((int)(((byte)(97)))));
@@ -313,7 +464,7 @@ namespace FilmLibrary
             // 
             // panelBtnSearch
             // 
-            this.panelBtnSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelBtnSearch.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelBtnSearch.Controls.Add(this.btnSearch);
             this.panelBtnSearch.Location = new System.Drawing.Point(576, 21);
             this.panelBtnSearch.Name = "panelBtnSearch";
@@ -324,30 +475,17 @@ namespace FilmLibrary
             // 
             this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
             this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
+            this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(80)))), ((int)(((byte)(97)))));
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Location = new System.Drawing.Point(3, 3);
+            this.btnSearch.Location = new System.Drawing.Point(3, 2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(20, 18);
             this.btnSearch.TabIndex = 2;
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
-            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.ForeColor = System.Drawing.Color.White;
-            this.txtSearch.Location = new System.Drawing.Point(49, 21);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(530, 26);
-            this.txtSearch.TabIndex = 0;
-            this.txtSearch.Text = "Search";
-            this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
-            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
-            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
-            this.txtSearch.Leave += new System.EventHandler(this.txtSearch_Leave);
             // 
             // panelProfileComboBoxcontainer
             // 
@@ -559,6 +697,21 @@ namespace FilmLibrary
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
+            // txtSearch
+            // 
+            this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(239)))));
+            this.txtSearch.IsPassword = false;
+            this.txtSearch.Location = new System.Drawing.Point(49, 21);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.OriginalText = "Search";
+            this.txtSearch.Size = new System.Drawing.Size(530, 26);
+            this.txtSearch.TabIndex = 15;
+            this.txtSearch.Text = "Search";
+            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
+            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
+            // 
             // pbProfilePic
             // 
             this.pbProfilePic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -575,6 +728,7 @@ namespace FilmLibrary
             // genreButton1
             // 
             this.genreButton1.BackColor = System.Drawing.Color.Transparent;
+            this.genreButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.genreButton1.Dock = System.Windows.Forms.DockStyle.Top;
             this.genreButton1.Enabled = false;
             this.genreButton1.FlatAppearance.BorderSize = 0;
@@ -606,6 +760,10 @@ namespace FilmLibrary
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseDown);
             this.panelSideBar.ResumeLayout(false);
             this.panelSideBar.PerformLayout();
+            this.flpManage.ResumeLayout(false);
+            this.flpManage.PerformLayout();
+            this.flpSettings.ResumeLayout(false);
+            this.flpSettings.PerformLayout();
             this.flpMenu.ResumeLayout(false);
             this.flpMenu.PerformLayout();
             this.panelGenresContainer.ResumeLayout(false);
@@ -647,9 +805,6 @@ namespace FilmLibrary
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Label lblUsername;
         private CircularPictureBox pbProfilePic;
-        private System.Windows.Forms.Panel panelBtnSearch;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Panel panelProfileComboBoxcontainer;
         private System.Windows.Forms.ComboBox cbProfile;
         private System.Windows.Forms.Panel panelContainer;
@@ -678,5 +833,16 @@ namespace FilmLibrary
         private System.Windows.Forms.Button btnGenres;
         private System.Windows.Forms.Panel panelGenresContainer;
         private GenreButton genreButton1;
+        private System.Windows.Forms.FlowLayoutPanel flpSettings;
+        private System.Windows.Forms.Label lblSettings;
+        private System.Windows.Forms.Button btnFAQ;
+        private System.Windows.Forms.Button btnHelp;
+        private System.Windows.Forms.Button btnTerms;
+        private System.Windows.Forms.Button btnPrivacy;
+        private System.Windows.Forms.FlowLayoutPanel flpManage;
+        private System.Windows.Forms.Label lblManage;
+        private MyTextBox txtSearch;
+        private System.Windows.Forms.Panel panelBtnSearch;
+        private System.Windows.Forms.Button btnSearch;
     }
 }

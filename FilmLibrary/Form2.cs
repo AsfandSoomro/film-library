@@ -85,22 +85,6 @@ namespace FilmLibrary
             txtSearch.Text = "Search";
         }
 
-        private void txtSearch_Enter(object sender, EventArgs e)
-        {
-            if (txtSearch.Text == "Search")
-            {
-                txtSearch.Text = "";
-            }
-        }
-
-        private void txtSearch_Leave(object sender, EventArgs e)
-        {
-            if (txtSearch.Text == "")
-            {
-                txtSearch.Text = "Search";
-            }
-        }
-
         private async void txtSearch_KeyDown(object sender, KeyEventArgs e)
         {
             // Dispose searched movies container first if there already is
@@ -120,6 +104,12 @@ namespace FilmLibrary
             foreach(DataRow movie in movies.Rows)
             {
                 UCSearchedMovie uc = new UCSearchedMovie((int)movie["movie_id"], (string)movie["title"], (int)movie["release_year"], (Image)Utils.ByteToImage((byte[])movie["cover"]));
+                flp.Controls.Add(uc);
+            }
+
+            if (movies.Rows.Count == 0)
+            {
+                UCSearchedMovieNoResult uc = new UCSearchedMovieNoResult(String.Format("No results for \"{0}\"", txtSearch.Text));
                 flp.Controls.Add(uc);
             }
 

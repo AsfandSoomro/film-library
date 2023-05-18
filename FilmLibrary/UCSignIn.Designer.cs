@@ -40,6 +40,7 @@ namespace FilmLibrary
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSignIn2.BackColor = System.Drawing.Color.SlateGray;
+            this.btnSignIn2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSignIn2.Enabled = false;
             this.btnSignIn2.FlatAppearance.BorderSize = 0;
             this.btnSignIn2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;

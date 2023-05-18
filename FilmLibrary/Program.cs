@@ -17,8 +17,8 @@ namespace FilmLibrary
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form2((DataRow)(Queries.GetDataTableNonAsync("Users", "SELECT * FROM Users WHERE username = 'asfand'")).Rows[0]));
-            //Application.Run(new Form1());
+            //Application.Run(new Form2((DataRow)(Queries.GetDataTableNonAsync("Users", "SELECT * FROM Users WHERE username = 'asfand'")).Rows[0]));
+            Application.Run(new Form1());
         }
     }
 }
