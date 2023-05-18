@@ -31,7 +31,6 @@ namespace FilmLibrary
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCMovies));
             this.flPanelMovies = new System.Windows.Forms.FlowLayoutPanel();
-            this.moviePictureBox1 = new FilmLibrary.MoviePictureBox();
             this.moviePictureBox2 = new FilmLibrary.MoviePictureBox();
             this.moviePictureBox3 = new FilmLibrary.MoviePictureBox();
             this.moviePictureBox4 = new FilmLibrary.MoviePictureBox();
@@ -41,7 +40,6 @@ namespace FilmLibrary
             this.moviePictureBox8 = new FilmLibrary.MoviePictureBox();
             this.moviePictureBox9 = new FilmLibrary.MoviePictureBox();
             this.flPanelMovies.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.moviePictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moviePictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moviePictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moviePictureBox4)).BeginInit();
@@ -58,7 +56,6 @@ namespace FilmLibrary
             this.flPanelMovies.AutoScrollMargin = new System.Drawing.Size(10, 10);
             this.flPanelMovies.AutoScrollMinSize = new System.Drawing.Size(10, 10);
             this.flPanelMovies.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
-            this.flPanelMovies.Controls.Add(this.moviePictureBox1);
             this.flPanelMovies.Controls.Add(this.moviePictureBox2);
             this.flPanelMovies.Controls.Add(this.moviePictureBox3);
             this.flPanelMovies.Controls.Add(this.moviePictureBox4);
@@ -72,24 +69,8 @@ namespace FilmLibrary
             this.flPanelMovies.Name = "flPanelMovies";
             this.flPanelMovies.Padding = new System.Windows.Forms.Padding(20);
             this.flPanelMovies.Size = new System.Drawing.Size(809, 660);
-            this.flPanelMovies.TabIndex = 2;
+            this.flPanelMovies.TabIndex = 3;
             this.flPanelMovies.Scroll += new System.Windows.Forms.ScrollEventHandler(this.flPanelMovies_Scroll);
-            this.flPanelMovies.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flPanelMovies_MouseDown);
-            // 
-            // moviePictureBox1
-            // 
-            this.moviePictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.moviePictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.moviePictureBox1.Enabled = false;
-            this.moviePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("moviePictureBox1.Image")));
-            this.moviePictureBox1.Location = new System.Drawing.Point(30, 30);
-            this.moviePictureBox1.Margin = new System.Windows.Forms.Padding(10);
-            this.moviePictureBox1.Name = "moviePictureBox1";
-            this.moviePictureBox1.Size = new System.Drawing.Size(205, 295);
-            this.moviePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.moviePictureBox1.TabIndex = 0;
-            this.moviePictureBox1.TabStop = false;
-            this.moviePictureBox1.Visible = false;
             // 
             // moviePictureBox2
             // 
@@ -97,7 +78,7 @@ namespace FilmLibrary
             this.moviePictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.moviePictureBox2.Enabled = false;
             this.moviePictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("moviePictureBox2.Image")));
-            this.moviePictureBox2.Location = new System.Drawing.Point(255, 30);
+            this.moviePictureBox2.Location = new System.Drawing.Point(30, 30);
             this.moviePictureBox2.Margin = new System.Windows.Forms.Padding(10);
             this.moviePictureBox2.Name = "moviePictureBox2";
             this.moviePictureBox2.Size = new System.Drawing.Size(205, 295);
@@ -112,7 +93,7 @@ namespace FilmLibrary
             this.moviePictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.moviePictureBox3.Enabled = false;
             this.moviePictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("moviePictureBox3.Image")));
-            this.moviePictureBox3.Location = new System.Drawing.Point(480, 30);
+            this.moviePictureBox3.Location = new System.Drawing.Point(255, 30);
             this.moviePictureBox3.Margin = new System.Windows.Forms.Padding(10);
             this.moviePictureBox3.Name = "moviePictureBox3";
             this.moviePictureBox3.Size = new System.Drawing.Size(205, 295);
@@ -127,7 +108,7 @@ namespace FilmLibrary
             this.moviePictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.moviePictureBox4.Enabled = false;
             this.moviePictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("moviePictureBox4.Image")));
-            this.moviePictureBox4.Location = new System.Drawing.Point(30, 345);
+            this.moviePictureBox4.Location = new System.Drawing.Point(480, 30);
             this.moviePictureBox4.Margin = new System.Windows.Forms.Padding(10);
             this.moviePictureBox4.Name = "moviePictureBox4";
             this.moviePictureBox4.Size = new System.Drawing.Size(205, 295);
@@ -142,7 +123,7 @@ namespace FilmLibrary
             this.moviePictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.moviePictureBox5.Enabled = false;
             this.moviePictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("moviePictureBox5.Image")));
-            this.moviePictureBox5.Location = new System.Drawing.Point(255, 345);
+            this.moviePictureBox5.Location = new System.Drawing.Point(30, 345);
             this.moviePictureBox5.Margin = new System.Windows.Forms.Padding(10);
             this.moviePictureBox5.Name = "moviePictureBox5";
             this.moviePictureBox5.Size = new System.Drawing.Size(205, 295);
@@ -157,7 +138,7 @@ namespace FilmLibrary
             this.moviePictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.moviePictureBox6.Enabled = false;
             this.moviePictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("moviePictureBox6.Image")));
-            this.moviePictureBox6.Location = new System.Drawing.Point(480, 345);
+            this.moviePictureBox6.Location = new System.Drawing.Point(255, 345);
             this.moviePictureBox6.Margin = new System.Windows.Forms.Padding(10);
             this.moviePictureBox6.Name = "moviePictureBox6";
             this.moviePictureBox6.Size = new System.Drawing.Size(205, 295);
@@ -172,7 +153,7 @@ namespace FilmLibrary
             this.moviePictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.moviePictureBox7.Enabled = false;
             this.moviePictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("moviePictureBox7.Image")));
-            this.moviePictureBox7.Location = new System.Drawing.Point(30, 660);
+            this.moviePictureBox7.Location = new System.Drawing.Point(480, 345);
             this.moviePictureBox7.Margin = new System.Windows.Forms.Padding(10);
             this.moviePictureBox7.Name = "moviePictureBox7";
             this.moviePictureBox7.Size = new System.Drawing.Size(205, 295);
@@ -187,7 +168,7 @@ namespace FilmLibrary
             this.moviePictureBox8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.moviePictureBox8.Enabled = false;
             this.moviePictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("moviePictureBox8.Image")));
-            this.moviePictureBox8.Location = new System.Drawing.Point(255, 660);
+            this.moviePictureBox8.Location = new System.Drawing.Point(30, 660);
             this.moviePictureBox8.Margin = new System.Windows.Forms.Padding(10);
             this.moviePictureBox8.Name = "moviePictureBox8";
             this.moviePictureBox8.Size = new System.Drawing.Size(205, 295);
@@ -202,7 +183,7 @@ namespace FilmLibrary
             this.moviePictureBox9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.moviePictureBox9.Enabled = false;
             this.moviePictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("moviePictureBox9.Image")));
-            this.moviePictureBox9.Location = new System.Drawing.Point(480, 660);
+            this.moviePictureBox9.Location = new System.Drawing.Point(255, 660);
             this.moviePictureBox9.Margin = new System.Windows.Forms.Padding(10);
             this.moviePictureBox9.Name = "moviePictureBox9";
             this.moviePictureBox9.Size = new System.Drawing.Size(205, 295);
@@ -220,7 +201,6 @@ namespace FilmLibrary
             this.Name = "UCMovies";
             this.Size = new System.Drawing.Size(809, 660);
             this.flPanelMovies.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.moviePictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.moviePictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.moviePictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.moviePictureBox4)).EndInit();
@@ -234,9 +214,7 @@ namespace FilmLibrary
         }
 
         #endregion
-
         private System.Windows.Forms.FlowLayoutPanel flPanelMovies;
-        private MoviePictureBox moviePictureBox1;
         private MoviePictureBox moviePictureBox2;
         private MoviePictureBox moviePictureBox3;
         private MoviePictureBox moviePictureBox4;

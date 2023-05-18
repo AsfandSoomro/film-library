@@ -18,6 +18,8 @@ namespace FilmLibrary
         private bool isSideBarVisible;
         private int originalSideBarWidth;
 
+        public static string currentMainPage;
+
         public Form2(DataRow user)
         {
             InitializeComponent();
@@ -27,7 +29,7 @@ namespace FilmLibrary
         
         private void Form2_Load(object sender, EventArgs e)
         {
-            Helpers.ShowDashboard();
+            Helpers.ShowHome();
 
             this.lblUsername.Text = (string)this.user["username"];
             try
@@ -56,6 +58,21 @@ namespace FilmLibrary
                 }
                 Helpers.DisposeSearchedMoviesContainerFlowLayoutPanel(this);
             }
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            if (Form2.currentMainPage != "Home")
+                Helpers.ShowHome();
+        }
+
+        private void btnGenres_Click(object sender, EventArgs e)
+        {
+            panelGenresContainer.Enabled = !panelGenresContainer.Enabled;
+            panelGenresContainer.Visible = !panelGenresContainer.Visible;
+            
+            if(panelGenresContainer.Controls.Count < 2)
+                Helpers.CreateGenreButtons(panelGenresContainer);
         }
 
         private void txtSearch_Enter(object sender, EventArgs e)

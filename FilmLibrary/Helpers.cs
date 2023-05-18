@@ -12,8 +12,31 @@ namespace FilmLibrary
 {
     class Helpers
     {
-        public static void ShowDashboard()
+        public static void UpdateMainPageHeading()
         {
+            Form form = Application.OpenForms.OfType<Form2>().FirstOrDefault();
+
+            Label heading = form.Controls.Find("lblMainPageHeading", true).FirstOrDefault() as Label;
+            heading.Text = Form2.currentMainPage;
+        }
+        public static void ShowMovies(string query)
+        {
+            Form form = Application.OpenForms.OfType<Form2>().FirstOrDefault();
+            Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
+            Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
+
+            query = query.Replace("SELECT", "SELECT @LIMIT");
+            UCMovies uc = new UCMovies(query);
+            uc.Dock = DockStyle.Fill;
+            mainPanel.Controls.Clear();
+            mainPanel.Controls.Add(uc);
+        }
+
+        public static void ShowHome()
+        {
+            Form2.currentMainPage = "Home";
+            UpdateMainPageHeading();
+
             Form form = Application.OpenForms.OfType<Form2>().FirstOrDefault();
             Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
             Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
@@ -68,6 +91,17 @@ namespace FilmLibrary
             FlowLayoutPanel searchedMoviesContainerPanel = form.Controls.Find("flpSearchedMoviesContainerRuntime", true).FirstOrDefault() as FlowLayoutPanel;
             if (searchedMoviesContainerPanel != null)
                 searchedMoviesContainerPanel.Dispose();
+        }
+
+        public async static void CreateGenreButtons(Panel panel)
+        {
+            DataTable genres = (await Queries.GetDataTable("Genres"));
+
+            foreach (DataRow genre in genres.Rows)
+            {
+                GenreButton btn = new GenreButton(genre);
+                panel.Controls.Add(btn);
+            } 
         }
     }
 }

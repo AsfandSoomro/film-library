@@ -34,7 +34,7 @@ namespace FilmLibrary
         private void UpdateQuery()
         {
             this.query = theQuery.Replace("@LIMIT", String.Format("TOP {0}", this.limit));
-            this.query = this.query.Replace("@CONDITIONS", String.Format("movie_id > {0}", this.lastDisplayedMovieId));
+            this.query = this.query.Replace("@CONDITIONS", String.Format("Movies.movie_id > {0}", this.lastDisplayedMovieId));
         }
 
         private async void StartDisplayMovies()
@@ -44,8 +44,13 @@ namespace FilmLibrary
 
         private void DisplayMovies(DataTable movies)
         {
+            // If there are no more movies to display
+            if(movies.Rows.Count == 0)
+            {
+                this.Scroll -= flPanelMovies_Scroll;
+                return;
+            }
             // Loop over each movie
-
             foreach(DataRow movie in movies.Rows)
             {
                 // Create a new movie picture box the movie
@@ -68,6 +73,7 @@ namespace FilmLibrary
                     // Lock to avoid same movies fetched more than once
                     this.ScrollDisplayMoviesLock = true;
                     // Display 18 more movies
+
                     this.DisplayMovies(await Task.Run(() => Queries.GetDataTable("Movies", this.query)));
                     // Unlock to let the user display more movies via scroll 
                     this.ScrollDisplayMoviesLock = false;

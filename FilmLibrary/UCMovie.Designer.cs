@@ -36,7 +36,6 @@ namespace FilmLibrary
             this.flpMovieTitleAndYear = new System.Windows.Forms.FlowLayoutPanel();
             this.lblMovieTitle = new System.Windows.Forms.Label();
             this.lblMovieYear = new System.Windows.Forms.Label();
-            this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbMovieCover)).BeginInit();
             this.flpPlotOutline.SuspendLayout();
             this.flpMovieTitleAndYear.SuspendLayout();
@@ -102,27 +101,12 @@ namespace FilmLibrary
             this.lblMovieYear.TabIndex = 3;
             this.lblMovieYear.Text = "(Year)";
             // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(157)))), ((int)(((byte)(116)))));
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(0, 0);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(46, 33);
-            this.btnBack.TabIndex = 6;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
             // UCMovie
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoScroll = true;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
-            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.flpMovieTitleAndYear);
             this.Controls.Add(this.flpPlotOutline);
             this.Controls.Add(this.pbMovieCover);
@@ -145,6 +129,5 @@ namespace FilmLibrary
         private System.Windows.Forms.FlowLayoutPanel flpMovieTitleAndYear;
         private System.Windows.Forms.Label lblMovieTitle;
         private System.Windows.Forms.Label lblMovieYear;
-        private System.Windows.Forms.Button btnBack;
     }
 }

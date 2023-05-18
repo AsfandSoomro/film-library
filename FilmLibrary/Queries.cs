@@ -28,6 +28,24 @@ namespace FilmLibrary
             }
         }
 
+        public async static Task<DataTable> GetDataTable(string tableName)
+        {
+            using (SqlConnection conn = new SqlConnection(Program.MyConnectionString))
+            {
+                await conn.OpenAsync();
+
+                SqlCommand command = new SqlCommand(String.Format("SELECT * FROM {0}", tableName), conn);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataSet dataSet = new DataSet();
+                adapter.Fill(dataSet, tableName);
+
+                DataTable dataTable = dataSet.Tables[tableName];
+
+                return dataTable;
+            }
+        }
+
         public static DataTable GetDataTableNonAsync(string tableName, string query)
         {
             using (SqlConnection conn = new SqlConnection(Program.MyConnectionString))
@@ -59,6 +77,24 @@ namespace FilmLibrary
 
                 object value = command.ExecuteScalar();
                 if (value != null) count = (int) value;
+
+                return count;
+            }
+        }
+
+        public async static Task<int> GetCountRows(string tableName)
+        {
+            string query = String.Format("SELECT COUNT(*) FROM {0}", tableName);
+            int count = 0;
+
+            using (SqlConnection conn = new SqlConnection(Program.MyConnectionString))
+            {
+                await conn.OpenAsync();
+
+                SqlCommand command = new SqlCommand(query, conn);
+
+                object value = command.ExecuteScalar();
+                if (value != null) count = (int)value;
 
                 return count;
             }

@@ -28,10 +28,5 @@ namespace FilmLibrary
             this.lblMovieYear.Text = "(" + (int)movie["release_year"] + ")";
             this.lblPlotOutline.Text = (string)movie["plot_outline"];
         }
-
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            Helpers.ShowDashboard();
-        }
     }
 }
