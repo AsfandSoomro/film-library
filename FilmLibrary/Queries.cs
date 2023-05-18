@@ -28,6 +28,24 @@ namespace FilmLibrary
             }
         }
 
+        public static DataTable GetDataTableNonAsync(string tableName, string query)
+        {
+            using (SqlConnection conn = new SqlConnection(Program.MyConnectionString))
+            {
+                conn.Open();
+
+                SqlCommand command = new SqlCommand(query, conn);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataSet dataSet = new DataSet();
+                adapter.Fill(dataSet, tableName);
+
+                DataTable dataTable = dataSet.Tables[tableName];
+
+                return dataTable;
+            }
+        }
+
         public async static Task<int> GetCountRows(string tableName, string condition)
         {
             string query = String.Format("SELECT COUNT(*) FROM {0} WHERE {1}", tableName, condition);

@@ -29,9 +29,17 @@ namespace FilmLibrary
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.panelSideBar = new System.Windows.Forms.Panel();
+            this.flpMenu = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblMenu = new System.Windows.Forms.Label();
+            this.btnHome = new System.Windows.Forms.Button();
+            this.btnMyWatchlists = new System.Windows.Forms.Button();
+            this.btnPublicWatchlists = new System.Windows.Forms.Button();
+            this.btnGenres = new System.Windows.Forms.Button();
             this.panelSideBarLogo = new System.Windows.Forms.Panel();
+            this.lblTitle2 = new System.Windows.Forms.Label();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
             this.flpSearchedMoviesContainer = new System.Windows.Forms.FlowLayoutPanel();
@@ -51,10 +59,18 @@ namespace FilmLibrary
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelSearchBar = new System.Windows.Forms.Panel();
+            this.btnMenu = new System.Windows.Forms.Button();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.pbProfilePic = new FilmLibrary.CircularPictureBox();
             this.panelBtnSearch = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.panelProfileComboBoxcontainer = new System.Windows.Forms.Panel();
+            this.cbProfile = new System.Windows.Forms.ComboBox();
+            this.timerSideBarAnimate = new System.Windows.Forms.Timer(this.components);
             this.panelSideBar.SuspendLayout();
+            this.flpMenu.SuspendLayout();
+            this.panelSideBarLogo.SuspendLayout();
             this.panelContainer.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.flpSearchedMoviesContainer.SuspendLayout();
@@ -68,12 +84,15 @@ namespace FilmLibrary
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelSearchBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProfilePic)).BeginInit();
             this.panelBtnSearch.SuspendLayout();
+            this.panelProfileComboBoxcontainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelSideBar
             // 
-            this.panelSideBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(182)))), ((int)(((byte)(157)))), ((int)(((byte)(116)))));
+            this.panelSideBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(157)))), ((int)(((byte)(116)))));
+            this.panelSideBar.Controls.Add(this.flpMenu);
             this.panelSideBar.Controls.Add(this.panelSideBarLogo);
             this.panelSideBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideBar.Location = new System.Drawing.Point(0, 0);
@@ -82,14 +101,128 @@ namespace FilmLibrary
             this.panelSideBar.TabIndex = 0;
             this.panelSideBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelSideBar_MouseDown);
             // 
+            // flpMenu
+            // 
+            this.flpMenu.AutoSize = true;
+            this.flpMenu.Controls.Add(this.lblMenu);
+            this.flpMenu.Controls.Add(this.btnHome);
+            this.flpMenu.Controls.Add(this.btnMyWatchlists);
+            this.flpMenu.Controls.Add(this.btnPublicWatchlists);
+            this.flpMenu.Controls.Add(this.btnGenres);
+            this.flpMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flpMenu.Location = new System.Drawing.Point(0, 63);
+            this.flpMenu.Name = "flpMenu";
+            this.flpMenu.Size = new System.Drawing.Size(160, 201);
+            this.flpMenu.TabIndex = 1;
+            // 
+            // lblMenu
+            // 
+            this.lblMenu.AutoSize = true;
+            this.lblMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMenu.Location = new System.Drawing.Point(3, 10);
+            this.lblMenu.Margin = new System.Windows.Forms.Padding(3, 10, 3, 15);
+            this.lblMenu.Name = "lblMenu";
+            this.lblMenu.Size = new System.Drawing.Size(63, 24);
+            this.lblMenu.TabIndex = 5;
+            this.lblMenu.Text = "Menu";
+            // 
+            // btnHome
+            // 
+            this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(157)))), ((int)(((byte)(116)))));
+            this.btnHome.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHome.FlatAppearance.BorderSize = 0;
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
+            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHome.Location = new System.Drawing.Point(3, 49);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(160, 38);
+            this.btnHome.TabIndex = 7;
+            this.btnHome.Text = "Home";
+            this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHome.UseVisualStyleBackColor = false;
+            // 
+            // btnMyWatchlists
+            // 
+            this.btnMyWatchlists.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(157)))), ((int)(((byte)(116)))));
+            this.btnMyWatchlists.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMyWatchlists.FlatAppearance.BorderSize = 0;
+            this.btnMyWatchlists.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMyWatchlists.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMyWatchlists.Image = ((System.Drawing.Image)(resources.GetObject("btnMyWatchlists.Image")));
+            this.btnMyWatchlists.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMyWatchlists.Location = new System.Drawing.Point(3, 87);
+            this.btnMyWatchlists.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.btnMyWatchlists.Name = "btnMyWatchlists";
+            this.btnMyWatchlists.Size = new System.Drawing.Size(160, 38);
+            this.btnMyWatchlists.TabIndex = 8;
+            this.btnMyWatchlists.Text = "My Watchlists";
+            this.btnMyWatchlists.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMyWatchlists.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMyWatchlists.UseVisualStyleBackColor = false;
+            // 
+            // btnPublicWatchlists
+            // 
+            this.btnPublicWatchlists.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(157)))), ((int)(((byte)(116)))));
+            this.btnPublicWatchlists.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPublicWatchlists.FlatAppearance.BorderSize = 0;
+            this.btnPublicWatchlists.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPublicWatchlists.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPublicWatchlists.Image = ((System.Drawing.Image)(resources.GetObject("btnPublicWatchlists.Image")));
+            this.btnPublicWatchlists.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPublicWatchlists.Location = new System.Drawing.Point(3, 125);
+            this.btnPublicWatchlists.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.btnPublicWatchlists.Name = "btnPublicWatchlists";
+            this.btnPublicWatchlists.Size = new System.Drawing.Size(160, 38);
+            this.btnPublicWatchlists.TabIndex = 9;
+            this.btnPublicWatchlists.Text = "Pub Watchlists";
+            this.btnPublicWatchlists.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPublicWatchlists.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPublicWatchlists.UseVisualStyleBackColor = false;
+            // 
+            // btnGenres
+            // 
+            this.btnGenres.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(157)))), ((int)(((byte)(116)))));
+            this.btnGenres.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGenres.FlatAppearance.BorderSize = 0;
+            this.btnGenres.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenres.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenres.Image = ((System.Drawing.Image)(resources.GetObject("btnGenres.Image")));
+            this.btnGenres.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGenres.Location = new System.Drawing.Point(3, 163);
+            this.btnGenres.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.btnGenres.Name = "btnGenres";
+            this.btnGenres.Size = new System.Drawing.Size(160, 38);
+            this.btnGenres.TabIndex = 10;
+            this.btnGenres.Text = "Genres";
+            this.btnGenres.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGenres.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGenres.UseVisualStyleBackColor = false;
+            // 
             // panelSideBarLogo
             // 
+            this.panelSideBarLogo.Controls.Add(this.lblTitle2);
             this.panelSideBarLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSideBarLogo.Location = new System.Drawing.Point(0, 0);
             this.panelSideBarLogo.Name = "panelSideBarLogo";
-            this.panelSideBarLogo.Size = new System.Drawing.Size(160, 87);
+            this.panelSideBarLogo.Size = new System.Drawing.Size(160, 63);
             this.panelSideBarLogo.TabIndex = 0;
             this.panelSideBarLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelSideBarLogo_MouseDown);
+            // 
+            // lblTitle2
+            // 
+            this.lblTitle2.AutoSize = true;
+            this.lblTitle2.Font = new System.Drawing.Font("Jokerman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
+            this.lblTitle2.Location = new System.Drawing.Point(1, 15);
+            this.lblTitle2.Name = "lblTitle2";
+            this.lblTitle2.Size = new System.Drawing.Size(158, 33);
+            this.lblTitle2.TabIndex = 9;
+            this.lblTitle2.Text = "Film Library";
             // 
             // panelContainer
             // 
@@ -279,14 +412,67 @@ namespace FilmLibrary
             // 
             // panelSearchBar
             // 
+            this.panelSearchBar.Controls.Add(this.btnMenu);
+            this.panelSearchBar.Controls.Add(this.lblUsername);
+            this.panelSearchBar.Controls.Add(this.pbProfilePic);
             this.panelSearchBar.Controls.Add(this.panelBtnSearch);
             this.panelSearchBar.Controls.Add(this.txtSearch);
+            this.panelSearchBar.Controls.Add(this.panelProfileComboBoxcontainer);
             this.panelSearchBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSearchBar.Location = new System.Drawing.Point(0, 0);
             this.panelSearchBar.Name = "panelSearchBar";
             this.panelSearchBar.Size = new System.Drawing.Size(809, 63);
             this.panelSearchBar.TabIndex = 0;
             this.panelSearchBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelSearchBar_MouseDown);
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.BackColor = System.Drawing.Color.Transparent;
+            this.btnMenu.FlatAppearance.BorderSize = 0;
+            this.btnMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(80)))), ((int)(((byte)(97)))));
+            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
+            this.btnMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMenu.Location = new System.Drawing.Point(3, 12);
+            this.btnMenu.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(35, 35);
+            this.btnMenu.TabIndex = 12;
+            this.btnMenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMenu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMenu.UseVisualStyleBackColor = false;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
+            // lblUsername
+            // 
+            this.lblUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.ForeColor = System.Drawing.Color.White;
+            this.lblUsername.Location = new System.Drawing.Point(646, 24);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblUsername.Size = new System.Drawing.Size(101, 17);
+            this.lblUsername.TabIndex = 10;
+            this.lblUsername.Text = "UsernameAB";
+            this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblUsername.Click += new System.EventHandler(this.lblUsername_Click);
+            // 
+            // pbProfilePic
+            // 
+            this.pbProfilePic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbProfilePic.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbProfilePic.Image = ((System.Drawing.Image)(resources.GetObject("pbProfilePic.Image")));
+            this.pbProfilePic.Location = new System.Drawing.Point(748, 15);
+            this.pbProfilePic.Name = "pbProfilePic";
+            this.pbProfilePic.Size = new System.Drawing.Size(32, 32);
+            this.pbProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbProfilePic.TabIndex = 9;
+            this.pbProfilePic.TabStop = false;
+            this.pbProfilePic.Click += new System.EventHandler(this.pbProfilePic_Click);
             // 
             // panelBtnSearch
             // 
@@ -325,6 +511,35 @@ namespace FilmLibrary
             this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
             this.txtSearch.Leave += new System.EventHandler(this.txtSearch_Leave);
             // 
+            // panelProfileComboBoxcontainer
+            // 
+            this.panelProfileComboBoxcontainer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelProfileComboBoxcontainer.Controls.Add(this.cbProfile);
+            this.panelProfileComboBoxcontainer.Location = new System.Drawing.Point(775, 27);
+            this.panelProfileComboBoxcontainer.Name = "panelProfileComboBoxcontainer";
+            this.panelProfileComboBoxcontainer.Size = new System.Drawing.Size(10, 10);
+            this.panelProfileComboBoxcontainer.TabIndex = 11;
+            // 
+            // cbProfile
+            // 
+            this.cbProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(157)))), ((int)(((byte)(116)))));
+            this.cbProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbProfile.ForeColor = System.Drawing.Color.Black;
+            this.cbProfile.FormattingEnabled = true;
+            this.cbProfile.Items.AddRange(new object[] {
+            "Something",
+            "Logout"});
+            this.cbProfile.Location = new System.Drawing.Point(-100, 10);
+            this.cbProfile.Name = "cbProfile";
+            this.cbProfile.Size = new System.Drawing.Size(117, 24);
+            this.cbProfile.TabIndex = 0;
+            // 
+            // timerSideBarAnimate
+            // 
+            this.timerSideBarAnimate.Interval = 1;
+            this.timerSideBarAnimate.Tick += new System.EventHandler(this.timerSideBarAnimate_Tick);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -340,6 +555,11 @@ namespace FilmLibrary
             this.Load += new System.EventHandler(this.Form2_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseDown);
             this.panelSideBar.ResumeLayout(false);
+            this.panelSideBar.PerformLayout();
+            this.flpMenu.ResumeLayout(false);
+            this.flpMenu.PerformLayout();
+            this.panelSideBarLogo.ResumeLayout(false);
+            this.panelSideBarLogo.PerformLayout();
             this.panelContainer.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
@@ -358,7 +578,9 @@ namespace FilmLibrary
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelSearchBar.ResumeLayout(false);
             this.panelSearchBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProfilePic)).EndInit();
             this.panelBtnSearch.ResumeLayout(false);
+            this.panelProfileComboBoxcontainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -389,5 +611,18 @@ namespace FilmLibrary
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panelSideBarLogo;
+        private CircularPictureBox pbProfilePic;
+        private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.Panel panelProfileComboBoxcontainer;
+        private System.Windows.Forms.ComboBox cbProfile;
+        private System.Windows.Forms.FlowLayoutPanel flpMenu;
+        private System.Windows.Forms.Label lblMenu;
+        private System.Windows.Forms.Button btnHome;
+        private System.Windows.Forms.Button btnMyWatchlists;
+        private System.Windows.Forms.Label lblTitle2;
+        private System.Windows.Forms.Button btnMenu;
+        private System.Windows.Forms.Timer timerSideBarAnimate;
+        private System.Windows.Forms.Button btnPublicWatchlists;
+        private System.Windows.Forms.Button btnGenres;
     }
 }

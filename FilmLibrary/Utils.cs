@@ -12,6 +12,23 @@ namespace FilmLibrary
 {
     class Utils
     {
+        // Center the controls in the panel
+        public static void CenterControls(Panel panel, Form form)
+        {
+            foreach (Control control in panel.Controls)
+            {
+                control.Location = new Point((form.ClientSize.Width - control.Size.Width) / 2, (form.ClientSize.Height - control.Size.Height) / 2);
+            }
+        }
+        public static void CenterControl(Control control, Form form)
+        {
+            control.Location = new Point((form.ClientSize.Width - control.Size.Width) / 2, (form.ClientSize.Height - control.Size.Height) / 2);
+        }
+        public static void CenterControlX(Control control, Form form)
+        {
+            control.Location = new Point((form.ClientSize.Width - control.Size.Width) / 2, control.Size.Height);
+        }
+
         public static byte[] ImageToByte(Image img)
         {
             ImageConverter converter = new ImageConverter();

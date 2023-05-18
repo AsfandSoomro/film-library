@@ -14,6 +14,10 @@ namespace FilmLibrary
     public partial class Form2 : Form
     {
         private DataRow user;
+
+        private bool isSideBarVisible;
+        private int originalSideBarWidth;
+
         public Form2(DataRow user)
         {
             InitializeComponent();
@@ -24,6 +28,18 @@ namespace FilmLibrary
         private void Form2_Load(object sender, EventArgs e)
         {
             Helpers.ShowDashboard();
+
+            this.lblUsername.Text = (string)this.user["username"];
+            try
+            {
+                this.pbProfilePic.Image = Utils.ByteToImage((byte[])this.user["profile_photo"]);
+            }
+            catch (Exception)
+            {
+            }
+
+            this.isSideBarVisible = true;
+            this.originalSideBarWidth = panelSideBar.Width;
         }
 
         private void Form2_MouseDown(object sender, MouseEventArgs e)
@@ -130,6 +146,62 @@ namespace FilmLibrary
             {
                 this.OnMouseDown(e);
             }));
+        }
+
+        private void pbProfilePic_Click(object sender, EventArgs e)
+        {
+            cbProfile.DroppedDown = true;
+        }
+
+        private void lblUsername_Click(object sender, EventArgs e)
+        {
+            cbProfile.DroppedDown = true;
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            timerSideBarAnimate.Enabled = true;
+
+            // Dispose searched movies container first if there already is
+            Helpers.DisposeSearchedMoviesContainerFlowLayoutPanel(this);
+        }
+
+        private void timerSideBarAnimate_Tick(object sender, EventArgs e)
+        {
+            if(this.isSideBarVisible)
+            {
+                if (panelSideBar.Width > 5)
+                {
+                    AnimateSideBarDecrease();
+                }
+                else
+                {
+                    timerSideBarAnimate.Enabled = false;
+                    this.isSideBarVisible = false;
+                }
+            }
+            else
+            {
+                if (panelSideBar.Width < this.originalSideBarWidth)
+                {
+                    AnimateSideBarIncrease();
+                }
+                else
+                {
+                    timerSideBarAnimate.Enabled = false;
+                    this.isSideBarVisible = true;
+                }
+            }
+        }
+
+        private void AnimateSideBarIncrease()
+        {
+            panelSideBar.Width += 5;
+        }
+
+        private void AnimateSideBarDecrease()
+        {
+            panelSideBar.Width -= 5;
         }
     }
 }

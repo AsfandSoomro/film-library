@@ -32,7 +32,7 @@ namespace FilmLibrary
         private void Form1_Resize(object sender, EventArgs e)
         {
             if(this.flgCenterControls == true)
-                CenterControls(this.panelMain);
+                Utils.CenterControls(this.panelMain, this);
         }
 
         private void btnSignIn_Click(object sender, EventArgs e)
@@ -41,7 +41,7 @@ namespace FilmLibrary
             this.panelMain.Controls.Clear();
             this.panelMain.Controls.Add(uc);
             this.flgCenterControls = true;
-            CenterControls(this.panelMain);
+            Utils.CenterControls(this.panelMain, this);
 
             this.btnStartPage.Visible = true;
             this.btnSignIn.Enabled = false;
@@ -54,7 +54,7 @@ namespace FilmLibrary
             this.panelMain.Controls.Clear();
             this.panelMain.Controls.Add(uc);
             this.flgCenterControls = true;
-            CenterControls(this.panelMain);
+            Utils.CenterControls(this.panelMain, this);
 
             this.btnStartPage.Visible = true;
             this.btnSignIn.Enabled = true;
@@ -71,15 +71,6 @@ namespace FilmLibrary
             this.btnStartPage.Visible = false;
             this.btnSignIn.Enabled = true;
             this.btnSignUp.Enabled = true;
-        }
-
-        // Center the controls in the panel
-        public void CenterControls(Panel panel)
-        {
-            foreach (Control control in panel.Controls)
-            {
-                control.Location = new Point((this.ClientSize.Width - control.Size.Width) / 2, (this.ClientSize.Height - control.Size.Height) / 2);
-            }
         }
     }
 }
