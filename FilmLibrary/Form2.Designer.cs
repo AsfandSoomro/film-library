@@ -45,9 +45,10 @@ namespace FilmLibrary
             this.btnHome = new System.Windows.Forms.Button();
             this.btnMyWatchlists = new System.Windows.Forms.Button();
             this.panelUserWatchlistsContainer = new System.Windows.Forms.Panel();
+            this.watchlistButton1 = new FilmLibrary.WatchlistButton();
+            this.btnCreateWatchlist = new FilmLibrary.SideBarSubCategoryButton();
             this.btnPublicWatchlists = new System.Windows.Forms.Button();
             this.panelPublicWatchlistsContainer = new System.Windows.Forms.Panel();
-            this.watchlistButton2 = new FilmLibrary.WatchlistButton();
             this.btnGenres = new System.Windows.Forms.Button();
             this.panelGenresContainer = new System.Windows.Forms.Panel();
             this.btnGenre = new FilmLibrary.GenreButton();
@@ -79,8 +80,8 @@ namespace FilmLibrary
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnCreateWatchlist = new FilmLibrary.SideBarSubCategoryButton();
-            this.watchlistButton1 = new FilmLibrary.WatchlistButton();
+            this.btnCreateWatchlist2 = new FilmLibrary.SideBarSubCategoryButton();
+            this.watchlistButton2 = new FilmLibrary.WatchlistButton();
             this.panelSideBar.SuspendLayout();
             this.flpManage.SuspendLayout();
             this.flpSettings.SuspendLayout();
@@ -344,6 +345,43 @@ namespace FilmLibrary
             this.panelUserWatchlistsContainer.TabIndex = 13;
             this.panelUserWatchlistsContainer.Visible = false;
             // 
+            // watchlistButton1
+            // 
+            this.watchlistButton1.BackColor = System.Drawing.Color.Transparent;
+            this.watchlistButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.watchlistButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.watchlistButton1.Enabled = false;
+            this.watchlistButton1.FlatAppearance.BorderSize = 0;
+            this.watchlistButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.watchlistButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.watchlistButton1.ForeColor = System.Drawing.Color.Black;
+            this.watchlistButton1.Location = new System.Drawing.Point(0, 23);
+            this.watchlistButton1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.watchlistButton1.Name = "watchlistButton1";
+            this.watchlistButton1.Size = new System.Drawing.Size(157, 23);
+            this.watchlistButton1.TabIndex = 2;
+            this.watchlistButton1.Text = "Watchlist";
+            this.watchlistButton1.UseVisualStyleBackColor = false;
+            this.watchlistButton1.Visible = false;
+            // 
+            // btnCreateWatchlist
+            // 
+            this.btnCreateWatchlist.BackColor = System.Drawing.Color.Transparent;
+            this.btnCreateWatchlist.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCreateWatchlist.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCreateWatchlist.FlatAppearance.BorderSize = 0;
+            this.btnCreateWatchlist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateWatchlist.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnCreateWatchlist.ForeColor = System.Drawing.Color.Maroon;
+            this.btnCreateWatchlist.Location = new System.Drawing.Point(0, 0);
+            this.btnCreateWatchlist.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.btnCreateWatchlist.Name = "btnCreateWatchlist";
+            this.btnCreateWatchlist.Size = new System.Drawing.Size(157, 23);
+            this.btnCreateWatchlist.TabIndex = 1;
+            this.btnCreateWatchlist.Text = "Create";
+            this.btnCreateWatchlist.UseVisualStyleBackColor = false;
+            this.btnCreateWatchlist.Click += new System.EventHandler(this.btnCreateWatchlist_Click);
+            // 
             // btnPublicWatchlists
             // 
             this.btnPublicWatchlists.BackColor = System.Drawing.Color.Transparent;
@@ -363,12 +401,14 @@ namespace FilmLibrary
             this.btnPublicWatchlists.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPublicWatchlists.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPublicWatchlists.UseVisualStyleBackColor = false;
+            this.btnPublicWatchlists.Click += new System.EventHandler(this.btnPublicWatchlists_Click);
             // 
             // panelPublicWatchlistsContainer
             // 
             this.panelPublicWatchlistsContainer.AutoScroll = true;
             this.panelPublicWatchlistsContainer.BackColor = System.Drawing.Color.Transparent;
             this.panelPublicWatchlistsContainer.Controls.Add(this.watchlistButton2);
+            this.panelPublicWatchlistsContainer.Controls.Add(this.btnCreateWatchlist2);
             this.panelPublicWatchlistsContainer.Enabled = false;
             this.panelPublicWatchlistsContainer.Location = new System.Drawing.Point(3, 266);
             this.panelPublicWatchlistsContainer.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
@@ -376,25 +416,6 @@ namespace FilmLibrary
             this.panelPublicWatchlistsContainer.Size = new System.Drawing.Size(157, 100);
             this.panelPublicWatchlistsContainer.TabIndex = 17;
             this.panelPublicWatchlistsContainer.Visible = false;
-            // 
-            // watchlistButton2
-            // 
-            this.watchlistButton2.BackColor = System.Drawing.Color.Transparent;
-            this.watchlistButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.watchlistButton2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.watchlistButton2.Enabled = false;
-            this.watchlistButton2.FlatAppearance.BorderSize = 0;
-            this.watchlistButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.watchlistButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.watchlistButton2.ForeColor = System.Drawing.Color.Black;
-            this.watchlistButton2.Location = new System.Drawing.Point(0, 0);
-            this.watchlistButton2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.watchlistButton2.Name = "watchlistButton2";
-            this.watchlistButton2.Size = new System.Drawing.Size(157, 23);
-            this.watchlistButton2.TabIndex = 0;
-            this.watchlistButton2.Text = "Watchlist";
-            this.watchlistButton2.UseVisualStyleBackColor = false;
-            this.watchlistButton2.Visible = false;
             // 
             // btnGenres
             // 
@@ -761,42 +782,42 @@ namespace FilmLibrary
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // btnCreateWatchlist
+            // btnCreateWatchlist2
             // 
-            this.btnCreateWatchlist.BackColor = System.Drawing.Color.Transparent;
-            this.btnCreateWatchlist.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCreateWatchlist.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCreateWatchlist.FlatAppearance.BorderSize = 0;
-            this.btnCreateWatchlist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateWatchlist.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.btnCreateWatchlist.ForeColor = System.Drawing.Color.Maroon;
-            this.btnCreateWatchlist.Location = new System.Drawing.Point(0, 0);
-            this.btnCreateWatchlist.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.btnCreateWatchlist.Name = "btnCreateWatchlist";
-            this.btnCreateWatchlist.Size = new System.Drawing.Size(157, 23);
-            this.btnCreateWatchlist.TabIndex = 1;
-            this.btnCreateWatchlist.Text = "Create";
-            this.btnCreateWatchlist.UseVisualStyleBackColor = false;
-            this.btnCreateWatchlist.Click += new System.EventHandler(this.btnCreateWatchlist_Click);
+            this.btnCreateWatchlist2.BackColor = System.Drawing.Color.Transparent;
+            this.btnCreateWatchlist2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCreateWatchlist2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCreateWatchlist2.FlatAppearance.BorderSize = 0;
+            this.btnCreateWatchlist2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateWatchlist2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnCreateWatchlist2.ForeColor = System.Drawing.Color.Maroon;
+            this.btnCreateWatchlist2.Location = new System.Drawing.Point(0, 0);
+            this.btnCreateWatchlist2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.btnCreateWatchlist2.Name = "btnCreateWatchlist2";
+            this.btnCreateWatchlist2.Size = new System.Drawing.Size(157, 23);
+            this.btnCreateWatchlist2.TabIndex = 2;
+            this.btnCreateWatchlist2.Text = "Create";
+            this.btnCreateWatchlist2.UseVisualStyleBackColor = false;
+            this.btnCreateWatchlist2.Click += new System.EventHandler(this.btnCreateWatchlist2_Click);
             // 
-            // watchlistButton1
+            // watchlistButton2
             // 
-            this.watchlistButton1.BackColor = System.Drawing.Color.Transparent;
-            this.watchlistButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.watchlistButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.watchlistButton1.Enabled = false;
-            this.watchlistButton1.FlatAppearance.BorderSize = 0;
-            this.watchlistButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.watchlistButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.watchlistButton1.ForeColor = System.Drawing.Color.Black;
-            this.watchlistButton1.Location = new System.Drawing.Point(0, 23);
-            this.watchlistButton1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.watchlistButton1.Name = "watchlistButton1";
-            this.watchlistButton1.Size = new System.Drawing.Size(157, 23);
-            this.watchlistButton1.TabIndex = 2;
-            this.watchlistButton1.Text = "Watchlist";
-            this.watchlistButton1.UseVisualStyleBackColor = false;
-            this.watchlistButton1.Visible = false;
+            this.watchlistButton2.BackColor = System.Drawing.Color.Transparent;
+            this.watchlistButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.watchlistButton2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.watchlistButton2.Enabled = false;
+            this.watchlistButton2.FlatAppearance.BorderSize = 0;
+            this.watchlistButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.watchlistButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.watchlistButton2.ForeColor = System.Drawing.Color.Black;
+            this.watchlistButton2.Location = new System.Drawing.Point(0, 23);
+            this.watchlistButton2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.watchlistButton2.Name = "watchlistButton2";
+            this.watchlistButton2.Size = new System.Drawing.Size(157, 23);
+            this.watchlistButton2.TabIndex = 3;
+            this.watchlistButton2.Text = "Watchlist";
+            this.watchlistButton2.UseVisualStyleBackColor = false;
+            this.watchlistButton2.Visible = false;
             // 
             // Form2
             // 
@@ -895,11 +916,12 @@ namespace FilmLibrary
         private System.Windows.Forms.Panel panelUserWatchlistsContainer;
         private System.Windows.Forms.Button btnPublicWatchlists;
         private System.Windows.Forms.Panel panelPublicWatchlistsContainer;
-        private WatchlistButton watchlistButton2;
         private System.Windows.Forms.Button btnGenres;
         private System.Windows.Forms.Panel panelGenresContainer;
         private GenreButton btnGenre;
         private WatchlistButton watchlistButton1;
         private SideBarSubCategoryButton btnCreateWatchlist;
+        private WatchlistButton watchlistButton2;
+        private SideBarSubCategoryButton btnCreateWatchlist2;
     }
 }

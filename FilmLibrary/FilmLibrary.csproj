@@ -170,6 +170,12 @@
     <Compile Include="UCStartPage.Designer.cs">
       <DependentUpon>UCStartPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCWatchlistInfoHeading.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCWatchlistInfoHeading.Designer.cs">
+      <DependentUpon>UCWatchlistInfoHeading.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils.cs" />
     <Compile Include="WatchlistButton.cs">
       <SubType>Component</SubType>
@@ -215,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCStartPage.resx">
       <DependentUpon>UCStartPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCWatchlistInfoHeading.resx">
+      <DependentUpon>UCWatchlistInfoHeading.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

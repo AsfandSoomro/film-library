@@ -24,18 +24,20 @@ namespace FilmLibrary
 
             this.Text = (string)watchlist["title"];
 
-            this.Click += new EventHandler(this.GenreButton_Click);
+            this.Click += new EventHandler(this.WatchlistButton_Click);
         }
 
-        private void GenreButton_Click(object sender, EventArgs e)
+        private void WatchlistButton_Click(object sender, EventArgs e)
         {
             if (Form2.currentMainPage != (string)this.watchlist["title"])
             {
                 Form2.currentMainPage = (string)this.watchlist["title"];
                 Helpers.UpdateMainPageHeading();
 
+                Helpers.ShowWatchlistInfoHeading(this.watchlist);
+
                 string query = String.Format("SELECT Movies.movie_id, Movies.cover FROM Movies JOIN Watchlists_Movies ON Movies.movie_id = Watchlists_Movies.movie_id WHERE Watchlists_Movies.watchlist_id = {0} AND @CONDITIONS", this.watchlist["watchlist_id"]);
-                Helpers.ShowMovies(query);
+                Helpers.ShowMoviesWithoutClear(query);
             }
         }
     }

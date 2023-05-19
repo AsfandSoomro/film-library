@@ -32,6 +32,18 @@ namespace FilmLibrary
             mainPanel.Controls.Add(uc);
         }
 
+        public static void ShowMoviesWithoutClear(string query)
+        {
+            Form form = Application.OpenForms.OfType<Form2>().FirstOrDefault();
+            Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
+            Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
+
+            query = query.Replace("SELECT", "SELECT @LIMIT");
+            UCMovies uc = new UCMovies(query);
+            uc.Dock = DockStyle.Fill;
+            mainPanel.Controls.Add(uc);
+        }
+
         public static void ShowHome()
         {
             Form2.currentMainPage = "Home";
@@ -59,6 +71,18 @@ namespace FilmLibrary
             DataTable movies = await Task.Run(() => Queries.GetDataTable("Movies", String.Format("SELECT movie_id, cover, title, release_year FROM Movies WHERE LOWER(title) LIKE '{0}%'", searchQuery.ToLower())));
             UCSearchedMoviesAll uc = new UCSearchedMoviesAll(movies);
             uc.Dock = DockStyle.Fill;
+            mainPanel.Controls.Clear();
+            mainPanel.Controls.Add(uc);
+        }
+
+        public static void ShowWatchlistInfoHeading(DataRow watchlist)
+        {
+            Form form = Application.OpenForms.OfType<Form2>().FirstOrDefault();
+            Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
+            Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
+
+            UCWatchlistInfoHeading uc = new UCWatchlistInfoHeading(watchlist);
+            uc.Dock = DockStyle.Top;
             mainPanel.Controls.Clear();
             mainPanel.Controls.Add(uc);
         }
@@ -136,9 +160,20 @@ namespace FilmLibrary
             } 
         }
 
-        public async static void CreateWatchlistButtons(Panel panel, int user_id)
+        public async static void CreateUserWatchlistButtons(Panel panel, int user_id)
         {
-            DataTable watchlists = (await Queries.GetDataTable("Watchlists", String.Format("SELECT TOP 4 * from Watchlists WHERE owner_id = {0}", user_id)));
+            DataTable watchlists = (await Queries.GetDataTable("Watchlists", String.Format("SELECT * from Watchlists WHERE owner_id = {0}", user_id)));
+
+            foreach (DataRow watchlist in watchlists.Rows)
+            {
+                WatchlistButton btn = new WatchlistButton(watchlist);
+                panel.Controls.Add(btn);
+            }
+        }
+
+        public async static void CreatePublicWatchlistButtons(Panel panel)
+        {
+            DataTable watchlists = (await Queries.GetDataTable("Watchlists", "SELECT * from Watchlists WHERE visibility = 'public'"));
 
             foreach (DataRow watchlist in watchlists.Rows)
             {
