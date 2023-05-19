@@ -113,6 +113,15 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Queries.cs" />
+    <Compile Include="SidebarSubCategoryButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UCCreateWatchlist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCCreateWatchlist.Designer.cs">
+      <DependentUpon>UCCreateWatchlist.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCMovie.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -162,6 +171,9 @@
       <DependentUpon>UCStartPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils.cs" />
+    <Compile Include="WatchlistButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,6 +189,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UCCreateWatchlist.resx">
+      <DependentUpon>UCCreateWatchlist.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCMovie.resx">
       <DependentUpon>UCMovie.cs</DependentUpon>
     </EmbeddedResource>

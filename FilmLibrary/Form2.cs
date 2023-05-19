@@ -31,7 +31,6 @@ namespace FilmLibrary
         {
             Helpers.ShowHome();
 
-            this.lblUsername.Text = (string)this.user["username"];
             try
             {
                 this.pbProfilePic.Image = Utils.ByteToImage((byte[])this.user["profile_photo"]);
@@ -172,16 +171,6 @@ namespace FilmLibrary
             }));
         }
 
-        private void pbProfilePic_Click(object sender, EventArgs e)
-        {
-            cbProfile.DroppedDown = true;
-        }
-
-        private void lblUsername_Click(object sender, EventArgs e)
-        {
-            cbProfile.DroppedDown = true;
-        }
-
         private void btnMenu_Click(object sender, EventArgs e)
         {
             timerSideBarAnimate.Enabled = true;
@@ -227,5 +216,21 @@ namespace FilmLibrary
         {
             panelSideBar.Width -= 5;
         }
+
+        private void btnMyWatchlists_Click(object sender, EventArgs e)
+        {
+            panelUserWatchlistsContainer.Enabled = !panelUserWatchlistsContainer.Enabled;
+            panelUserWatchlistsContainer.Visible = !panelUserWatchlistsContainer.Visible;
+
+            if (panelUserWatchlistsContainer.Controls.Count < 3)
+                Helpers.CreateWatchlistButtons(panelUserWatchlistsContainer, (int)this.user["user_id"]);
+        }
+
+        private void btnCreateWatchlist_Click(object sender, EventArgs e)
+        {
+            if (Form2.currentMainPage != "Create Watchlist")
+                Helpers.ShowCreateWatchlistPage((int)this.user["user_id"]);
+        }
+
     }
 }

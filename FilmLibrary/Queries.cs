@@ -111,5 +111,16 @@ namespace FilmLibrary
                 return command.ExecuteReader();
             }
         }
+
+        public static void InsertRow(string query)
+        {
+            using (SqlConnection conn = new SqlConnection(Program.MyConnectionString))
+            {
+                conn.Open();
+                SqlCommand command = new SqlCommand(String.Format(query, conn));
+                command.ExecuteNonQuery();
+                conn.Close();
+            }
+        }
     }
 }

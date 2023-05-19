@@ -63,6 +63,21 @@ namespace FilmLibrary
             mainPanel.Controls.Add(uc);
         }
 
+        public static void ShowCreateWatchlistPage(int user_id)
+        {
+            Form2.currentMainPage = "Create watchlist";
+            UpdateMainPageHeading();
+
+            Form form = Application.OpenForms.OfType<Form2>().FirstOrDefault();
+            Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
+            Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
+
+            UCCreateWatchlist uc = new UCCreateWatchlist(user_id);
+            uc.Dock = DockStyle.Fill;
+            mainPanel.Controls.Clear();
+            mainPanel.Controls.Add(uc);
+        }
+
         public static void OpenMoviePage(Form form, DataRow movie)
         {
             // Finds the panels in the given opened instance of Form2
@@ -88,13 +103,14 @@ namespace FilmLibrary
         public static FlowLayoutPanel CreateSearchedMoviesContainerFlowLayoutPanel(Form form)
         {
             Panel panelSideBar = form.Controls.Find("panelSideBar", true).FirstOrDefault() as Panel;
+            //Panel panelTop = form.Controls.Find("panelSearchBar", true).FirstOrDefault() as Panel;
 
             FlowLayoutPanel flp = new FlowLayoutPanel();
 
             flp.BackColor = Color.FromArgb(31, 40, 57);
             flp.BorderStyle = BorderStyle.FixedSingle;
             flp.Size = new Size(558, 235);
-            flp.Location = new Point(49 + panelSideBar.Width, 63 - 16);
+            flp.Location = new Point(panelSideBar.Width + 49, 63 - 16);
             flp.AutoSize = true;
             flp.FlowDirection = FlowDirection.TopDown;
 
@@ -118,6 +134,17 @@ namespace FilmLibrary
                 GenreButton btn = new GenreButton(genre);
                 panel.Controls.Add(btn);
             } 
+        }
+
+        public async static void CreateWatchlistButtons(Panel panel, int user_id)
+        {
+            DataTable watchlists = (await Queries.GetDataTable("Watchlists", String.Format("SELECT TOP 4 * from Watchlists WHERE owner_id = {0}", user_id)));
+
+            foreach (DataRow watchlist in watchlists.Rows)
+            {
+                WatchlistButton btn = new WatchlistButton(watchlist);
+                panel.Controls.Add(btn);
+            }
         }
     }
 }

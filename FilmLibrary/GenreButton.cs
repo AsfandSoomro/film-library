@@ -9,20 +9,13 @@ using System.Data;
 
 namespace FilmLibrary
 {
-    class GenreButton : Button
+    class GenreButton : SideBarSubCategoryButton
     {
         private DataRow genre;
 
         public GenreButton()
         {
-            this.BackColor = Color.Transparent;
-            this.ForeColor = Color.Black;
-            this.TextAlign = ContentAlignment.MiddleCenter;
-            this.Font = new Font(this.Font.FontFamily, 9, FontStyle.Bold);
-            this.FlatStyle = FlatStyle.Flat;
-            this.FlatAppearance.BorderSize = 0;
-            this.Margin = new Padding(3, 0, 3, 0);
-            this.Dock = DockStyle.Top;
+
         }
 
         public GenreButton(DataRow genre) : this()
