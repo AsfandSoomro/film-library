@@ -79,5 +79,39 @@ namespace FilmLibrary
 
             return false;
         }
+
+        public static Panel GetParentPanel(Control control)
+        {
+            Control parent = control.Parent;
+
+            while (parent != null)
+            {
+                if (parent is Panel panel)
+                {
+                    return panel;
+                }
+
+                parent = parent.Parent;
+            }
+
+            return null;
+        }
+
+        public static UserControl GetParentUserControl(Control control)
+        {
+            Control parent = control.Parent;
+
+            while (parent != null)
+            {
+                if (parent is UserControl uc)
+                {
+                    return uc;
+                }
+
+                parent = parent.Parent;
+            }
+
+            return null;
+        }
     }
 }

@@ -54,8 +54,8 @@ namespace FilmLibrary
             foreach(DataRow movie in movies.Rows)
             {
                 // Create a new movie picture box the movie
-                MoviePictureBox pbMovie = new MoviePictureBox((int)movie["movie_id"], (Byte[])movie["cover"]);
-                this.flPanelMovies.Controls.Add(pbMovie);
+                UCMovie ucMovie = new UCMovie((int)movie["movie_id"], (Byte[])movie["cover"]);
+                this.flPanelMovies.Controls.Add(ucMovie);
 
                 this.currentDisplayedMovies += 1;
             }

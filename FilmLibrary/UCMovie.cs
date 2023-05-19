@@ -7,26 +7,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace FilmLibrary
 {
     public partial class UCMovie : UserControl
     {
-        private DataRow movie;
-        public UCMovie(DataRow movie)
+        int movie_id;
+        Byte[] cover;
+
+        public UCMovie()
         {
             InitializeComponent();
+        }
 
-            this.movie = movie;
+        public UCMovie(int movie_id, Byte[] cover) : this()
+        {
+            this.movie_id = movie_id;
+            this.cover = cover;
         }
 
         private void UCMovie_Load(object sender, EventArgs e)
         {
-            this.pbMovieCover.Image = (Image)Utils.ByteToImage((Byte[])movie["cover"]);
-            this.lblMovieTitle.Text = (string)movie["title"];
-            this.lblMovieYear.Text = "(" + (int)movie["release_year"] + ")";
-            this.lblPlotOutline.Text = (string)movie["plot_outline"];
+            this.pbMovie.Update(this.movie_id, this.cover);
+        }
+
+        public void MouseEntered()
+        {
+            btnAddToWatchlist.Visible = true;
+        }
+
+        public void MouseLeft()
+        {
+            btnAddToWatchlist.Visible = false;
         }
     }
 }

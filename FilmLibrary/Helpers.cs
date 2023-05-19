@@ -117,7 +117,7 @@ namespace FilmLibrary
                 txtSearch.Text = "Search";
 
             // Initialize the Movie UserControl and pass it the movie data clearing the current content
-            UCMovie uc = new UCMovie(movie);
+            UCMoviePage uc = new UCMoviePage(movie);
             uc.Dock = DockStyle.Fill;
             foreach (Control control in mainPanel.Controls) control.Dispose();
             mainPanel.Controls.Clear();

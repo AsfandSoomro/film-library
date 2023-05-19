@@ -21,7 +21,7 @@ namespace FilmLibrary
         {
             this.BorderStyle = BorderStyle.FixedSingle;
             this.SizeMode = PictureBoxSizeMode.StretchImage;
-            this.Margin = new Padding(10);
+            //this.Margin = new Padding(10);
             this.Size = new Size(205, 295);
             this.Cursor = Cursors.Hand;
             if (this.OriginalImage == null)
@@ -30,7 +30,7 @@ namespace FilmLibrary
                 this.OriginalImage = this.Image;
             }
 
-            this.MouseHover += new EventHandler(this.MoviePictureBox_MouseHover);
+            this.MouseEnter += new EventHandler(this.MoviePictureBox_MouseEnter);
             this.MouseLeave += new EventHandler(this.MoviePictureBox_MouseLeave);
             this.Click += new EventHandler(this.MoviePictureBox_Click);
         }
@@ -42,11 +42,21 @@ namespace FilmLibrary
             this.OriginalImage = this.Image;
         }
 
+        public void Update(int movie_id, Byte[] cover)
+        {
+            this.movie_id = (int)movie_id;
+            this.Image = (Image)Utils.ByteToImage(cover);
+            this.OriginalImage = this.Image;
+        }
+
         // Default Mouse Hover Event
-        private void MoviePictureBox_MouseHover(object sender, EventArgs e)
+        private void MoviePictureBox_MouseEnter(object sender, EventArgs e)
         {
             this.BorderStyle = BorderStyle.Fixed3D;
             this.Image = Utils.ZoomIn((Bitmap)this.Image, 80);
+
+            UCMovie parentUc = (UCMovie)Utils.GetParentUserControl(this);
+            parentUc.MouseEntered();
         }
 
         // Default Mouse Leave Event
@@ -54,6 +64,9 @@ namespace FilmLibrary
         {
             this.Image = OriginalImage;
             this.BorderStyle = BorderStyle.FixedSingle;
+
+            UCMovie parentUc = (UCMovie)Utils.GetParentUserControl(this);
+            parentUc.MouseLeft();
         }
 
         // Default Mouse Click Event

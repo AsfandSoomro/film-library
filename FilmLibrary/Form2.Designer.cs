@@ -45,21 +45,16 @@ namespace FilmLibrary
             this.btnHome = new System.Windows.Forms.Button();
             this.btnMyWatchlists = new System.Windows.Forms.Button();
             this.panelUserWatchlistsContainer = new System.Windows.Forms.Panel();
-            this.watchlistButton1 = new FilmLibrary.WatchlistButton();
-            this.btnCreateWatchlist = new FilmLibrary.SideBarSubCategoryButton();
             this.btnPublicWatchlists = new System.Windows.Forms.Button();
             this.panelPublicWatchlistsContainer = new System.Windows.Forms.Panel();
             this.btnGenres = new System.Windows.Forms.Button();
             this.panelGenresContainer = new System.Windows.Forms.Panel();
-            this.btnGenre = new FilmLibrary.GenreButton();
             this.panelSideBarLogo = new System.Windows.Forms.Panel();
             this.lblTitle2 = new System.Windows.Forms.Label();
             this.timerSideBarAnimate = new System.Windows.Forms.Timer(this.components);
             this.panelSearchBar = new System.Windows.Forms.Panel();
-            this.txtSearch = new FilmLibrary.MyTextBox();
             this.lblMainPageHeading = new System.Windows.Forms.Label();
             this.btnMenu = new System.Windows.Forms.Button();
-            this.pbProfilePic = new FilmLibrary.CircularPictureBox();
             this.panelBtnSearch = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.panelContainer = new System.Windows.Forms.Panel();
@@ -80,8 +75,13 @@ namespace FilmLibrary
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnCreateWatchlist2 = new FilmLibrary.SideBarSubCategoryButton();
+            this.txtSearch = new FilmLibrary.MyTextBox();
+            this.pbProfilePic = new FilmLibrary.CircularPictureBox();
+            this.watchlistButton1 = new FilmLibrary.WatchlistButton();
+            this.btnCreateWatchlist = new FilmLibrary.SideBarSubCategoryButton();
             this.watchlistButton2 = new FilmLibrary.WatchlistButton();
+            this.btnCreateWatchlist2 = new FilmLibrary.SideBarSubCategoryButton();
+            this.btnGenre = new FilmLibrary.GenreButton();
             this.panelSideBar.SuspendLayout();
             this.flpManage.SuspendLayout();
             this.flpSettings.SuspendLayout();
@@ -91,7 +91,6 @@ namespace FilmLibrary
             this.panelGenresContainer.SuspendLayout();
             this.panelSideBarLogo.SuspendLayout();
             this.panelSearchBar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProfilePic)).BeginInit();
             this.panelBtnSearch.SuspendLayout();
             this.panelContainer.SuspendLayout();
             this.panelMain.SuspendLayout();
@@ -105,6 +104,7 @@ namespace FilmLibrary
             this.panel2.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProfilePic)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSideBar
@@ -345,43 +345,6 @@ namespace FilmLibrary
             this.panelUserWatchlistsContainer.TabIndex = 13;
             this.panelUserWatchlistsContainer.Visible = false;
             // 
-            // watchlistButton1
-            // 
-            this.watchlistButton1.BackColor = System.Drawing.Color.Transparent;
-            this.watchlistButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.watchlistButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.watchlistButton1.Enabled = false;
-            this.watchlistButton1.FlatAppearance.BorderSize = 0;
-            this.watchlistButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.watchlistButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.watchlistButton1.ForeColor = System.Drawing.Color.Black;
-            this.watchlistButton1.Location = new System.Drawing.Point(0, 23);
-            this.watchlistButton1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.watchlistButton1.Name = "watchlistButton1";
-            this.watchlistButton1.Size = new System.Drawing.Size(157, 23);
-            this.watchlistButton1.TabIndex = 2;
-            this.watchlistButton1.Text = "Watchlist";
-            this.watchlistButton1.UseVisualStyleBackColor = false;
-            this.watchlistButton1.Visible = false;
-            // 
-            // btnCreateWatchlist
-            // 
-            this.btnCreateWatchlist.BackColor = System.Drawing.Color.Transparent;
-            this.btnCreateWatchlist.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCreateWatchlist.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCreateWatchlist.FlatAppearance.BorderSize = 0;
-            this.btnCreateWatchlist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateWatchlist.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.btnCreateWatchlist.ForeColor = System.Drawing.Color.Maroon;
-            this.btnCreateWatchlist.Location = new System.Drawing.Point(0, 0);
-            this.btnCreateWatchlist.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.btnCreateWatchlist.Name = "btnCreateWatchlist";
-            this.btnCreateWatchlist.Size = new System.Drawing.Size(157, 23);
-            this.btnCreateWatchlist.TabIndex = 1;
-            this.btnCreateWatchlist.Text = "Create";
-            this.btnCreateWatchlist.UseVisualStyleBackColor = false;
-            this.btnCreateWatchlist.Click += new System.EventHandler(this.btnCreateWatchlist_Click);
-            // 
             // btnPublicWatchlists
             // 
             this.btnPublicWatchlists.BackColor = System.Drawing.Color.Transparent;
@@ -451,25 +414,6 @@ namespace FilmLibrary
             this.panelGenresContainer.TabIndex = 19;
             this.panelGenresContainer.Visible = false;
             // 
-            // btnGenre
-            // 
-            this.btnGenre.BackColor = System.Drawing.Color.Transparent;
-            this.btnGenre.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGenre.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnGenre.Enabled = false;
-            this.btnGenre.FlatAppearance.BorderSize = 0;
-            this.btnGenre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.btnGenre.ForeColor = System.Drawing.Color.Black;
-            this.btnGenre.Location = new System.Drawing.Point(0, 0);
-            this.btnGenre.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.btnGenre.Name = "btnGenre";
-            this.btnGenre.Size = new System.Drawing.Size(157, 23);
-            this.btnGenre.TabIndex = 12;
-            this.btnGenre.Text = "Genre";
-            this.btnGenre.UseVisualStyleBackColor = false;
-            this.btnGenre.Visible = false;
-            // 
             // panelSideBarLogo
             // 
             this.panelSideBarLogo.BackColor = System.Drawing.Color.Transparent;
@@ -512,21 +456,6 @@ namespace FilmLibrary
             this.panelSearchBar.TabIndex = 0;
             this.panelSearchBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelSearchBar_MouseDown);
             // 
-            // txtSearch
-            // 
-            this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
-            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(239)))));
-            this.txtSearch.IsPassword = false;
-            this.txtSearch.Location = new System.Drawing.Point(49, 21);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.OriginalText = "Search";
-            this.txtSearch.Size = new System.Drawing.Size(530, 26);
-            this.txtSearch.TabIndex = 15;
-            this.txtSearch.Text = "Search";
-            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
-            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
-            // 
             // lblMainPageHeading
             // 
             this.lblMainPageHeading.AutoSize = true;
@@ -558,18 +487,6 @@ namespace FilmLibrary
             this.btnMenu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMenu.UseVisualStyleBackColor = false;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
-            // 
-            // pbProfilePic
-            // 
-            this.pbProfilePic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbProfilePic.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbProfilePic.Image = ((System.Drawing.Image)(resources.GetObject("pbProfilePic.Image")));
-            this.pbProfilePic.Location = new System.Drawing.Point(727, 15);
-            this.pbProfilePic.Name = "pbProfilePic";
-            this.pbProfilePic.Size = new System.Drawing.Size(42, 42);
-            this.pbProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbProfilePic.TabIndex = 9;
-            this.pbProfilePic.TabStop = false;
             // 
             // panelBtnSearch
             // 
@@ -782,23 +699,69 @@ namespace FilmLibrary
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // btnCreateWatchlist2
+            // txtSearch
             // 
-            this.btnCreateWatchlist2.BackColor = System.Drawing.Color.Transparent;
-            this.btnCreateWatchlist2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCreateWatchlist2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCreateWatchlist2.FlatAppearance.BorderSize = 0;
-            this.btnCreateWatchlist2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateWatchlist2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.btnCreateWatchlist2.ForeColor = System.Drawing.Color.Maroon;
-            this.btnCreateWatchlist2.Location = new System.Drawing.Point(0, 0);
-            this.btnCreateWatchlist2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.btnCreateWatchlist2.Name = "btnCreateWatchlist2";
-            this.btnCreateWatchlist2.Size = new System.Drawing.Size(157, 23);
-            this.btnCreateWatchlist2.TabIndex = 2;
-            this.btnCreateWatchlist2.Text = "Create";
-            this.btnCreateWatchlist2.UseVisualStyleBackColor = false;
-            this.btnCreateWatchlist2.Click += new System.EventHandler(this.btnCreateWatchlist2_Click);
+            this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(239)))));
+            this.txtSearch.IsPassword = false;
+            this.txtSearch.Location = new System.Drawing.Point(49, 21);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.OriginalText = "Search";
+            this.txtSearch.Size = new System.Drawing.Size(530, 26);
+            this.txtSearch.TabIndex = 15;
+            this.txtSearch.Text = "Search";
+            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
+            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
+            // 
+            // pbProfilePic
+            // 
+            this.pbProfilePic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbProfilePic.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbProfilePic.Image = ((System.Drawing.Image)(resources.GetObject("pbProfilePic.Image")));
+            this.pbProfilePic.Location = new System.Drawing.Point(727, 15);
+            this.pbProfilePic.Name = "pbProfilePic";
+            this.pbProfilePic.Size = new System.Drawing.Size(42, 42);
+            this.pbProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbProfilePic.TabIndex = 9;
+            this.pbProfilePic.TabStop = false;
+            // 
+            // watchlistButton1
+            // 
+            this.watchlistButton1.BackColor = System.Drawing.Color.Transparent;
+            this.watchlistButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.watchlistButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.watchlistButton1.Enabled = false;
+            this.watchlistButton1.FlatAppearance.BorderSize = 0;
+            this.watchlistButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.watchlistButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.watchlistButton1.ForeColor = System.Drawing.Color.Black;
+            this.watchlistButton1.Location = new System.Drawing.Point(0, 23);
+            this.watchlistButton1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.watchlistButton1.Name = "watchlistButton1";
+            this.watchlistButton1.Size = new System.Drawing.Size(157, 23);
+            this.watchlistButton1.TabIndex = 2;
+            this.watchlistButton1.Text = "Watchlist";
+            this.watchlistButton1.UseVisualStyleBackColor = false;
+            this.watchlistButton1.Visible = false;
+            // 
+            // btnCreateWatchlist
+            // 
+            this.btnCreateWatchlist.BackColor = System.Drawing.Color.Transparent;
+            this.btnCreateWatchlist.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCreateWatchlist.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCreateWatchlist.FlatAppearance.BorderSize = 0;
+            this.btnCreateWatchlist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateWatchlist.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnCreateWatchlist.ForeColor = System.Drawing.Color.Maroon;
+            this.btnCreateWatchlist.Location = new System.Drawing.Point(0, 0);
+            this.btnCreateWatchlist.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.btnCreateWatchlist.Name = "btnCreateWatchlist";
+            this.btnCreateWatchlist.Size = new System.Drawing.Size(157, 23);
+            this.btnCreateWatchlist.TabIndex = 1;
+            this.btnCreateWatchlist.Text = "Create";
+            this.btnCreateWatchlist.UseVisualStyleBackColor = false;
+            this.btnCreateWatchlist.Click += new System.EventHandler(this.btnCreateWatchlist_Click);
             // 
             // watchlistButton2
             // 
@@ -818,6 +781,43 @@ namespace FilmLibrary
             this.watchlistButton2.Text = "Watchlist";
             this.watchlistButton2.UseVisualStyleBackColor = false;
             this.watchlistButton2.Visible = false;
+            // 
+            // btnCreateWatchlist2
+            // 
+            this.btnCreateWatchlist2.BackColor = System.Drawing.Color.Transparent;
+            this.btnCreateWatchlist2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCreateWatchlist2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCreateWatchlist2.FlatAppearance.BorderSize = 0;
+            this.btnCreateWatchlist2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateWatchlist2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnCreateWatchlist2.ForeColor = System.Drawing.Color.Maroon;
+            this.btnCreateWatchlist2.Location = new System.Drawing.Point(0, 0);
+            this.btnCreateWatchlist2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.btnCreateWatchlist2.Name = "btnCreateWatchlist2";
+            this.btnCreateWatchlist2.Size = new System.Drawing.Size(157, 23);
+            this.btnCreateWatchlist2.TabIndex = 2;
+            this.btnCreateWatchlist2.Text = "Create";
+            this.btnCreateWatchlist2.UseVisualStyleBackColor = false;
+            this.btnCreateWatchlist2.Click += new System.EventHandler(this.btnCreateWatchlist2_Click);
+            // 
+            // btnGenre
+            // 
+            this.btnGenre.BackColor = System.Drawing.Color.Transparent;
+            this.btnGenre.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGenre.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGenre.Enabled = false;
+            this.btnGenre.FlatAppearance.BorderSize = 0;
+            this.btnGenre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnGenre.ForeColor = System.Drawing.Color.Black;
+            this.btnGenre.Location = new System.Drawing.Point(0, 0);
+            this.btnGenre.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.btnGenre.Name = "btnGenre";
+            this.btnGenre.Size = new System.Drawing.Size(157, 23);
+            this.btnGenre.TabIndex = 12;
+            this.btnGenre.Text = "Genre";
+            this.btnGenre.UseVisualStyleBackColor = false;
+            this.btnGenre.Visible = false;
             // 
             // Form2
             // 
@@ -848,7 +848,6 @@ namespace FilmLibrary
             this.panelSideBarLogo.PerformLayout();
             this.panelSearchBar.ResumeLayout(false);
             this.panelSearchBar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProfilePic)).EndInit();
             this.panelBtnSearch.ResumeLayout(false);
             this.panelContainer.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
@@ -866,6 +865,7 @@ namespace FilmLibrary
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProfilePic)).EndInit();
             this.ResumeLayout(false);
 
         }

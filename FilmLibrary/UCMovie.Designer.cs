@@ -30,104 +30,70 @@ namespace FilmLibrary
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCMovie));
-            this.pbMovieCover = new System.Windows.Forms.PictureBox();
-            this.flpPlotOutline = new System.Windows.Forms.FlowLayoutPanel();
-            this.lblPlotOutline = new System.Windows.Forms.Label();
-            this.flpMovieTitleAndYear = new System.Windows.Forms.FlowLayoutPanel();
-            this.lblMovieTitle = new System.Windows.Forms.Label();
-            this.lblMovieYear = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMovieCover)).BeginInit();
-            this.flpPlotOutline.SuspendLayout();
-            this.flpMovieTitleAndYear.SuspendLayout();
+            this.panelMovieContainer = new System.Windows.Forms.Panel();
+            this.btnAddToWatchlist = new FilmLibrary.AddButton();
+            this.pbMovie = new FilmLibrary.MoviePictureBox();
+            this.panelMovieContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMovie)).BeginInit();
             this.SuspendLayout();
             // 
-            // pbMovieCover
+            // panelMovieContainer
             // 
-            this.pbMovieCover.Image = ((System.Drawing.Image)(resources.GetObject("pbMovieCover.Image")));
-            this.pbMovieCover.Location = new System.Drawing.Point(17, 51);
-            this.pbMovieCover.Name = "pbMovieCover";
-            this.pbMovieCover.Size = new System.Drawing.Size(246, 383);
-            this.pbMovieCover.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbMovieCover.TabIndex = 3;
-            this.pbMovieCover.TabStop = false;
+            this.panelMovieContainer.Controls.Add(this.btnAddToWatchlist);
+            this.panelMovieContainer.Controls.Add(this.pbMovie);
+            this.panelMovieContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMovieContainer.Location = new System.Drawing.Point(0, 0);
+            this.panelMovieContainer.Name = "panelMovieContainer";
+            this.panelMovieContainer.Size = new System.Drawing.Size(205, 295);
+            this.panelMovieContainer.TabIndex = 0;
             // 
-            // flpPlotOutline
+            // btnAddToWatchlist
             // 
-            this.flpPlotOutline.Controls.Add(this.lblPlotOutline);
-            this.flpPlotOutline.Location = new System.Drawing.Point(280, 140);
-            this.flpPlotOutline.Name = "flpPlotOutline";
-            this.flpPlotOutline.Size = new System.Drawing.Size(504, 293);
-            this.flpPlotOutline.TabIndex = 4;
+            this.btnAddToWatchlist.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddToWatchlist.BackgroundImage")));
+            this.btnAddToWatchlist.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAddToWatchlist.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddToWatchlist.FlatAppearance.BorderSize = 0;
+            this.btnAddToWatchlist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddToWatchlist.Location = new System.Drawing.Point(178, 3);
+            this.btnAddToWatchlist.Name = "btnAddToWatchlist";
+            this.btnAddToWatchlist.Size = new System.Drawing.Size(24, 24);
+            this.btnAddToWatchlist.TabIndex = 1;
+            this.btnAddToWatchlist.UseVisualStyleBackColor = true;
+            this.btnAddToWatchlist.Visible = false;
             // 
-            // lblPlotOutline
+            // pbMovie
             // 
-            this.lblPlotOutline.AutoSize = true;
-            this.lblPlotOutline.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlotOutline.ForeColor = System.Drawing.Color.White;
-            this.lblPlotOutline.Location = new System.Drawing.Point(3, 0);
-            this.lblPlotOutline.Name = "lblPlotOutline";
-            this.lblPlotOutline.Size = new System.Drawing.Size(90, 20);
-            this.lblPlotOutline.TabIndex = 3;
-            this.lblPlotOutline.Text = "Plot Outline";
-            // 
-            // flpMovieTitleAndYear
-            // 
-            this.flpMovieTitleAndYear.Controls.Add(this.lblMovieTitle);
-            this.flpMovieTitleAndYear.Controls.Add(this.lblMovieYear);
-            this.flpMovieTitleAndYear.Location = new System.Drawing.Point(280, 61);
-            this.flpMovieTitleAndYear.Name = "flpMovieTitleAndYear";
-            this.flpMovieTitleAndYear.Size = new System.Drawing.Size(504, 73);
-            this.flpMovieTitleAndYear.TabIndex = 5;
-            // 
-            // lblMovieTitle
-            // 
-            this.lblMovieTitle.AutoSize = true;
-            this.lblMovieTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMovieTitle.ForeColor = System.Drawing.Color.White;
-            this.lblMovieTitle.Location = new System.Drawing.Point(3, 0);
-            this.lblMovieTitle.Name = "lblMovieTitle";
-            this.lblMovieTitle.Size = new System.Drawing.Size(57, 26);
-            this.lblMovieTitle.TabIndex = 2;
-            this.lblMovieTitle.Text = "Title";
-            // 
-            // lblMovieYear
-            // 
-            this.lblMovieYear.AutoSize = true;
-            this.lblMovieYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMovieYear.ForeColor = System.Drawing.Color.White;
-            this.lblMovieYear.Location = new System.Drawing.Point(66, 0);
-            this.lblMovieYear.Name = "lblMovieYear";
-            this.lblMovieYear.Size = new System.Drawing.Size(79, 26);
-            this.lblMovieYear.TabIndex = 3;
-            this.lblMovieYear.Text = "(Year)";
+            this.pbMovie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbMovie.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbMovie.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbMovie.Image = ((System.Drawing.Image)(resources.GetObject("pbMovie.Image")));
+            this.pbMovie.Location = new System.Drawing.Point(0, 0);
+            this.pbMovie.Name = "pbMovie";
+            this.pbMovie.Size = new System.Drawing.Size(205, 295);
+            this.pbMovie.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbMovie.TabIndex = 0;
+            this.pbMovie.TabStop = false;
             // 
             // UCMovie
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.AutoScroll = true;
-            this.AutoSize = true;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
-            this.Controls.Add(this.flpMovieTitleAndYear);
-            this.Controls.Add(this.flpPlotOutline);
-            this.Controls.Add(this.pbMovieCover);
+            this.Controls.Add(this.panelMovieContainer);
+            this.Margin = new System.Windows.Forms.Padding(10);
             this.Name = "UCMovie";
-            this.Size = new System.Drawing.Size(809, 660);
+            this.Size = new System.Drawing.Size(205, 295);
             this.Load += new System.EventHandler(this.UCMovie_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pbMovieCover)).EndInit();
-            this.flpPlotOutline.ResumeLayout(false);
-            this.flpPlotOutline.PerformLayout();
-            this.flpMovieTitleAndYear.ResumeLayout(false);
-            this.flpMovieTitleAndYear.PerformLayout();
+            this.panelMovieContainer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbMovie)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pbMovieCover;
-        private System.Windows.Forms.FlowLayoutPanel flpPlotOutline;
-        private System.Windows.Forms.Label lblPlotOutline;
-        private System.Windows.Forms.FlowLayoutPanel flpMovieTitleAndYear;
-        private System.Windows.Forms.Label lblMovieTitle;
-        private System.Windows.Forms.Label lblMovieYear;
+
+        private System.Windows.Forms.Panel panelMovieContainer;
+        private MoviePictureBox pbMovie;
+        private AddButton btnAddToWatchlist;
     }
 }
