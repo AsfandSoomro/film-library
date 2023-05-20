@@ -102,6 +102,21 @@ namespace FilmLibrary
             mainPanel.Controls.Add(uc);
         }
 
+        public static void ShowUpdateWatchlistPage(DataRow watchlist)
+        {
+            Form2.currentMainPage = "Update watchlist - " + (string)watchlist["title"];
+            UpdateMainPageHeading();
+
+            Form form = Application.OpenForms.OfType<Form2>().FirstOrDefault();
+            Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
+            Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
+
+            UCUpdateWatchlist uc = new UCUpdateWatchlist(watchlist);
+            uc.Dock = DockStyle.Fill;
+            mainPanel.Controls.Clear();
+            mainPanel.Controls.Add(uc);
+        }
+
         public static void OpenMoviePage(Form form, DataRow movie)
         {
             Form2.currentMainPage = "Movie - " + (string)movie["title"];
@@ -198,9 +213,12 @@ namespace FilmLibrary
 
         public static void DisposeWatchlistButtons(Panel panel)
         {
-            foreach (WatchlistButton btn in panel.Controls)
+            foreach (Button btn in panel.Controls)
             {
-                btn.Dispose();
+                if (btn is WatchlistButton)
+                {
+                    btn.Dispose();
+                }
             }
         }
 

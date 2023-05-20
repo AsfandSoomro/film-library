@@ -185,6 +185,12 @@
     <Compile Include="UCStartPage.Designer.cs">
       <DependentUpon>UCStartPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCUpdateWatchlist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCUpdateWatchlist.Designer.cs">
+      <DependentUpon>UCUpdateWatchlist.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCUserWatchlist.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -251,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCStartPage.resx">
       <DependentUpon>UCStartPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCUpdateWatchlist.resx">
+      <DependentUpon>UCUpdateWatchlist.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCUserWatchlist.resx">
       <DependentUpon>UCUserWatchlist.cs</DependentUpon>

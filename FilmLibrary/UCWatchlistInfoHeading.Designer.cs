@@ -37,6 +37,7 @@ namespace FilmLibrary
             this.lblCreatedBy = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pbCover = new System.Windows.Forms.PictureBox();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCover)).BeginInit();
             this.SuspendLayout();
@@ -45,6 +46,7 @@ namespace FilmLibrary
             // 
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.btnEdit);
             this.panel1.Controls.Add(this.lblVisibility);
             this.panel1.Controls.Add(this.lblMoviesCount);
             this.panel1.Controls.Add(this.lblCreationDate);
@@ -54,7 +56,7 @@ namespace FilmLibrary
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(809, 168);
+            this.panel1.Size = new System.Drawing.Size(771, 168);
             this.panel1.TabIndex = 0;
             // 
             // lblVisibility
@@ -128,6 +130,24 @@ namespace FilmLibrary
             this.pbCover.TabIndex = 1;
             this.pbCover.TabStop = false;
             // 
+            // btnEdit
+            // 
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(125)))), ((int)(((byte)(166)))));
+            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEdit.Enabled = false;
+            this.btnEdit.FlatAppearance.BorderSize = 0;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEdit.Font = new System.Drawing.Font("Sylfaen", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
+            this.btnEdit.Location = new System.Drawing.Point(665, 57);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(74, 36);
+            this.btnEdit.TabIndex = 9;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Visible = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
             // UCWatchlistInfoHeading
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -136,7 +156,7 @@ namespace FilmLibrary
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.panel1);
             this.Name = "UCWatchlistInfoHeading";
-            this.Size = new System.Drawing.Size(809, 168);
+            this.Size = new System.Drawing.Size(771, 168);
             this.Load += new System.EventHandler(this.UCWatchlistInfoHeading_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -155,5 +175,6 @@ namespace FilmLibrary
         private System.Windows.Forms.Label lblCreationDate;
         private System.Windows.Forms.Label lblCreatedBy;
         private System.Windows.Forms.Label lblVisibility;
+        private System.Windows.Forms.Button btnEdit;
     }
 }

@@ -29,9 +29,9 @@ namespace FilmLibrary
 
         private void GenreButton_Click(object sender, EventArgs e)
         {
-            if (Form2.currentMainPage != (string)this.genre["name"])
+            if (Form2.currentMainPage != "Genre - " + (string)this.genre["name"])
             {
-                Form2.currentMainPage = (string)this.genre["name"];
+                Form2.currentMainPage = "Genre - " + (string)this.genre["name"];
                 Helpers.UpdateMainPageHeading();
 
                 string query = String.Format("SELECT Movies.movie_id, Movies.cover FROM Movies JOIN Movies_Genres ON Movies.movie_id = Movies_Genres.movie_id WHERE Movies_Genres.genre_id = {0} AND @CONDITIONS", this.genre["genre_id"]);

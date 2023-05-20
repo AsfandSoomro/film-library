@@ -28,9 +28,9 @@ namespace FilmLibrary
 
         private void WatchlistButton_Click(object sender, EventArgs e)
         {
-            if (Form2.currentMainPage != (string)this.watchlist["title"])
+            if (Form2.currentMainPage != "Watchlist - " + (string)this.watchlist["title"])
             {
-                Form2.currentMainPage = (string)this.watchlist["title"];
+                Form2.currentMainPage = "Watchlist - " + (string)this.watchlist["title"];
                 Helpers.UpdateMainPageHeading();
 
                 Helpers.ShowWatchlistInfoHeading(this.watchlist);

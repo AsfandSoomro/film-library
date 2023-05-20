@@ -42,6 +42,19 @@ namespace FilmLibrary
 
             if(this.watchlist["cover"] != DBNull.Value)  
                 pbCover.Image = Utils.ByteToImage((Byte[])this.watchlist["cover"]);
+
+            // Only enable the edit button if the user is watchlist's owner
+            if((int)this.watchlist["owner_id"] == (int)Form2.user["user_id"])
+            {
+                btnEdit.Visible = true;
+                btnEdit.Enabled = true;
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (Form2.currentMainPage != "Update watchlist - " + (string)watchlist["title"])
+                Helpers.ShowUpdateWatchlistPage(watchlist);
         }
     }
 }
