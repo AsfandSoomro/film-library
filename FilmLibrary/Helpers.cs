@@ -129,8 +129,6 @@ namespace FilmLibrary
 
         public static FlowLayoutPanel CreateSearchedMoviesContainerFlowLayoutPanel(Form form)
         {
-            Panel panelSideBar = form.Controls.Find("panelSideBar", true).FirstOrDefault() as Panel;
-            //Panel panelTop = form.Controls.Find("panelSearchBar", true).FirstOrDefault() as Panel;
             TextBox txtSearch = form.Controls.Find("txtSearch", true).FirstOrDefault() as TextBox;
 
             FlowLayoutPanel flp = new FlowLayoutPanel();
@@ -187,9 +185,20 @@ namespace FilmLibrary
             }
         }
 
+        public async static void CreatePublicWatchlistButtons(Panel panel)
+        {
+            DataTable watchlists = (await Queries.GetDataTable("Watchlists", "SELECT * from Watchlists WHERE visibility = 'public'"));
+
+            foreach (DataRow watchlist in watchlists.Rows)
+            {
+                WatchlistButton btn = new WatchlistButton(watchlist);
+                panel.Controls.Add(btn);
+            }
+        }
+
         public static void DisposeWatchlistButtons(Panel panel)
         {
-            foreach(WatchlistButton btn in panel.Controls)
+            foreach (WatchlistButton btn in panel.Controls)
             {
                 btn.Dispose();
             }
@@ -206,17 +215,6 @@ namespace FilmLibrary
 
             Helpers.DisposeWatchlistButtons(publicWatchlistsPanel);
             Helpers.CreatePublicWatchlistButtons(publicWatchlistsPanel);
-        }
-
-        public async static void CreatePublicWatchlistButtons(Panel panel)
-        {
-            DataTable watchlists = (await Queries.GetDataTable("Watchlists", "SELECT * from Watchlists WHERE visibility = 'public'"));
-
-            foreach (DataRow watchlist in watchlists.Rows)
-            {
-                WatchlistButton btn = new WatchlistButton(watchlist);
-                panel.Controls.Add(btn);
-            }
         }
     }
 }

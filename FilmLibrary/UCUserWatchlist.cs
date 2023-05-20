@@ -54,7 +54,6 @@ namespace FilmLibrary
             //MessageBox.Show(String.Format("Successfully added the move to watchlist {0}.", (string)watchlist["title"]), "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             this.UpdateButtons();
-            Helpers.UpdateWatchlistsSideBar();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -65,7 +64,6 @@ namespace FilmLibrary
             //MessageBox.Show(String.Format("Successfully deleted the move from watchlist {0}.", (string)watchlist["title"]), "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             this.UpdateButtons();
-            Helpers.UpdateWatchlistsSideBar();
         }
 
         private void UpdateButtons()

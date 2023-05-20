@@ -97,6 +97,7 @@ namespace FilmLibrary
                     txtSearch.Text = "Search";
                 Helpers.DisposeSearchedMoviesContainerFlowLayoutPanel(form);
             }
+            Helpers.DisposeAddToWatchlistsUC(form);
         }
     }
 }

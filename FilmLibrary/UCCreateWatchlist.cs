@@ -89,6 +89,8 @@ namespace FilmLibrary
 
                 conn.Close();
 
+                Helpers.UpdateWatchlistsSideBar();
+
                 MessageBox.Show("Successfully created the watchlist.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }

@@ -191,7 +191,25 @@ namespace FilmLibrary
             }));
         }
 
-        private void panelSideBarLogo_MouseDown(object sender, MouseEventArgs e)
+        private void flpMenu_MouseDown(object sender, MouseEventArgs e)
+        {
+            // Trigger the form's mouse down event
+            this.Invoke((MethodInvoker)(() =>
+            {
+                this.OnMouseDown(e);
+            }));
+        }
+
+        private void flpSettings_MouseDown(object sender, MouseEventArgs e)
+        {
+            // Trigger the form's mouse down event
+            this.Invoke((MethodInvoker)(() =>
+            {
+                this.OnMouseDown(e);
+            }));
+        }
+
+        private void flpManage_MouseDown(object sender, MouseEventArgs e)
         {
             // Trigger the form's mouse down event
             this.Invoke((MethodInvoker)(() =>

@@ -31,6 +31,7 @@ namespace FilmLibrary
         private void UCMovie_Load(object sender, EventArgs e)
         {
             this.pbMovie.Update(this.movie_id, this.cover);
+            this.btnAddToWatchlist.Parent = this.pbMovie;
             this.isAddToWatchlistButtonClicked = false;
         }
 

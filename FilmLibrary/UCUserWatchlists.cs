@@ -21,7 +21,7 @@ namespace FilmLibrary
             InitializeComponent();
         }
 
-        public UCUserWatchlists(int movie_id, UCMovie parentMovie) : this() 
+        public UCUserWatchlists(int movie_id, UCMovie parentMovie) : this()
         {
             this.movie_id = movie_id;
             this.parentMovie = parentMovie;
