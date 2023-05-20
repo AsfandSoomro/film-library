@@ -13,7 +13,7 @@ namespace FilmLibrary
 {
     public partial class Form2 : Form
     {
-        private DataRow user;
+        public static DataRow user;
 
         private bool isSideBarVisible;
         private int originalSideBarWidth;
@@ -24,7 +24,7 @@ namespace FilmLibrary
         {
             InitializeComponent();
 
-            this.user = user;
+            Form2.user = user;
         }
         
         private void Form2_Load(object sender, EventArgs e)
@@ -33,7 +33,7 @@ namespace FilmLibrary
 
             try
             {
-                this.pbProfilePic.Image = Utils.ByteToImage((byte[])this.user["profile_photo"]);
+                this.pbProfilePic.Image = Utils.ByteToImage((byte[])Form2.user["profile_photo"]);
             }
             catch (Exception)
             {
@@ -57,6 +57,7 @@ namespace FilmLibrary
                 }
                 Helpers.DisposeSearchedMoviesContainerFlowLayoutPanel(this);
             }
+            Helpers.DisposeAddToWatchlistsUC(this);
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -80,7 +81,7 @@ namespace FilmLibrary
             panelUserWatchlistsContainer.Visible = !panelUserWatchlistsContainer.Visible;
 
             if (panelUserWatchlistsContainer.Controls.Count < 3)
-                Helpers.CreateUserWatchlistButtons(panelUserWatchlistsContainer, (int)this.user["user_id"]);
+                Helpers.CreateUserWatchlistButtons(panelUserWatchlistsContainer, (int)Form2.user["user_id"]);
         }
 
         private void btnPublicWatchlists_Click(object sender, EventArgs e)
@@ -95,7 +96,7 @@ namespace FilmLibrary
         private void btnCreateWatchlist_Click(object sender, EventArgs e)
         {
             if (Form2.currentMainPage != "Create Watchlist")
-                Helpers.ShowCreateWatchlistPage((int)this.user["user_id"]);
+                Helpers.ShowCreateWatchlistPage((int)Form2.user["user_id"]);
         }
 
         private void btnCreateWatchlist2_Click(object sender, EventArgs e)

@@ -104,6 +104,9 @@ namespace FilmLibrary
 
         public static void OpenMoviePage(Form form, DataRow movie)
         {
+            Form2.currentMainPage = "Movie - " + (string)movie["title"];
+            Helpers.UpdateMainPageHeading();
+
             // Finds the panels in the given opened instance of Form2
             Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
             Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
@@ -147,6 +150,18 @@ namespace FilmLibrary
             FlowLayoutPanel searchedMoviesContainerPanel = form.Controls.Find("flpSearchedMoviesContainerRuntime", true).FirstOrDefault() as FlowLayoutPanel;
             if (searchedMoviesContainerPanel != null)
                 searchedMoviesContainerPanel.Dispose();
+        }
+
+        public static void DisposeAddToWatchlistsUC(Form form)
+        {
+            // Finds AddToWatchlists UserControl
+            UserControl addToWatchlistsUC = form.Controls.Find("UCUserWatchlists", true).FirstOrDefault() as UserControl;
+            if (addToWatchlistsUC != null)
+            {
+                UCUserWatchlists uc = (UCUserWatchlists)addToWatchlistsUC;
+                uc.parentMovie.isAddToWatchlistButtonClicked = false;
+                addToWatchlistsUC.Dispose();
+            }
         }
 
         public async static void CreateGenreButtons(Panel panel)

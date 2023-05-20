@@ -117,8 +117,22 @@ namespace FilmLibrary
             using (SqlConnection conn = new SqlConnection(Program.MyConnectionString))
             {
                 conn.Open();
-                SqlCommand command = new SqlCommand(String.Format(query, conn));
+                SqlCommand command = new SqlCommand(query, conn);
                 command.ExecuteNonQuery();
+                conn.Close();
+            }
+        }
+
+        public async static void DeleteRows(string query)
+        {
+            using (SqlConnection conn = new SqlConnection(Program.MyConnectionString))
+            {
+                await conn.OpenAsync();
+
+                SqlCommand command = new SqlCommand(query, conn);
+
+                command.ExecuteNonQuery();
+
                 conn.Close();
             }
         }

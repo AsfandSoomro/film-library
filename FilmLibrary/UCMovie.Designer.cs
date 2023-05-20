@@ -60,6 +60,7 @@ namespace FilmLibrary
             this.btnAddToWatchlist.TabIndex = 1;
             this.btnAddToWatchlist.UseVisualStyleBackColor = true;
             this.btnAddToWatchlist.Visible = false;
+            this.btnAddToWatchlist.Click += new System.EventHandler(this.btnAddToWatchlist_Click);
             // 
             // pbMovie
             // 

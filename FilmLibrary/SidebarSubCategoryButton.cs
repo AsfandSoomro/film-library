@@ -13,7 +13,7 @@ namespace FilmLibrary
             this.BackColor = Color.Transparent;
             this.ForeColor = Color.Black;
             this.TextAlign = ContentAlignment.MiddleCenter;
-            this.Font = new Font(this.Font.FontFamily, 9, FontStyle.Bold);
+            this.Font = new Font(this.Font.FontFamily, 9);
             this.FlatStyle = FlatStyle.Flat;
             this.FlatAppearance.BorderSize = 0;
             this.Cursor = Cursors.Hand;

@@ -182,6 +182,18 @@
     <Compile Include="UCStartPage.Designer.cs">
       <DependentUpon>UCStartPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCUserWatchlist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCUserWatchlist.Designer.cs">
+      <DependentUpon>UCUserWatchlist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCUserWatchlists.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCUserWatchlists.Designer.cs">
+      <DependentUpon>UCUserWatchlists.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCWatchlistInfoHeading.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -236,6 +248,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCStartPage.resx">
       <DependentUpon>UCStartPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCUserWatchlist.resx">
+      <DependentUpon>UCUserWatchlist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCUserWatchlists.resx">
+      <DependentUpon>UCUserWatchlists.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCWatchlistInfoHeading.resx">
       <DependentUpon>UCWatchlistInfoHeading.cs</DependentUpon>

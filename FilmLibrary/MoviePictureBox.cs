@@ -76,7 +76,8 @@ namespace FilmLibrary
             string query = String.Format("SELECT * FROM Movies WHERE movie_id = {0}", this.movie_id.ToString());
             this.movie = (DataRow)(await Queries.GetDataTable("Movies", query)).Rows[0];
 
-            Helpers.OpenMoviePage(this.FindForm(), this.movie);
+            if (Form2.currentMainPage != "Movie - " + (string)(this.movie["title"]))
+                Helpers.OpenMoviePage(this.FindForm(), this.movie);
         }
     }
 }

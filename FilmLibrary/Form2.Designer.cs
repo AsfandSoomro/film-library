@@ -110,7 +110,7 @@ namespace FilmLibrary
             // panelSideBar
             // 
             this.panelSideBar.AutoScroll = true;
-            this.panelSideBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(157)))), ((int)(((byte)(116)))));
+            this.panelSideBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(182)))), ((int)(((byte)(157)))), ((int)(((byte)(116)))));
             this.panelSideBar.Controls.Add(this.flpManage);
             this.panelSideBar.Controls.Add(this.flpSettings);
             this.panelSideBar.Controls.Add(this.flpMenu);
@@ -184,7 +184,7 @@ namespace FilmLibrary
             this.btnFAQ.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnFAQ.FlatAppearance.BorderSize = 0;
             this.btnFAQ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFAQ.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFAQ.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFAQ.Image = ((System.Drawing.Image)(resources.GetObject("btnFAQ.Image")));
             this.btnFAQ.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFAQ.Location = new System.Drawing.Point(3, 49);
@@ -204,7 +204,7 @@ namespace FilmLibrary
             this.btnHelp.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnHelp.FlatAppearance.BorderSize = 0;
             this.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHelp.Image = ((System.Drawing.Image)(resources.GetObject("btnHelp.Image")));
             this.btnHelp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHelp.Location = new System.Drawing.Point(3, 87);
@@ -224,7 +224,7 @@ namespace FilmLibrary
             this.btnTerms.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTerms.FlatAppearance.BorderSize = 0;
             this.btnTerms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTerms.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTerms.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTerms.Image = ((System.Drawing.Image)(resources.GetObject("btnTerms.Image")));
             this.btnTerms.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTerms.Location = new System.Drawing.Point(3, 125);
@@ -244,7 +244,7 @@ namespace FilmLibrary
             this.btnPrivacy.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnPrivacy.FlatAppearance.BorderSize = 0;
             this.btnPrivacy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrivacy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrivacy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrivacy.Image = ((System.Drawing.Image)(resources.GetObject("btnPrivacy.Image")));
             this.btnPrivacy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPrivacy.Location = new System.Drawing.Point(3, 163);
@@ -296,7 +296,7 @@ namespace FilmLibrary
             this.btnHome.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnHome.FlatAppearance.BorderSize = 0;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
             this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome.Location = new System.Drawing.Point(3, 49);
@@ -317,7 +317,7 @@ namespace FilmLibrary
             this.btnMyWatchlists.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMyWatchlists.FlatAppearance.BorderSize = 0;
             this.btnMyWatchlists.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMyWatchlists.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMyWatchlists.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMyWatchlists.Image = ((System.Drawing.Image)(resources.GetObject("btnMyWatchlists.Image")));
             this.btnMyWatchlists.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMyWatchlists.Location = new System.Drawing.Point(3, 87);
@@ -352,7 +352,7 @@ namespace FilmLibrary
             this.btnPublicWatchlists.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnPublicWatchlists.FlatAppearance.BorderSize = 0;
             this.btnPublicWatchlists.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPublicWatchlists.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPublicWatchlists.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPublicWatchlists.Image = ((System.Drawing.Image)(resources.GetObject("btnPublicWatchlists.Image")));
             this.btnPublicWatchlists.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPublicWatchlists.Location = new System.Drawing.Point(3, 228);
@@ -387,7 +387,7 @@ namespace FilmLibrary
             this.btnGenres.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnGenres.FlatAppearance.BorderSize = 0;
             this.btnGenres.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenres.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenres.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenres.Image = ((System.Drawing.Image)(resources.GetObject("btnGenres.Image")));
             this.btnGenres.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGenres.Location = new System.Drawing.Point(3, 369);
@@ -734,7 +734,7 @@ namespace FilmLibrary
             this.watchlistButton1.Enabled = false;
             this.watchlistButton1.FlatAppearance.BorderSize = 0;
             this.watchlistButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.watchlistButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.watchlistButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.watchlistButton1.ForeColor = System.Drawing.Color.Black;
             this.watchlistButton1.Location = new System.Drawing.Point(0, 23);
             this.watchlistButton1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -752,7 +752,7 @@ namespace FilmLibrary
             this.btnCreateWatchlist.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCreateWatchlist.FlatAppearance.BorderSize = 0;
             this.btnCreateWatchlist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateWatchlist.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnCreateWatchlist.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.btnCreateWatchlist.ForeColor = System.Drawing.Color.Maroon;
             this.btnCreateWatchlist.Location = new System.Drawing.Point(0, 0);
             this.btnCreateWatchlist.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -771,7 +771,7 @@ namespace FilmLibrary
             this.watchlistButton2.Enabled = false;
             this.watchlistButton2.FlatAppearance.BorderSize = 0;
             this.watchlistButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.watchlistButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.watchlistButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.watchlistButton2.ForeColor = System.Drawing.Color.Black;
             this.watchlistButton2.Location = new System.Drawing.Point(0, 23);
             this.watchlistButton2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -789,7 +789,7 @@ namespace FilmLibrary
             this.btnCreateWatchlist2.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCreateWatchlist2.FlatAppearance.BorderSize = 0;
             this.btnCreateWatchlist2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateWatchlist2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnCreateWatchlist2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.btnCreateWatchlist2.ForeColor = System.Drawing.Color.Maroon;
             this.btnCreateWatchlist2.Location = new System.Drawing.Point(0, 0);
             this.btnCreateWatchlist2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -808,7 +808,7 @@ namespace FilmLibrary
             this.btnGenre.Enabled = false;
             this.btnGenre.FlatAppearance.BorderSize = 0;
             this.btnGenre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.btnGenre.ForeColor = System.Drawing.Color.Black;
             this.btnGenre.Location = new System.Drawing.Point(0, 0);
             this.btnGenre.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
