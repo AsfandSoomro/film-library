@@ -15,7 +15,6 @@ namespace FilmLibrary
 
         public WatchlistButton()
         {
-
         }
 
         public WatchlistButton(DataRow watchlist) : this()

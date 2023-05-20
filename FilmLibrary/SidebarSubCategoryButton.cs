@@ -15,6 +15,7 @@ namespace FilmLibrary
             this.TextAlign = ContentAlignment.MiddleCenter;
             this.Font = new Font(this.Font.FontFamily, 9);
             this.FlatStyle = FlatStyle.Flat;
+            this.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 66, 80);
             this.FlatAppearance.BorderSize = 0;
             this.Cursor = Cursors.Hand;
             this.Margin = new Padding(3, 0, 3, 0);

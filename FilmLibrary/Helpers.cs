@@ -135,7 +135,7 @@ namespace FilmLibrary
 
             FlowLayoutPanel flp = new FlowLayoutPanel();
 
-            flp.BackColor = Color.FromArgb(31, 40, 57);
+            flp.BackColor = Color.FromArgb(24, 26, 40);
             flp.BorderStyle = BorderStyle.FixedSingle;
             flp.Size = new Size(558, 235);
             flp.Location = new Point(txtSearch.Location.X, 63 - 16);

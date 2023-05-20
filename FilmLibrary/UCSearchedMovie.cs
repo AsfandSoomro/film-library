@@ -33,13 +33,13 @@ namespace FilmLibrary
         private void panelSearchedMovie_MouseEnter(object sender, EventArgs e)
         {
             Color color = this.panelSearchedMovie.BackColor;
-            this.panelSearchedMovie.BackColor = Color.FromArgb(color.R + 40, color.G + 40, color.B + 40);
+            this.panelSearchedMovie.BackColor = Color.FromArgb(24 + 40, 26 + 40, 40 + 40);
         }
 
         private void panelSearchedMovie_MouseLeave(object sender, EventArgs e)
         {
             Color color = this.panelSearchedMovie.BackColor;
-            this.panelSearchedMovie.BackColor = Color.FromArgb(color.R - 40, color.G - 40, color.B - 40);
+            this.panelSearchedMovie.BackColor = Color.Transparent;
         }
 
         private void MakeChildControlsInheritEvents()
