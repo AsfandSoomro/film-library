@@ -44,6 +44,7 @@ namespace FilmLibrary
             // panel1
             // 
             this.panel1.AutoSize = true;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.lblVisibility);
             this.panel1.Controls.Add(this.lblMoviesCount);
             this.panel1.Controls.Add(this.lblCreationDate);
@@ -132,7 +133,7 @@ namespace FilmLibrary
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.panel1);
             this.Name = "UCWatchlistInfoHeading";
             this.Size = new System.Drawing.Size(809, 168);

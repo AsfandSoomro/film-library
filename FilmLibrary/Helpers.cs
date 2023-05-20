@@ -131,13 +131,14 @@ namespace FilmLibrary
         {
             Panel panelSideBar = form.Controls.Find("panelSideBar", true).FirstOrDefault() as Panel;
             //Panel panelTop = form.Controls.Find("panelSearchBar", true).FirstOrDefault() as Panel;
+            TextBox txtSearch = form.Controls.Find("txtSearch", true).FirstOrDefault() as TextBox;
 
             FlowLayoutPanel flp = new FlowLayoutPanel();
 
             flp.BackColor = Color.FromArgb(31, 40, 57);
             flp.BorderStyle = BorderStyle.FixedSingle;
             flp.Size = new Size(558, 235);
-            flp.Location = new Point(panelSideBar.Width + 49, 63 - 16);
+            flp.Location = new Point(txtSearch.Location.X, 63 - 16);
             flp.AutoSize = true;
             flp.FlowDirection = FlowDirection.TopDown;
 
@@ -184,6 +185,27 @@ namespace FilmLibrary
                 WatchlistButton btn = new WatchlistButton(watchlist);
                 panel.Controls.Add(btn);
             }
+        }
+
+        public static void DisposeWatchlistButtons(Panel panel)
+        {
+            foreach(WatchlistButton btn in panel.Controls)
+            {
+                btn.Dispose();
+            }
+        }
+
+        public static void UpdateWatchlistsSideBar()
+        {
+            Form form = Application.OpenForms.OfType<Form2>().FirstOrDefault();
+            Panel userWatchlistsPanel = form.Controls.Find("panelUserWatchlistsContainer", true).FirstOrDefault() as Panel;
+            Panel publicWatchlistsPanel = form.Controls.Find("panelPublicWatchlistsContainer", true).FirstOrDefault() as Panel;
+
+            Helpers.DisposeWatchlistButtons(userWatchlistsPanel);
+            Helpers.CreateUserWatchlistButtons(userWatchlistsPanel, (int)Form2.user["user_id"]);
+
+            Helpers.DisposeWatchlistButtons(publicWatchlistsPanel);
+            Helpers.CreatePublicWatchlistButtons(publicWatchlistsPanel);
         }
 
         public async static void CreatePublicWatchlistButtons(Panel panel)

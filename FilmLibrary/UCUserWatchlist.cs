@@ -51,9 +51,10 @@ namespace FilmLibrary
             string query = String.Format("INSERT INTO Watchlists_Movies(watchlist_id, movie_id) VALUES ({0}, {1});", (int)watchlist["watchlist_id"], movie_id);
 
             Queries.InsertRow(query);
-            MessageBox.Show(String.Format("Successfully added the move to watchlist {0}.", (string)watchlist["title"]), "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //MessageBox.Show(String.Format("Successfully added the move to watchlist {0}.", (string)watchlist["title"]), "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             this.UpdateButtons();
+            Helpers.UpdateWatchlistsSideBar();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -61,9 +62,10 @@ namespace FilmLibrary
             string query = String.Format("DELETE FROM Watchlists_Movies WHERE watchlist_id = {0} AND movie_id = {1};", (int)watchlist["watchlist_id"], movie_id);
 
             Queries.DeleteRows(query);
-            MessageBox.Show(String.Format("Successfully deleted the move from watchlist {0}.", (string)watchlist["title"]), "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //MessageBox.Show(String.Format("Successfully deleted the move from watchlist {0}.", (string)watchlist["title"]), "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             this.UpdateButtons();
+            Helpers.UpdateWatchlistsSideBar();
         }
 
         private void UpdateButtons()
@@ -74,5 +76,6 @@ namespace FilmLibrary
             btnAdd.Enabled = !btnAdd.Enabled;
             btnAdd.Visible = !btnAdd.Visible;
         }
+
     }
 }

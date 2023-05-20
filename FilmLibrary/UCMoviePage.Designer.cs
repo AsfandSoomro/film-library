@@ -101,16 +101,16 @@ namespace FilmLibrary
             this.lblMovieYear.TabIndex = 3;
             this.lblMovieYear.Text = "(Year)";
             // 
-            // UCMovie
+            // UCMoviePage
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.flpMovieTitleAndYear);
             this.Controls.Add(this.flpPlotOutline);
             this.Controls.Add(this.pbMovieCover);
-            this.Name = "UCMovie";
+            this.Name = "UCMoviePage";
             this.Size = new System.Drawing.Size(809, 660);
             this.Load += new System.EventHandler(this.UCMoviePage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbMovieCover)).EndInit();

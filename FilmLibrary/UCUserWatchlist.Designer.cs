@@ -31,10 +31,10 @@ namespace FilmLibrary
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCUserWatchlist));
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.btnRemove = new FilmLibrary.RemoveButton();
             this.btnAdd = new FilmLibrary.AddButton();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pbCover = new System.Windows.Forms.PictureBox();
-            this.btnRemove = new FilmLibrary.RemoveButton();
             this.panelContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCover)).BeginInit();
             this.SuspendLayout();
@@ -51,6 +51,22 @@ namespace FilmLibrary
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Size = new System.Drawing.Size(433, 59);
             this.panelContainer.TabIndex = 0;
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRemove.BackgroundImage")));
+            this.btnRemove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRemove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRemove.Enabled = false;
+            this.btnRemove.FlatAppearance.BorderSize = 0;
+            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemove.Location = new System.Drawing.Point(391, 16);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(22, 22);
+            this.btnRemove.TabIndex = 6;
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Visible = false;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // btnAdd
             // 
@@ -91,27 +107,11 @@ namespace FilmLibrary
             this.pbCover.TabIndex = 3;
             this.pbCover.TabStop = false;
             // 
-            // btnRemove
-            // 
-            this.btnRemove.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRemove.BackgroundImage")));
-            this.btnRemove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRemove.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRemove.Enabled = false;
-            this.btnRemove.FlatAppearance.BorderSize = 0;
-            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemove.Location = new System.Drawing.Point(391, 16);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(22, 22);
-            this.btnRemove.TabIndex = 6;
-            this.btnRemove.UseVisualStyleBackColor = true;
-            this.btnRemove.Visible = false;
-            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
-            // 
             // UCUserWatchlist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.panelContainer);
             this.Margin = new System.Windows.Forms.Padding(10);
             this.Name = "UCUserWatchlist";

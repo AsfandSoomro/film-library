@@ -34,7 +34,7 @@ namespace FilmLibrary
             {
                 // Enable the sign in button
                 btnSignUp2.Enabled = true;
-                btnSignUp2.BackColor = Color.FromArgb(255, 182, 157, 116);
+                btnSignUp2.BackColor = Color.FromArgb(91, 125, 166);
             }
             else
             {

@@ -11,7 +11,7 @@ namespace FilmLibrary
         public SideBarSubCategoryButton()
         {
             this.BackColor = Color.Transparent;
-            this.ForeColor = Color.Black;
+            this.ForeColor = Color.FromArgb(245, 245, 239);
             this.TextAlign = ContentAlignment.MiddleCenter;
             this.Font = new Font(this.Font.FontFamily, 9);
             this.FlatStyle = FlatStyle.Flat;

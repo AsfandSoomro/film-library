@@ -245,6 +245,5 @@ namespace FilmLibrary
         {
             panelSideBar.Width -= 5;
         }
-
     }
 }

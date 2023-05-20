@@ -59,7 +59,7 @@ namespace FilmLibrary
             // 
             // ucSearchedMovie1
             // 
-            this.ucSearchedMovie1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
+            this.ucSearchedMovie1.BackColor = System.Drawing.Color.Transparent;
             this.ucSearchedMovie1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ucSearchedMovie1.Enabled = false;
             this.ucSearchedMovie1.Location = new System.Drawing.Point(20, 13);
@@ -71,7 +71,7 @@ namespace FilmLibrary
             // 
             // ucSearchedMovie2
             // 
-            this.ucSearchedMovie2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
+            this.ucSearchedMovie2.BackColor = System.Drawing.Color.Transparent;
             this.ucSearchedMovie2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ucSearchedMovie2.Enabled = false;
             this.ucSearchedMovie2.Location = new System.Drawing.Point(20, 121);
@@ -83,7 +83,7 @@ namespace FilmLibrary
             // 
             // ucSearchedMovie3
             // 
-            this.ucSearchedMovie3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
+            this.ucSearchedMovie3.BackColor = System.Drawing.Color.Transparent;
             this.ucSearchedMovie3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ucSearchedMovie3.Enabled = false;
             this.ucSearchedMovie3.Location = new System.Drawing.Point(20, 229);
@@ -95,7 +95,7 @@ namespace FilmLibrary
             // 
             // ucSearchedMovie4
             // 
-            this.ucSearchedMovie4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
+            this.ucSearchedMovie4.BackColor = System.Drawing.Color.Transparent;
             this.ucSearchedMovie4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ucSearchedMovie4.Enabled = false;
             this.ucSearchedMovie4.Location = new System.Drawing.Point(20, 337);
@@ -107,7 +107,7 @@ namespace FilmLibrary
             // 
             // ucSearchedMovie5
             // 
-            this.ucSearchedMovie5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
+            this.ucSearchedMovie5.BackColor = System.Drawing.Color.Transparent;
             this.ucSearchedMovie5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ucSearchedMovie5.Enabled = false;
             this.ucSearchedMovie5.Location = new System.Drawing.Point(20, 445);
@@ -133,7 +133,7 @@ namespace FilmLibrary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.flpSearchedMoviesAllContainer);
             this.Name = "UCSearchedMoviesAll";
             this.Size = new System.Drawing.Size(809, 626);

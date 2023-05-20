@@ -30,7 +30,7 @@ namespace FilmLibrary
 
         public MyTextBox()
         {
-            this.BackColor = Color.FromArgb(31, 40, 57);
+            this.BackColor = Color.FromArgb(24, 26, 40);
             this.ForeColor = Color.FromArgb(245, 245, 239);
             this.BorderStyle = BorderStyle.Fixed3D;
             this.Size = new Size(228, 26);
@@ -62,7 +62,7 @@ namespace FilmLibrary
                 this.Text = this.originalText;
                 if (this.isPassword) this.PasswordChar = '\0';
             }
-            this.BackColor = Color.FromArgb(255, 31, 40, 57);
+            this.BackColor = Color.FromArgb(24, 26, 40);
             this.ForeColor = Color.FromArgb(255, 245, 245, 239);
         }
 

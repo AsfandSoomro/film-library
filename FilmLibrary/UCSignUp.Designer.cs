@@ -91,7 +91,7 @@ namespace FilmLibrary
             // 
             // txtLastName
             // 
-            this.txtLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
+            this.txtLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(26)))), ((int)(((byte)(40)))));
             this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtLastName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(239)))));
             this.txtLastName.IsPassword = false;
@@ -104,7 +104,7 @@ namespace FilmLibrary
             // 
             // txtFirstName
             // 
-            this.txtFirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
+            this.txtFirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(26)))), ((int)(((byte)(40)))));
             this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtFirstName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(239)))));
             this.txtFirstName.IsPassword = false;
@@ -117,7 +117,7 @@ namespace FilmLibrary
             // 
             // txtEmail
             // 
-            this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
+            this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(26)))), ((int)(((byte)(40)))));
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(239)))));
             this.txtEmail.IsPassword = false;
@@ -130,7 +130,7 @@ namespace FilmLibrary
             // 
             // txtPasswordSU
             // 
-            this.txtPasswordSU.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
+            this.txtPasswordSU.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(26)))), ((int)(((byte)(40)))));
             this.txtPasswordSU.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtPasswordSU.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(239)))));
             this.txtPasswordSU.IsPassword = true;
@@ -144,7 +144,7 @@ namespace FilmLibrary
             // 
             // txtUsernameSU
             // 
-            this.txtUsernameSU.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
+            this.txtUsernameSU.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(26)))), ((int)(((byte)(40)))));
             this.txtUsernameSU.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtUsernameSU.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(239)))));
             this.txtUsernameSU.IsPassword = false;
@@ -172,7 +172,7 @@ namespace FilmLibrary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.pbProfilePicSU);
             this.Controls.Add(this.btnSignUp2);
             this.Controls.Add(this.lblDOB);
