@@ -36,7 +36,9 @@ namespace FilmLibrary
             this.btnUpdate = new System.Windows.Forms.Button();
             this.txtTitle = new FilmLibrary.MyTextBox();
             this.pbCover = new System.Windows.Forms.PictureBox();
+            this.panelContainer = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pbCover)).BeginInit();
+            this.panelContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // rbPublic
@@ -45,7 +47,7 @@ namespace FilmLibrary
             this.rbPublic.BackColor = System.Drawing.Color.Transparent;
             this.rbPublic.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbPublic.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(239)))));
-            this.rbPublic.Location = new System.Drawing.Point(480, 467);
+            this.rbPublic.Location = new System.Drawing.Point(477, 454);
             this.rbPublic.Name = "rbPublic";
             this.rbPublic.Size = new System.Drawing.Size(69, 24);
             this.rbPublic.TabIndex = 17;
@@ -59,7 +61,7 @@ namespace FilmLibrary
             this.rbPrivate.BackColor = System.Drawing.Color.Transparent;
             this.rbPrivate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbPrivate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(239)))));
-            this.rbPrivate.Location = new System.Drawing.Point(356, 467);
+            this.rbPrivate.Location = new System.Drawing.Point(353, 454);
             this.rbPrivate.Name = "rbPrivate";
             this.rbPrivate.Size = new System.Drawing.Size(75, 24);
             this.rbPrivate.TabIndex = 16;
@@ -73,7 +75,7 @@ namespace FilmLibrary
             this.lblVisibility.BackColor = System.Drawing.Color.Transparent;
             this.lblVisibility.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVisibility.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(239)))));
-            this.lblVisibility.Location = new System.Drawing.Point(228, 469);
+            this.lblVisibility.Location = new System.Drawing.Point(225, 456);
             this.lblVisibility.Name = "lblVisibility";
             this.lblVisibility.Size = new System.Drawing.Size(68, 20);
             this.lblVisibility.TabIndex = 15;
@@ -90,7 +92,7 @@ namespace FilmLibrary
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUpdate.Font = new System.Drawing.Font("Sylfaen", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
-            this.btnUpdate.Location = new System.Drawing.Point(293, 508);
+            this.btnUpdate.Location = new System.Drawing.Point(290, 495);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(228, 36);
             this.btnUpdate.TabIndex = 14;
@@ -104,7 +106,7 @@ namespace FilmLibrary
             this.txtTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(239)))));
             this.txtTitle.IsPassword = false;
-            this.txtTitle.Location = new System.Drawing.Point(232, 427);
+            this.txtTitle.Location = new System.Drawing.Point(229, 414);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.OriginalText = "Title";
             this.txtTitle.Size = new System.Drawing.Size(349, 26);
@@ -117,7 +119,7 @@ namespace FilmLibrary
             this.pbCover.BackColor = System.Drawing.Color.Transparent;
             this.pbCover.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbCover.Image = ((System.Drawing.Image)(resources.GetObject("pbCover.Image")));
-            this.pbCover.Location = new System.Drawing.Point(262, 83);
+            this.pbCover.Location = new System.Drawing.Point(259, 70);
             this.pbCover.Name = "pbCover";
             this.pbCover.Size = new System.Drawing.Size(294, 326);
             this.pbCover.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -125,23 +127,33 @@ namespace FilmLibrary
             this.pbCover.TabStop = false;
             this.pbCover.Click += new System.EventHandler(this.pbCover_Click);
             // 
+            // panelContainer
+            // 
+            this.panelContainer.AutoScroll = true;
+            this.panelContainer.Controls.Add(this.pbCover);
+            this.panelContainer.Controls.Add(this.rbPublic);
+            this.panelContainer.Controls.Add(this.txtTitle);
+            this.panelContainer.Controls.Add(this.rbPrivate);
+            this.panelContainer.Controls.Add(this.btnUpdate);
+            this.panelContainer.Controls.Add(this.lblVisibility);
+            this.panelContainer.Location = new System.Drawing.Point(0, 0);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(809, 626);
+            this.panelContainer.TabIndex = 18;
+            // 
             // UCUpdateWatchlist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.rbPublic);
-            this.Controls.Add(this.rbPrivate);
-            this.Controls.Add(this.lblVisibility);
-            this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.txtTitle);
-            this.Controls.Add(this.pbCover);
+            this.Controls.Add(this.panelContainer);
             this.Name = "UCUpdateWatchlist";
             this.Size = new System.Drawing.Size(809, 626);
             this.Load += new System.EventHandler(this.UCUpdateWatchlist_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbCover)).EndInit();
+            this.panelContainer.ResumeLayout(false);
+            this.panelContainer.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -153,5 +165,6 @@ namespace FilmLibrary
         private System.Windows.Forms.Button btnUpdate;
         private MyTextBox txtTitle;
         private System.Windows.Forms.PictureBox pbCover;
+        private System.Windows.Forms.Panel panelContainer;
     }
 }

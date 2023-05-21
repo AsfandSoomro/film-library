@@ -88,9 +88,15 @@ namespace FilmLibrary
         private void panelMain_Resize(object sender, EventArgs e)
         {
             if (Form2.currentMainPage.IndexOf("Movie -") == 0)
-                Helpers.ArrangeMoviePageControls(this);
+                Helpers.ArrangeMainPanelControls(this);
             else if (Form2.currentMainPage == "Dashboard")
-                Helpers.ArrangeDashboardControls(this);
+                Helpers.ArrangeMainPanelControls(this);
+            else if (Form2.currentMainPage == "Create watchlist")
+                Helpers.ArrangeMainPanelControls(this);
+            else if (Form2.currentMainPage.IndexOf("Update watchlist -") == 0)
+                Helpers.ArrangeMainPanelControls(this);
+            else if (Form2.currentMainPage == "Manage - Add Movie")
+                Helpers.ArrangeMainPanelControls(this);
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
@@ -155,6 +161,27 @@ namespace FilmLibrary
             Helpers.ShowSearchedMovies(this, txtSearch.Text);
 
             txtSearch.Text = "Search";
+        }
+
+        private void btnManageMovies_Click(object sender, EventArgs e)
+        {
+            panelManageMoviesContainer.Enabled = !panelManageMoviesContainer.Enabled;
+            panelManageMoviesContainer.Visible = !panelManageMoviesContainer.Visible;
+        }
+
+        private void btnAddMovie_Click(object sender, EventArgs e)
+        {
+            if (Form2.currentMainPage != "Manage - Add Movie")
+            {
+                Helpers.ShowManageAddMoviePage(this);
+            }
+        }
+
+        private void pbProfilePic_Click(object sender, EventArgs e)
+        {
+            ucProfileMenu.Visible = !ucProfileMenu.Visible;
+            if (this.ucProfileMenu.Visible)
+                this.UpdateProfileMenuLocation();
         }
 
         private async void txtSearch_KeyDown(object sender, KeyEventArgs e)
@@ -311,13 +338,6 @@ namespace FilmLibrary
         private void UpdateProfileMenuLocation()
         {
             ucProfileMenu.Location = new Point(pbProfilePic.Location.X - 127, pbProfilePic.Location.Y + 53);
-        }
-
-        private void pbProfilePic_Click(object sender, EventArgs e)
-        {
-            ucProfileMenu.Visible = !ucProfileMenu.Visible;
-            if (this.ucProfileMenu.Visible)
-                this.UpdateProfileMenuLocation();
         }
     }
 }

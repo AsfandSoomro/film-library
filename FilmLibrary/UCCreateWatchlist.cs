@@ -25,6 +25,8 @@ namespace FilmLibrary
 
         private void UCCreateWatchlist_Load(object sender, EventArgs e)
         {
+            Helpers.ArrangeMainPanelControls(this.FindForm());
+
             this.isUserImageUploaded = false;
             rbPrivate.Checked = true;
         }

@@ -28,6 +28,8 @@ namespace FilmLibrary
 
         private void UCUpdateWatchlist_Load(object sender, EventArgs e)
         {
+            Helpers.ArrangeMainPanelControls(this.FindForm());
+
             txtTitle.Text = (string)watchlist["title"];
             txtTitle.OriginalText = (string)watchlist["title"];
             

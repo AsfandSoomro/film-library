@@ -18,6 +18,22 @@ namespace FilmLibrary
             heading.Text = Form2.currentMainPage;
         }
 
+        public static void ArrangeMainPanelControls(Form form)
+        {
+            Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
+            Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
+
+            Panel container = (Panel)mainPanel.Controls.Find("panelContainer", true)[0];
+
+            Size newSize = mainPanel.Size;
+
+            // Calculate the new X position of the control.
+            int newLeft = (newSize.Width - container.Width) / 2;
+
+            container.Left = newLeft;
+            container.Height = newSize.Height;
+        }
+
         public static void ShowMovies(Form form, string query)
         {
             Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
@@ -53,23 +69,6 @@ namespace FilmLibrary
             uc.Dock = DockStyle.Fill;
             mainPanel.Controls.Clear();
             mainPanel.Controls.Add(uc);
-        }
-
-        public static void ArrangeDashboardControls(Form form)
-        {
-            Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
-            Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
-
-            Panel dashboardPanel = (Panel)mainPanel.Controls.Find("panelContainer", true)[0];
-
-            Size newSize = mainPanel.Size;
-
-            // Calculate the new X position of the control.
-            int newLeft = (newSize.Width - dashboardPanel.Width) / 2;
-
-            dashboardPanel.Left = newLeft;
-            dashboardPanel.Height = newSize.Height;
-            //moviePanel.Width += newLeft/2;
         }
 
         public static void ShowHome(Form form)
@@ -163,23 +162,6 @@ namespace FilmLibrary
             foreach (Control control in mainPanel.Controls) control.Dispose();
             mainPanel.Controls.Clear();
             mainPanel.Controls.Add(uc);
-        }
-
-        public static void ArrangeMoviePageControls(Form form)
-        {
-            Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
-            Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
-
-            Panel moviePanel = (Panel)mainPanel.Controls.Find("panelContainer", true)[0];
-
-            Size newSize = mainPanel.Size;
-
-            // Calculate the new X position of the control.
-            int newLeft = (newSize.Width - moviePanel.Width) / 2;
-
-            moviePanel.Left = newLeft;
-            moviePanel.Height = newSize.Height;
-            //moviePanel.Width += newLeft/2;
         }
 
         public static FlowLayoutPanel CreateSearchedMoviesContainerFlowLayoutPanel(Form form)
@@ -298,6 +280,20 @@ namespace FilmLibrary
 
             Helpers.DisposeWatchlistButtons(publicWatchlistsPanel);
             Helpers.CreatePublicWatchlistButtons(publicWatchlistsPanel);
+        }
+
+        public static void ShowManageAddMoviePage(Form form)
+        {
+            Form2.currentMainPage = "Manage - Add Movie";
+            UpdateMainPageHeading(form);
+
+            Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
+            Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
+
+            UCAddMovie uc = new UCAddMovie();
+            uc.Dock = DockStyle.Fill;
+            mainPanel.Controls.Clear();
+            mainPanel.Controls.Add(uc);
         }
 
         public static void LogoutUser(Form form2)

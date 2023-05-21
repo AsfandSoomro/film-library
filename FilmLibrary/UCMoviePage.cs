@@ -24,7 +24,7 @@ namespace FilmLibrary
 
         private void UCMoviePage_Load(object sender, EventArgs e)
         {
-            Helpers.ArrangeMoviePageControls(this.FindForm());
+            Helpers.ArrangeMainPanelControls(this.FindForm());
 
             if (movie["cover"] != DBNull.Value) this.pbCover.Image = (Image)Utils.ByteToImage((Byte[])movie["cover"]);
             this.lblTitle.Text = (string)movie["title"];

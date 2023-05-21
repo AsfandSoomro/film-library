@@ -125,6 +125,12 @@
     <Compile Include="SidebarSubCategoryButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="UCAddMovie.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCAddMovie.Designer.cs">
+      <DependentUpon>UCAddMovie.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCCreateWatchlist.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -240,6 +246,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UCAddMovie.resx">
+      <DependentUpon>UCAddMovie.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCCreateWatchlist.resx">
       <DependentUpon>UCCreateWatchlist.cs</DependentUpon>
     </EmbeddedResource>

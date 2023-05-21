@@ -83,6 +83,11 @@ namespace FilmLibrary
             this.panelGenresContainer = new System.Windows.Forms.Panel();
             this.btnGenre = new FilmLibrary.GenreButton();
             this.ucProfileMenu = new FilmLibrary.UCProfileMenu();
+            this.btnManageMovies = new System.Windows.Forms.Button();
+            this.panelManageMoviesContainer = new System.Windows.Forms.Panel();
+            this.btnAddMovie = new FilmLibrary.SideBarSubCategoryButton();
+            this.btnUpdateMovie = new FilmLibrary.SideBarSubCategoryButton();
+            this.btnDeleteMovie = new FilmLibrary.SideBarSubCategoryButton();
             this.panelSearchBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfilePic)).BeginInit();
@@ -106,6 +111,7 @@ namespace FilmLibrary
             this.panelUserWatchlistsContainer.SuspendLayout();
             this.panelPublicWatchlistsContainer.SuspendLayout();
             this.panelGenresContainer.SuspendLayout();
+            this.panelManageMoviesContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // timerSideBarAnimate
@@ -433,11 +439,13 @@ namespace FilmLibrary
             this.flpManage.AutoSize = true;
             this.flpManage.BackColor = System.Drawing.Color.Transparent;
             this.flpManage.Controls.Add(this.lblManage);
+            this.flpManage.Controls.Add(this.btnManageMovies);
+            this.flpManage.Controls.Add(this.panelManageMoviesContainer);
             this.flpManage.Cursor = System.Windows.Forms.Cursors.Default;
             this.flpManage.Dock = System.Windows.Forms.DockStyle.Top;
             this.flpManage.Location = new System.Drawing.Point(0, 749);
             this.flpManage.Name = "flpManage";
-            this.flpManage.Size = new System.Drawing.Size(181, 49);
+            this.flpManage.Size = new System.Drawing.Size(181, 190);
             this.flpManage.TabIndex = 3;
             this.flpManage.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flpManage_MouseDown);
             // 
@@ -748,7 +756,7 @@ namespace FilmLibrary
             this.btnPublicWatchlists.Name = "btnPublicWatchlists";
             this.btnPublicWatchlists.Size = new System.Drawing.Size(198, 38);
             this.btnPublicWatchlists.TabIndex = 14;
-            this.btnPublicWatchlists.Text = "Pub Watchlists";
+            this.btnPublicWatchlists.Text = "Public Watchlists";
             this.btnPublicWatchlists.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPublicWatchlists.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPublicWatchlists.UseVisualStyleBackColor = false;
@@ -871,6 +879,99 @@ namespace FilmLibrary
             this.ucProfileMenu.TabIndex = 19;
             this.ucProfileMenu.Visible = false;
             // 
+            // btnManageMovies
+            // 
+            this.btnManageMovies.BackColor = System.Drawing.Color.Transparent;
+            this.btnManageMovies.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnManageMovies.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnManageMovies.FlatAppearance.BorderSize = 0;
+            this.btnManageMovies.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(80)))));
+            this.btnManageMovies.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManageMovies.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManageMovies.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(239)))));
+            this.btnManageMovies.Image = ((System.Drawing.Image)(resources.GetObject("btnManageMovies.Image")));
+            this.btnManageMovies.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnManageMovies.Location = new System.Drawing.Point(3, 49);
+            this.btnManageMovies.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.btnManageMovies.Name = "btnManageMovies";
+            this.btnManageMovies.Size = new System.Drawing.Size(198, 38);
+            this.btnManageMovies.TabIndex = 13;
+            this.btnManageMovies.Text = "Movies";
+            this.btnManageMovies.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnManageMovies.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnManageMovies.UseVisualStyleBackColor = false;
+            this.btnManageMovies.Click += new System.EventHandler(this.btnManageMovies_Click);
+            // 
+            // panelManageMoviesContainer
+            // 
+            this.panelManageMoviesContainer.AutoScroll = true;
+            this.panelManageMoviesContainer.BackColor = System.Drawing.Color.Transparent;
+            this.panelManageMoviesContainer.Controls.Add(this.btnDeleteMovie);
+            this.panelManageMoviesContainer.Controls.Add(this.btnUpdateMovie);
+            this.panelManageMoviesContainer.Controls.Add(this.btnAddMovie);
+            this.panelManageMoviesContainer.Enabled = false;
+            this.panelManageMoviesContainer.Location = new System.Drawing.Point(3, 87);
+            this.panelManageMoviesContainer.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.panelManageMoviesContainer.Name = "panelManageMoviesContainer";
+            this.panelManageMoviesContainer.Size = new System.Drawing.Size(180, 100);
+            this.panelManageMoviesContainer.TabIndex = 20;
+            this.panelManageMoviesContainer.Visible = false;
+            // 
+            // btnAddMovie
+            // 
+            this.btnAddMovie.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddMovie.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddMovie.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAddMovie.FlatAppearance.BorderSize = 0;
+            this.btnAddMovie.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(80)))));
+            this.btnAddMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnAddMovie.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnAddMovie.Location = new System.Drawing.Point(0, 0);
+            this.btnAddMovie.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.btnAddMovie.Name = "btnAddMovie";
+            this.btnAddMovie.Size = new System.Drawing.Size(180, 23);
+            this.btnAddMovie.TabIndex = 0;
+            this.btnAddMovie.Text = "Add";
+            this.btnAddMovie.UseVisualStyleBackColor = false;
+            this.btnAddMovie.Click += new System.EventHandler(this.btnAddMovie_Click);
+            // 
+            // btnUpdateMovie
+            // 
+            this.btnUpdateMovie.BackColor = System.Drawing.Color.Transparent;
+            this.btnUpdateMovie.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdateMovie.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUpdateMovie.FlatAppearance.BorderSize = 0;
+            this.btnUpdateMovie.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(80)))));
+            this.btnUpdateMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdateMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnUpdateMovie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(239)))));
+            this.btnUpdateMovie.Location = new System.Drawing.Point(0, 23);
+            this.btnUpdateMovie.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.btnUpdateMovie.Name = "btnUpdateMovie";
+            this.btnUpdateMovie.Size = new System.Drawing.Size(180, 23);
+            this.btnUpdateMovie.TabIndex = 1;
+            this.btnUpdateMovie.Text = "Update";
+            this.btnUpdateMovie.UseVisualStyleBackColor = false;
+            // 
+            // btnDeleteMovie
+            // 
+            this.btnDeleteMovie.BackColor = System.Drawing.Color.Transparent;
+            this.btnDeleteMovie.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteMovie.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDeleteMovie.FlatAppearance.BorderSize = 0;
+            this.btnDeleteMovie.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(80)))));
+            this.btnDeleteMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnDeleteMovie.ForeColor = System.Drawing.Color.Maroon;
+            this.btnDeleteMovie.Location = new System.Drawing.Point(0, 46);
+            this.btnDeleteMovie.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.btnDeleteMovie.Name = "btnDeleteMovie";
+            this.btnDeleteMovie.Size = new System.Drawing.Size(180, 23);
+            this.btnDeleteMovie.TabIndex = 2;
+            this.btnDeleteMovie.Text = "Delete";
+            this.btnDeleteMovie.UseVisualStyleBackColor = false;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -920,6 +1021,7 @@ namespace FilmLibrary
             this.panelUserWatchlistsContainer.ResumeLayout(false);
             this.panelPublicWatchlistsContainer.ResumeLayout(false);
             this.panelGenresContainer.ResumeLayout(false);
+            this.panelManageMoviesContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -977,5 +1079,10 @@ namespace FilmLibrary
         private GenreButton btnGenre;
         private System.Windows.Forms.Button btnDashboard;
         private UCProfileMenu ucProfileMenu;
+        private System.Windows.Forms.Button btnManageMovies;
+        private System.Windows.Forms.Panel panelManageMoviesContainer;
+        private SideBarSubCategoryButton btnDeleteMovie;
+        private SideBarSubCategoryButton btnUpdateMovie;
+        private SideBarSubCategoryButton btnAddMovie;
     }
 }

@@ -19,7 +19,7 @@ namespace FilmLibrary
 
         private async void UCDashboard_Load(object sender, EventArgs e)
         {
-            Helpers.ArrangeDashboardControls(this.FindForm());
+            Helpers.ArrangeMainPanelControls(this.FindForm());
 
             int totalMovies = (await Task.Run(() => Queries.GetCountRows("Movies")));
             lblMovies.Text = totalMovies.ToString();
