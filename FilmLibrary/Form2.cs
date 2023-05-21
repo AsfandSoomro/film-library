@@ -13,6 +13,8 @@ namespace FilmLibrary
 {
     public partial class Form2 : Form
     {
+        private Timer timerDisposeForm1;
+
         public static DataRow user;
 
         private bool isSideBarVisible;
@@ -26,10 +28,27 @@ namespace FilmLibrary
 
             Form2.user = user;
         }
-        
+
+        private void timerDisposeForm1_Tick(object sender, EventArgs e)
+        {
+            Form form1 = Application.OpenForms.OfType<Form1>().FirstOrDefault();
+            if (form1 != null)
+                //form1.Dispose();
+            this.timerDisposeForm1.Dispose();
+        }
+
         private void Form2_Load(object sender, EventArgs e)
         {
-            Helpers.ShowDashboard();
+            Form form1 = Application.OpenForms.OfType<Form1>().FirstOrDefault();
+            if (form1 != null)
+            {
+                this.timerDisposeForm1 = new Timer();
+                this.timerDisposeForm1.Enabled = true;
+                this.timerDisposeForm1.Interval = 4000;
+                this.timerDisposeForm1.Tick += new EventHandler(timerDisposeForm1_Tick);
+            }
+
+            Helpers.ShowDashboard(this);
 
             try
             {
@@ -41,6 +60,12 @@ namespace FilmLibrary
 
             this.isSideBarVisible = true;
             this.originalSideBarWidth = panelSideBar.Width;
+        }
+
+        private void Form2_Resize(object sender, EventArgs e)
+        {
+            if (this.ucProfileMenu.Visible)
+                this.UpdateProfileMenuLocation();
         }
 
         private void Form2_MouseDown(object sender, MouseEventArgs e)
@@ -63,20 +88,20 @@ namespace FilmLibrary
         private void panelMain_Resize(object sender, EventArgs e)
         {
             if (Form2.currentMainPage.IndexOf("Movie -") == 0)
-                Helpers.ArrangeMoviePageControls();
+                Helpers.ArrangeMoviePageControls(this);
             else if (Form2.currentMainPage == "Dashboard")
-                Helpers.ArrangeDashboardControls();
+                Helpers.ArrangeDashboardControls(this);
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             if (Form2.currentMainPage != "Dashboard")
-                Helpers.ShowDashboard();
+                Helpers.ShowDashboard(this);
         }
         private void btnHome_Click(object sender, EventArgs e)
         {
             if (Form2.currentMainPage != "Home")
-                Helpers.ShowHome();
+                Helpers.ShowHome(this);
         }
 
         private void btnGenres_Click(object sender, EventArgs e)
@@ -114,7 +139,7 @@ namespace FilmLibrary
             if (Form2.currentMainPage != "Create Watchlist")
             {
                 Helpers.DisposeWatchlistButtons(panelPublicWatchlistsContainer);
-                Helpers.ShowCreateWatchlistPage((int)Form2.user["user_id"]);
+                Helpers.ShowCreateWatchlistPage(this, (int)Form2.user["user_id"]);
             }
         }
 
@@ -127,7 +152,7 @@ namespace FilmLibrary
             // Dispose searched movies container first if there already is
             Helpers.DisposeSearchedMoviesContainerFlowLayoutPanel(this);
 
-            Helpers.ShowSearchedMovies(txtSearch.Text);
+            Helpers.ShowSearchedMovies(this, txtSearch.Text);
 
             txtSearch.Text = "Search";
         }
@@ -139,7 +164,7 @@ namespace FilmLibrary
 
             if(e.KeyCode == Keys.Enter)
             {
-                Helpers.ShowSearchedMovies(txtSearch.Text);
+                Helpers.ShowSearchedMovies(this, txtSearch.Text);
                 txtSearch.Text = "Search";
                 return;
             }
@@ -281,6 +306,18 @@ namespace FilmLibrary
         private void AnimateSideBarDecrease()
         {
             panelSideBar.Width -= 5;
+        }
+
+        private void UpdateProfileMenuLocation()
+        {
+            ucProfileMenu.Location = new Point(pbProfilePic.Location.X - 127, pbProfilePic.Location.Y + 53);
+        }
+
+        private void pbProfilePic_Click(object sender, EventArgs e)
+        {
+            ucProfileMenu.Visible = !ucProfileMenu.Visible;
+            if (this.ucProfileMenu.Visible)
+                this.UpdateProfileMenuLocation();
         }
     }
 }

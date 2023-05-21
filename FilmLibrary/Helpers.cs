@@ -12,16 +12,14 @@ namespace FilmLibrary
 {
     class Helpers
     {
-        public static void UpdateMainPageHeading()
+        public static void UpdateMainPageHeading(Form form)
         {
-            Form form = Application.OpenForms.OfType<Form2>().FirstOrDefault();
-
             Label heading = form.Controls.Find("lblMainPageHeading", true).FirstOrDefault() as Label;
             heading.Text = Form2.currentMainPage;
         }
-        public static void ShowMovies(string query)
+
+        public static void ShowMovies(Form form, string query)
         {
-            Form form = Application.OpenForms.OfType<Form2>().FirstOrDefault();
             Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
             Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
 
@@ -32,9 +30,8 @@ namespace FilmLibrary
             mainPanel.Controls.Add(uc);
         }
 
-        public static void ShowMoviesWithoutClear(string query)
+        public static void ShowMoviesWithoutClear(Form form, string query)
         {
-            Form form = Application.OpenForms.OfType<Form2>().FirstOrDefault();
             Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
             Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
 
@@ -44,12 +41,11 @@ namespace FilmLibrary
             mainPanel.Controls.Add(uc);
         }
 
-        public static void ShowDashboard()
+        public static void ShowDashboard(Form form)
         {
             Form2.currentMainPage = "Dashboard";
-            UpdateMainPageHeading();
+            UpdateMainPageHeading(form);
 
-            Form form = Application.OpenForms.OfType<Form2>().FirstOrDefault();
             Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
             Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
 
@@ -59,9 +55,8 @@ namespace FilmLibrary
             mainPanel.Controls.Add(uc);
         }
 
-        public static void ArrangeDashboardControls()
+        public static void ArrangeDashboardControls(Form form)
         {
-            Form form = Application.OpenForms.OfType<Form2>().FirstOrDefault();
             Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
             Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
 
@@ -77,12 +72,11 @@ namespace FilmLibrary
             //moviePanel.Width += newLeft/2;
         }
 
-        public static void ShowHome()
+        public static void ShowHome(Form form)
         {
             Form2.currentMainPage = "Home";
-            UpdateMainPageHeading();
+            UpdateMainPageHeading(form);
 
-            Form form = Application.OpenForms.OfType<Form2>().FirstOrDefault();
             Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
             Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
 
@@ -92,12 +86,11 @@ namespace FilmLibrary
             mainPanel.Controls.Add(uc);
         }
 
-        public async static void ShowSearchedMovies(string searchQuery)
+        public async static void ShowSearchedMovies(Form form, string searchQuery)
         {
             Form2.currentMainPage = String.Format("Search result for - \"{0}\"", searchQuery);
-            UpdateMainPageHeading();
+            UpdateMainPageHeading(form);
 
-            Form form = Application.OpenForms.OfType<Form2>().FirstOrDefault();
             Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
             Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
 
@@ -108,9 +101,8 @@ namespace FilmLibrary
             mainPanel.Controls.Add(uc);
         }
 
-        public static void ShowWatchlistInfoHeading(DataRow watchlist)
+        public static void ShowWatchlistInfoHeading(Form form, DataRow watchlist)
         {
-            Form form = Application.OpenForms.OfType<Form2>().FirstOrDefault();
             Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
             Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
 
@@ -120,12 +112,11 @@ namespace FilmLibrary
             mainPanel.Controls.Add(uc);
         }
 
-        public static void ShowCreateWatchlistPage(int user_id)
+        public static void ShowCreateWatchlistPage(Form form, int user_id)
         {
             Form2.currentMainPage = "Create watchlist";
-            UpdateMainPageHeading();
+            UpdateMainPageHeading(form);
 
-            Form form = Application.OpenForms.OfType<Form2>().FirstOrDefault();
             Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
             Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
 
@@ -135,12 +126,11 @@ namespace FilmLibrary
             mainPanel.Controls.Add(uc);
         }
 
-        public static void ShowUpdateWatchlistPage(DataRow watchlist)
+        public static void ShowUpdateWatchlistPage(Form form, DataRow watchlist)
         {
             Form2.currentMainPage = "Update watchlist - " + (string)watchlist["title"];
-            UpdateMainPageHeading();
+            UpdateMainPageHeading(form);
 
-            Form form = Application.OpenForms.OfType<Form2>().FirstOrDefault();
             Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
             Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
 
@@ -153,7 +143,7 @@ namespace FilmLibrary
         public static void OpenMoviePage(Form form, DataRow movie)
         {
             Form2.currentMainPage = "Movie - " + (string)movie["title"];
-            Helpers.UpdateMainPageHeading();
+            Helpers.UpdateMainPageHeading(form);
 
             // Finds the panels in the given opened instance of Form2
             Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
@@ -175,9 +165,8 @@ namespace FilmLibrary
             mainPanel.Controls.Add(uc);
         }
 
-        public static void ArrangeMoviePageControls()
+        public static void ArrangeMoviePageControls(Form form)
         {
-            Form form = Application.OpenForms.OfType<Form2>().FirstOrDefault();
             Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
             Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
 
@@ -217,9 +206,8 @@ namespace FilmLibrary
                 searchedMoviesContainerPanel.Dispose();
         }
 
-        public static void ShowAddToWatchlistsUC(int movie_id)
+        public static void ShowAddToWatchlistsUC(Form form, int movie_id)
         {
-            Form form = Application.OpenForms.OfType<Form2>().FirstOrDefault();
             Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
             Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
 
@@ -230,9 +218,8 @@ namespace FilmLibrary
             uc.BringToFront();
         }
 
-        public static void ShowAddToWatchlistsUC(int movie_id, UCMovie parentMovie)
+        public static void ShowAddToWatchlistsUC(Form form, int movie_id, UCMovie parentMovie)
         {
-            Form form = Application.OpenForms.OfType<Form2>().FirstOrDefault();
             Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
             Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
 
@@ -301,9 +288,8 @@ namespace FilmLibrary
             }
         }
 
-        public static void UpdateWatchlistsSideBar()
+        public static void UpdateWatchlistsSideBar(Form form)
         {
-            Form form = Application.OpenForms.OfType<Form2>().FirstOrDefault();
             Panel userWatchlistsPanel = form.Controls.Find("panelUserWatchlistsContainer", true).FirstOrDefault() as Panel;
             Panel publicWatchlistsPanel = form.Controls.Find("panelPublicWatchlistsContainer", true).FirstOrDefault() as Panel;
 
@@ -312,6 +298,15 @@ namespace FilmLibrary
 
             Helpers.DisposeWatchlistButtons(publicWatchlistsPanel);
             Helpers.CreatePublicWatchlistButtons(publicWatchlistsPanel);
+        }
+
+        public static void LogoutUser(Form form2)
+        {
+            form2.Hide();
+
+            Form form1 = new Form1();
+            form1.Location = form2.Location;
+            form1.Show();
         }
     }
 }

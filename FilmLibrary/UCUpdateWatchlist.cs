@@ -146,7 +146,7 @@ namespace FilmLibrary
 
                 conn.Close();
 
-                Helpers.UpdateWatchlistsSideBar();
+                Helpers.UpdateWatchlistsSideBar(this.FindForm());
 
                 MessageBox.Show("Successfully updated the watchlist.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

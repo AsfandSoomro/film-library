@@ -31,12 +31,12 @@ namespace FilmLibrary
             if (Form2.currentMainPage != "Watchlist - " + (string)this.watchlist["title"])
             {
                 Form2.currentMainPage = "Watchlist - " + (string)this.watchlist["title"];
-                Helpers.UpdateMainPageHeading();
+                Helpers.UpdateMainPageHeading(this.FindForm());
 
-                Helpers.ShowWatchlistInfoHeading(this.watchlist);
+                Helpers.ShowWatchlistInfoHeading(this.FindForm(), this.watchlist);
 
                 string query = String.Format("SELECT Movies.movie_id, Movies.cover FROM Movies JOIN Watchlists_Movies ON Movies.movie_id = Watchlists_Movies.movie_id WHERE Watchlists_Movies.watchlist_id = {0} AND @CONDITIONS", this.watchlist["watchlist_id"]);
-                Helpers.ShowMoviesWithoutClear(query);
+                Helpers.ShowMoviesWithoutClear(this.FindForm(), query);
             }
         }
     }

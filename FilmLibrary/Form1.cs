@@ -12,6 +12,8 @@ namespace FilmLibrary
 {
     public partial class Form1 : Form
     {
+        private Timer timerDisposeForm2;
+
         // Flags
         private bool flgCenterControls = false;
 
@@ -20,8 +22,25 @@ namespace FilmLibrary
             InitializeComponent();
         }
 
+        private void timerDisposeForm2_Tick(object sender, EventArgs e)
+        {
+            Form form2 = Application.OpenForms.OfType<Form2>().FirstOrDefault();
+            if (form2 != null)
+                //form2.Dispose();
+            this.timerDisposeForm2.Dispose();
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
+            Form form2 = Application.OpenForms.OfType<Form2>().FirstOrDefault();
+            if (form2 != null)
+            {
+                this.timerDisposeForm2 = new Timer();
+                this.timerDisposeForm2.Enabled = true;
+                this.timerDisposeForm2.Interval = 4000;
+                this.timerDisposeForm2.Tick += new EventHandler(timerDisposeForm2_Tick);
+            }
+
             UCStartPage uc = new UCStartPage();
            // uc.Dock = DockStyle.Fill;
             //uc.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;

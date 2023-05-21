@@ -24,7 +24,7 @@ namespace FilmLibrary
 
         private void UCMoviePage_Load(object sender, EventArgs e)
         {
-            Helpers.ArrangeMoviePageControls();
+            Helpers.ArrangeMoviePageControls(this.FindForm());
 
             if (movie["cover"] != DBNull.Value) this.pbCover.Image = (Image)Utils.ByteToImage((Byte[])movie["cover"]);
             this.lblTitle.Text = (string)movie["title"];
@@ -45,7 +45,7 @@ namespace FilmLibrary
 
         private void btnAddToWatchlist_Click(object sender, EventArgs e)
         {
-            Helpers.ShowAddToWatchlistsUC((int)movie["movie_id"]);
+            Helpers.ShowAddToWatchlistsUC(this.FindForm(), (int)movie["movie_id"]);
         }
 
         private async void FillGenres()

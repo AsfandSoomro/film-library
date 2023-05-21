@@ -51,7 +51,7 @@ namespace FilmLibrary
             {
                 this.isAddToWatchlistButtonClicked = true;
 
-                Helpers.ShowAddToWatchlistsUC(movie_id, this);
+                Helpers.ShowAddToWatchlistsUC(this.FindForm(), movie_id, this);
             }
         }
     }

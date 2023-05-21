@@ -32,10 +32,10 @@ namespace FilmLibrary
             if (Form2.currentMainPage != "Genre - " + (string)this.genre["name"])
             {
                 Form2.currentMainPage = "Genre - " + (string)this.genre["name"];
-                Helpers.UpdateMainPageHeading();
+                Helpers.UpdateMainPageHeading(this.FindForm());
 
                 string query = String.Format("SELECT Movies.movie_id, Movies.cover FROM Movies JOIN Movies_Genres ON Movies.movie_id = Movies_Genres.movie_id WHERE Movies_Genres.genre_id = {0} AND @CONDITIONS", this.genre["genre_id"]);
-                Helpers.ShowMovies(query);
+                Helpers.ShowMovies(this.FindForm(), query);
             }
         }
     }

@@ -54,7 +54,7 @@ namespace FilmLibrary
         private void btnEdit_Click(object sender, EventArgs e)
         {
             if (Form2.currentMainPage != "Update watchlist - " + (string)watchlist["title"])
-                Helpers.ShowUpdateWatchlistPage(watchlist);
+                Helpers.ShowUpdateWatchlistPage(this.FindForm(), watchlist);
         }
     }
 }

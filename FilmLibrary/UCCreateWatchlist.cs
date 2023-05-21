@@ -89,7 +89,7 @@ namespace FilmLibrary
 
                 conn.Close();
 
-                Helpers.UpdateWatchlistsSideBar();
+                Helpers.UpdateWatchlistsSideBar(this.FindForm());
 
                 MessageBox.Show("Successfully created the watchlist.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
