@@ -60,6 +60,12 @@ namespace FilmLibrary
             Helpers.DisposeAddToWatchlistsUC(this);
         }
 
+        private void panelMain_Resize(object sender, EventArgs e)
+        {
+            if (Form2.currentMainPage.Contains("Movie"))
+                Helpers.ArrangeMoviePageControls();
+        }
+
         private void btnHome_Click(object sender, EventArgs e)
         {
             if (Form2.currentMainPage != "Home")
@@ -71,7 +77,7 @@ namespace FilmLibrary
             panelGenresContainer.Enabled = !panelGenresContainer.Enabled;
             panelGenresContainer.Visible = !panelGenresContainer.Visible;
             
-            if(panelGenresContainer.Controls.Count < 2)
+            if(panelGenresContainer.Controls.Count <= 1)
                 Helpers.CreateGenreButtons(panelGenresContainer);
         }
 
@@ -80,7 +86,7 @@ namespace FilmLibrary
             panelUserWatchlistsContainer.Enabled = !panelUserWatchlistsContainer.Enabled;
             panelUserWatchlistsContainer.Visible = !panelUserWatchlistsContainer.Visible;
 
-            if (panelUserWatchlistsContainer.Controls.Count < 3)
+            if (panelUserWatchlistsContainer.Controls.Count <= 2)
                 Helpers.CreateUserWatchlistButtons(panelUserWatchlistsContainer, (int)Form2.user["user_id"]);
         }
 
@@ -89,14 +95,20 @@ namespace FilmLibrary
             panelPublicWatchlistsContainer.Enabled = !panelPublicWatchlistsContainer.Enabled;
             panelPublicWatchlistsContainer.Visible = !panelPublicWatchlistsContainer.Visible;
 
-            if (panelPublicWatchlistsContainer.Controls.Count < 3)
+            if (panelPublicWatchlistsContainer.Controls.Count <= 2)
+            {
+                Helpers.DisposeWatchlistButtons(panelPublicWatchlistsContainer);
                 Helpers.CreatePublicWatchlistButtons(panelPublicWatchlistsContainer);
+            }
         }
 
         private void btnCreateWatchlist_Click(object sender, EventArgs e)
         {
             if (Form2.currentMainPage != "Create Watchlist")
+            {
+                Helpers.DisposeWatchlistButtons(panelPublicWatchlistsContainer);
                 Helpers.ShowCreateWatchlistPage((int)Form2.user["user_id"]);
+            }
         }
 
         private void btnCreateWatchlist2_Click(object sender, EventArgs e)

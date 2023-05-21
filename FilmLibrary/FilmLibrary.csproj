@@ -137,17 +137,17 @@
     <Compile Include="UCMovie.Designer.cs">
       <DependentUpon>UCMovie.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCMoviePage.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCMoviePage.Designer.cs">
-      <DependentUpon>UCMoviePage.cs</DependentUpon>
-    </Compile>
     <Compile Include="UCMovies.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UCMovies.Designer.cs">
       <DependentUpon>UCMovies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCMoviePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCMoviePage.Designer.cs">
+      <DependentUpon>UCMoviePage.cs</DependentUpon>
     </Compile>
     <Compile Include="UCSearchedMovie.cs">
       <SubType>UserControl</SubType>
@@ -234,11 +234,11 @@
     <EmbeddedResource Include="UCMovie.resx">
       <DependentUpon>UCMovie.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UCMoviePage.resx">
-      <DependentUpon>UCMoviePage.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UCMovies.resx">
       <DependentUpon>UCMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCMoviePage.resx">
+      <DependentUpon>UCMoviePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCSearchedMovie.resx">
       <DependentUpon>UCSearchedMovie.cs</DependentUpon>

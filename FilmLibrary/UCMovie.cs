@@ -49,23 +49,9 @@ namespace FilmLibrary
         {
             if (this.isAddToWatchlistButtonClicked == false)
             {
-                //Panel panelContainer = new Panel();
-                //panelContainer.BackColor = Color.FromArgb(50, 128, 128, 128);
-                //panelContainer.Dock = DockStyle.Fill;
-
                 this.isAddToWatchlistButtonClicked = true;
 
-                UCUserWatchlists uc = new UCUserWatchlists(movie_id, this);
-
-                //panelContainer.Controls.Add(uc);
-
-                Form form = Application.OpenForms.OfType<Form2>().FirstOrDefault();
-                Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
-                Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
-
-                mainPanel.Controls.Add(uc);
-                Utils.CenterControl(uc, form);
-                uc.BringToFront();
+                Helpers.ShowAddToWatchlistsUC(movie_id, this);
             }
         }
     }

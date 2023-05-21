@@ -42,11 +42,13 @@ namespace FilmLibrary
             // 
             // panelSearchedMovie
             // 
+            this.panelSearchedMovie.AutoSize = true;
             this.panelSearchedMovie.BackColor = System.Drawing.Color.Transparent;
             this.panelSearchedMovie.Controls.Add(this.flpTitleAndYear);
             this.panelSearchedMovie.Controls.Add(this.pbCover);
             this.panelSearchedMovie.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelSearchedMovie.Location = new System.Drawing.Point(3, 0);
+            this.panelSearchedMovie.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelSearchedMovie.Location = new System.Drawing.Point(0, 0);
             this.panelSearchedMovie.Name = "panelSearchedMovie";
             this.panelSearchedMovie.Size = new System.Drawing.Size(547, 82);
             this.panelSearchedMovie.TabIndex = 5;
@@ -108,6 +110,7 @@ namespace FilmLibrary
             this.flpTitleAndYear.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCover)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

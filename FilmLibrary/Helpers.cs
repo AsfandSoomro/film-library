@@ -142,6 +142,24 @@ namespace FilmLibrary
             mainPanel.Controls.Add(uc);
         }
 
+        public static void ArrangeMoviePageControls()
+        {
+            Form form = Application.OpenForms.OfType<Form2>().FirstOrDefault();
+            Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
+            Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
+
+            Panel moviePanel = (Panel)mainPanel.Controls.Find("panelContainer", true)[0];
+
+            Size newSize = mainPanel.Size;
+
+            // Calculate the new X position of the control.
+            int newLeft = (newSize.Width - moviePanel.Width) / 2;
+
+            moviePanel.Left = newLeft;
+            moviePanel.Height = newSize.Height;
+            //moviePanel.Width += newLeft/2;
+        }
+
         public static FlowLayoutPanel CreateSearchedMoviesContainerFlowLayoutPanel(Form form)
         {
             TextBox txtSearch = form.Controls.Find("txtSearch", true).FirstOrDefault() as TextBox;
@@ -166,6 +184,32 @@ namespace FilmLibrary
                 searchedMoviesContainerPanel.Dispose();
         }
 
+        public static void ShowAddToWatchlistsUC(int movie_id)
+        {
+            Form form = Application.OpenForms.OfType<Form2>().FirstOrDefault();
+            Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
+            Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
+
+            UCUserWatchlists uc = new UCUserWatchlists(movie_id);
+
+            mainPanel.Controls.Add(uc);
+            Utils.CenterControl(uc, form);
+            uc.BringToFront();
+        }
+
+        public static void ShowAddToWatchlistsUC(int movie_id, UCMovie parentMovie)
+        {
+            Form form = Application.OpenForms.OfType<Form2>().FirstOrDefault();
+            Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
+            Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
+
+            UCUserWatchlists uc = new UCUserWatchlists(movie_id, parentMovie);
+
+            mainPanel.Controls.Add(uc);
+            Utils.CenterControl(uc, form);
+            uc.BringToFront();
+        }
+
         public static void DisposeAddToWatchlistsUC(Form form)
         {
             // Finds AddToWatchlists UserControl
@@ -173,7 +217,8 @@ namespace FilmLibrary
             if (addToWatchlistsUC != null)
             {
                 UCUserWatchlists uc = (UCUserWatchlists)addToWatchlistsUC;
-                uc.parentMovie.isAddToWatchlistButtonClicked = false;
+                if(uc.parentMovie != null)
+                    uc.parentMovie.isAddToWatchlistButtonClicked = false;
                 addToWatchlistsUC.Dispose();
             }
         }
@@ -217,7 +262,8 @@ namespace FilmLibrary
             {
                 if (btn is WatchlistButton)
                 {
-                    btn.Dispose();
+                    WatchlistButton watchlistButton = (WatchlistButton)btn;
+                    watchlistButton.Dispose();
                 }
             }
         }

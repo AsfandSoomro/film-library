@@ -27,7 +27,8 @@ namespace FilmLibrary
             this.lblReleaseYear.Text = "(" + release_year.ToString() + ")";
             this.pbCover.Image = cover;
 
-            this.MakeChildControlsInheritEvents();
+            this.MakeChildControlsInheritEvents(this.panelSearchedMovie);
+            this.MakeChildControlsInheritEvents(this.flpTitleAndYear);
         }
 
         private void panelSearchedMovie_MouseEnter(object sender, EventArgs e)
@@ -42,15 +43,6 @@ namespace FilmLibrary
             this.panelSearchedMovie.BackColor = Color.Transparent;
         }
 
-        private void MakeChildControlsInheritEvents()
-        {
-            foreach (Control control in this.panelSearchedMovie.Controls)
-            {
-                control.MouseEnter += this.panelSearchedMovie_MouseEnter;
-                control.MouseLeave += this.panelSearchedMovie_MouseLeave;
-            }
-        }
-
         private async void panelSearchedMovie_Click(object sender, EventArgs e)
         {
             // Get the movie data and store in move attribute
@@ -58,6 +50,15 @@ namespace FilmLibrary
             DataRow movie = (DataRow)(await Queries.GetDataTable("Movies", query)).Rows[0];
 
             Helpers.OpenMoviePage(this.FindForm(), movie);
+        }
+
+        private void MakeChildControlsInheritEvents(Panel panel)
+        {
+            foreach (Control control in panel.Controls)
+            {
+                control.MouseEnter += this.panelSearchedMovie_MouseEnter;
+                control.MouseLeave += this.panelSearchedMovie_MouseLeave;
+            }
         }
     }
 }
