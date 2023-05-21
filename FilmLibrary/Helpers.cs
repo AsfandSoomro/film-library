@@ -44,6 +44,39 @@ namespace FilmLibrary
             mainPanel.Controls.Add(uc);
         }
 
+        public static void ShowDashboard()
+        {
+            Form2.currentMainPage = "Dashboard";
+            UpdateMainPageHeading();
+
+            Form form = Application.OpenForms.OfType<Form2>().FirstOrDefault();
+            Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
+            Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
+
+            UCDashboard uc = new UCDashboard(); 
+            uc.Dock = DockStyle.Fill;
+            mainPanel.Controls.Clear();
+            mainPanel.Controls.Add(uc);
+        }
+
+        public static void ArrangeDashboardControls()
+        {
+            Form form = Application.OpenForms.OfType<Form2>().FirstOrDefault();
+            Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
+            Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
+
+            Panel dashboardPanel = (Panel)mainPanel.Controls.Find("panelContainer", true)[0];
+
+            Size newSize = mainPanel.Size;
+
+            // Calculate the new X position of the control.
+            int newLeft = (newSize.Width - dashboardPanel.Width) / 2;
+
+            dashboardPanel.Left = newLeft;
+            dashboardPanel.Height = newSize.Height;
+            //moviePanel.Width += newLeft/2;
+        }
+
         public static void ShowHome()
         {
             Form2.currentMainPage = "Home";

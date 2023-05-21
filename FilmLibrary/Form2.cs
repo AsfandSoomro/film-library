@@ -29,7 +29,7 @@ namespace FilmLibrary
         
         private void Form2_Load(object sender, EventArgs e)
         {
-            Helpers.ShowHome();
+            Helpers.ShowDashboard();
 
             try
             {
@@ -62,10 +62,17 @@ namespace FilmLibrary
 
         private void panelMain_Resize(object sender, EventArgs e)
         {
-            if (Form2.currentMainPage.Contains("Movie"))
+            if (Form2.currentMainPage.IndexOf("Movie -") == 0)
                 Helpers.ArrangeMoviePageControls();
+            else if (Form2.currentMainPage == "Dashboard")
+                Helpers.ArrangeDashboardControls();
         }
 
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            if (Form2.currentMainPage != "Dashboard")
+                Helpers.ShowDashboard();
+        }
         private void btnHome_Click(object sender, EventArgs e)
         {
             if (Form2.currentMainPage != "Home")

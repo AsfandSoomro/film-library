@@ -81,6 +81,7 @@ namespace FilmLibrary
             this.btnGenres = new System.Windows.Forms.Button();
             this.panelGenresContainer = new System.Windows.Forms.Panel();
             this.btnGenre = new FilmLibrary.GenreButton();
+            this.btnDashboard = new System.Windows.Forms.Button();
             this.panelSearchBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfilePic)).BeginInit();
@@ -432,7 +433,7 @@ namespace FilmLibrary
             this.flpManage.Controls.Add(this.lblManage);
             this.flpManage.Cursor = System.Windows.Forms.Cursors.Default;
             this.flpManage.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flpManage.Location = new System.Drawing.Point(0, 711);
+            this.flpManage.Location = new System.Drawing.Point(0, 749);
             this.flpManage.Name = "flpManage";
             this.flpManage.Size = new System.Drawing.Size(181, 49);
             this.flpManage.TabIndex = 3;
@@ -463,7 +464,7 @@ namespace FilmLibrary
             this.flpSettings.Controls.Add(this.btnPrivacy);
             this.flpSettings.Cursor = System.Windows.Forms.Cursors.Default;
             this.flpSettings.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flpSettings.Location = new System.Drawing.Point(0, 510);
+            this.flpSettings.Location = new System.Drawing.Point(0, 548);
             this.flpSettings.Name = "flpSettings";
             this.flpSettings.Size = new System.Drawing.Size(181, 201);
             this.flpSettings.TabIndex = 2;
@@ -576,6 +577,7 @@ namespace FilmLibrary
             this.flpMenu.AutoSize = true;
             this.flpMenu.BackColor = System.Drawing.Color.Transparent;
             this.flpMenu.Controls.Add(this.lblMenu);
+            this.flpMenu.Controls.Add(this.btnDashboard);
             this.flpMenu.Controls.Add(this.btnHome);
             this.flpMenu.Controls.Add(this.btnMyWatchlists);
             this.flpMenu.Controls.Add(this.panelUserWatchlistsContainer);
@@ -587,7 +589,7 @@ namespace FilmLibrary
             this.flpMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.flpMenu.Location = new System.Drawing.Point(0, 0);
             this.flpMenu.Name = "flpMenu";
-            this.flpMenu.Size = new System.Drawing.Size(181, 510);
+            this.flpMenu.Size = new System.Drawing.Size(181, 548);
             this.flpMenu.TabIndex = 1;
             this.flpMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flpMenu_MouseDown);
             // 
@@ -617,7 +619,7 @@ namespace FilmLibrary
             this.btnHome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(239)))));
             this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
             this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.Location = new System.Drawing.Point(3, 49);
+            this.btnHome.Location = new System.Drawing.Point(3, 87);
             this.btnHome.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(198, 38);
@@ -640,7 +642,7 @@ namespace FilmLibrary
             this.btnMyWatchlists.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(239)))));
             this.btnMyWatchlists.Image = ((System.Drawing.Image)(resources.GetObject("btnMyWatchlists.Image")));
             this.btnMyWatchlists.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMyWatchlists.Location = new System.Drawing.Point(3, 87);
+            this.btnMyWatchlists.Location = new System.Drawing.Point(3, 125);
             this.btnMyWatchlists.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.btnMyWatchlists.Name = "btnMyWatchlists";
             this.btnMyWatchlists.Size = new System.Drawing.Size(198, 38);
@@ -658,7 +660,7 @@ namespace FilmLibrary
             this.panelUserWatchlistsContainer.Controls.Add(this.watchlistButton1);
             this.panelUserWatchlistsContainer.Controls.Add(this.btnCreateWatchlist);
             this.panelUserWatchlistsContainer.Enabled = false;
-            this.panelUserWatchlistsContainer.Location = new System.Drawing.Point(3, 125);
+            this.panelUserWatchlistsContainer.Location = new System.Drawing.Point(3, 163);
             this.panelUserWatchlistsContainer.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.panelUserWatchlistsContainer.Name = "panelUserWatchlistsContainer";
             this.panelUserWatchlistsContainer.Size = new System.Drawing.Size(180, 100);
@@ -716,7 +718,7 @@ namespace FilmLibrary
             this.btnPublicWatchlists.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(239)))));
             this.btnPublicWatchlists.Image = ((System.Drawing.Image)(resources.GetObject("btnPublicWatchlists.Image")));
             this.btnPublicWatchlists.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPublicWatchlists.Location = new System.Drawing.Point(3, 228);
+            this.btnPublicWatchlists.Location = new System.Drawing.Point(3, 266);
             this.btnPublicWatchlists.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.btnPublicWatchlists.Name = "btnPublicWatchlists";
             this.btnPublicWatchlists.Size = new System.Drawing.Size(198, 38);
@@ -734,7 +736,7 @@ namespace FilmLibrary
             this.panelPublicWatchlistsContainer.Controls.Add(this.watchlistButton2);
             this.panelPublicWatchlistsContainer.Controls.Add(this.btnCreateWatchlist2);
             this.panelPublicWatchlistsContainer.Enabled = false;
-            this.panelPublicWatchlistsContainer.Location = new System.Drawing.Point(3, 266);
+            this.panelPublicWatchlistsContainer.Location = new System.Drawing.Point(3, 304);
             this.panelPublicWatchlistsContainer.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.panelPublicWatchlistsContainer.Name = "panelPublicWatchlistsContainer";
             this.panelPublicWatchlistsContainer.Size = new System.Drawing.Size(180, 100);
@@ -792,7 +794,7 @@ namespace FilmLibrary
             this.btnGenres.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(239)))));
             this.btnGenres.Image = ((System.Drawing.Image)(resources.GetObject("btnGenres.Image")));
             this.btnGenres.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGenres.Location = new System.Drawing.Point(3, 369);
+            this.btnGenres.Location = new System.Drawing.Point(3, 407);
             this.btnGenres.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.btnGenres.Name = "btnGenres";
             this.btnGenres.Size = new System.Drawing.Size(198, 38);
@@ -809,7 +811,7 @@ namespace FilmLibrary
             this.panelGenresContainer.BackColor = System.Drawing.Color.Transparent;
             this.panelGenresContainer.Controls.Add(this.btnGenre);
             this.panelGenresContainer.Enabled = false;
-            this.panelGenresContainer.Location = new System.Drawing.Point(3, 407);
+            this.panelGenresContainer.Location = new System.Drawing.Point(3, 445);
             this.panelGenresContainer.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.panelGenresContainer.Name = "panelGenresContainer";
             this.panelGenresContainer.Size = new System.Drawing.Size(180, 100);
@@ -834,6 +836,29 @@ namespace FilmLibrary
             this.btnGenre.Text = "Genre";
             this.btnGenre.UseVisualStyleBackColor = false;
             this.btnGenre.Visible = false;
+            // 
+            // btnDashboard
+            // 
+            this.btnDashboard.BackColor = System.Drawing.Color.Transparent;
+            this.btnDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDashboard.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDashboard.FlatAppearance.BorderSize = 0;
+            this.btnDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(80)))));
+            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(239)))));
+            this.btnDashboard.Image = ((System.Drawing.Image)(resources.GetObject("btnDashboard.Image")));
+            this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDashboard.Location = new System.Drawing.Point(3, 49);
+            this.btnDashboard.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Size = new System.Drawing.Size(198, 38);
+            this.btnDashboard.TabIndex = 8;
+            this.btnDashboard.Text = "Dashboard";
+            this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDashboard.UseVisualStyleBackColor = false;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
             // Form2
             // 
@@ -937,5 +962,6 @@ namespace FilmLibrary
         private System.Windows.Forms.Button btnGenres;
         private System.Windows.Forms.Panel panelGenresContainer;
         private GenreButton btnGenre;
+        private System.Windows.Forms.Button btnDashboard;
     }
 }

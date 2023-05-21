@@ -131,6 +131,12 @@
     <Compile Include="UCCreateWatchlist.Designer.cs">
       <DependentUpon>UCCreateWatchlist.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCDashboard.Designer.cs">
+      <DependentUpon>UCDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCMovie.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -230,6 +236,9 @@
     </Compile>
     <EmbeddedResource Include="UCCreateWatchlist.resx">
       <DependentUpon>UCCreateWatchlist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCDashboard.resx">
+      <DependentUpon>UCDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCMovie.resx">
       <DependentUpon>UCMovie.cs</DependentUpon>
