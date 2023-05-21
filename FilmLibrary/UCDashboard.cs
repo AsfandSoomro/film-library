@@ -19,6 +19,8 @@ namespace FilmLibrary
 
         private async void UCDashboard_Load(object sender, EventArgs e)
         {
+            Helpers.ArrangeDashboardControls();
+
             int totalMovies = (await Task.Run(() => Queries.GetCountRows("Movies")));
             lblMovies.Text = totalMovies.ToString();
             lblUsers.Text = (await Task.Run(() => Queries.GetCountRows("Users", "status = 'user'"))).ToString();

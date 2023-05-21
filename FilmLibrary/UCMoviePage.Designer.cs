@@ -135,6 +135,7 @@ namespace FilmLibrary
             // 
             // flowLayoutPanel4
             // 
+            this.flowLayoutPanel4.AutoScroll = true;
             this.flowLayoutPanel4.Controls.Add(this.lblWriter);
             this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -169,6 +170,7 @@ namespace FilmLibrary
             // 
             // flowLayoutPanel5
             // 
+            this.flowLayoutPanel5.AutoScroll = true;
             this.flowLayoutPanel5.Controls.Add(this.lblCast);
             this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -203,6 +205,7 @@ namespace FilmLibrary
             // 
             // flowLayoutPanel3
             // 
+            this.flowLayoutPanel3.AutoScroll = true;
             this.flowLayoutPanel3.Controls.Add(this.lblProducer);
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -456,9 +459,9 @@ namespace FilmLibrary
             // 
             this.flpBoxOffice.BackColor = System.Drawing.Color.Transparent;
             this.flpBoxOffice.Controls.Add(this.lblBoxOffice);
-            this.flpBoxOffice.Location = new System.Drawing.Point(84, 0);
+            this.flpBoxOffice.Location = new System.Drawing.Point(91, 0);
             this.flpBoxOffice.Name = "flpBoxOffice";
-            this.flpBoxOffice.Size = new System.Drawing.Size(376, 46);
+            this.flpBoxOffice.Size = new System.Drawing.Size(369, 46);
             this.flpBoxOffice.TabIndex = 16;
             // 
             // lblBoxOffice
@@ -479,7 +482,7 @@ namespace FilmLibrary
             this.panel4.Controls.Add(this.flpDirectorsContainer);
             this.panel4.Location = new System.Drawing.Point(3, 245);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(460, 46);
+            this.panel4.Size = new System.Drawing.Size(460, 51);
             this.panel4.TabIndex = 29;
             // 
             // lblDirectorMain
@@ -528,7 +531,7 @@ namespace FilmLibrary
             this.btnAddToWatchlist.ForeColor = System.Drawing.Color.White;
             this.btnAddToWatchlist.Image = ((System.Drawing.Image)(resources.GetObject("btnAddToWatchlist.Image")));
             this.btnAddToWatchlist.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddToWatchlist.Location = new System.Drawing.Point(288, 398);
+            this.btnAddToWatchlist.Location = new System.Drawing.Point(288, 392);
             this.btnAddToWatchlist.Name = "btnAddToWatchlist";
             this.btnAddToWatchlist.Size = new System.Drawing.Size(176, 32);
             this.btnAddToWatchlist.TabIndex = 10;

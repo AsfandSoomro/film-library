@@ -31,6 +31,9 @@ namespace FilmLibrary
         {
             this.lblTitle.Text = (string)watchlist["title"];
 
+            if (this.watchlist["cover"] != DBNull.Value)
+                pbCover.Image = Utils.ByteToImage((Byte[])this.watchlist["cover"]);
+
             // Check if movie is already in the watchlist by getting the row count
             int countRows = await Queries.GetCountRows("Watchlists_Movies", String.Format("watchlist_id = {0} AND movie_id = {1}", (int)watchlist["watchlist_id"], movie_id));
 
