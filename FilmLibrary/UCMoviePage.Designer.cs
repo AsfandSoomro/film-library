@@ -518,11 +518,11 @@ namespace FilmLibrary
             // 
             // btnAddToWatchlist
             // 
-            this.btnAddToWatchlist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(125)))), ((int)(((byte)(166)))));
+            this.btnAddToWatchlist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(125)))), ((int)(((byte)(166)))));
             this.btnAddToWatchlist.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddToWatchlist.FlatAppearance.BorderSize = 0;
-            this.btnAddToWatchlist.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(125)))), ((int)(((byte)(166)))));
-            this.btnAddToWatchlist.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(206)))));
+            this.btnAddToWatchlist.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(125)))), ((int)(((byte)(166)))));
+            this.btnAddToWatchlist.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(206)))));
             this.btnAddToWatchlist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddToWatchlist.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddToWatchlist.ForeColor = System.Drawing.Color.White;

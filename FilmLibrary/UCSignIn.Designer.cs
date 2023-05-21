@@ -43,6 +43,8 @@ namespace FilmLibrary
             this.btnSignIn2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSignIn2.Enabled = false;
             this.btnSignIn2.FlatAppearance.BorderSize = 0;
+            this.btnSignIn2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(125)))), ((int)(((byte)(166)))));
+            this.btnSignIn2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(165)))), ((int)(((byte)(206)))));
             this.btnSignIn2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSignIn2.Font = new System.Drawing.Font("Sylfaen", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignIn2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
