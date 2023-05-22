@@ -10,12 +10,12 @@ namespace FilmLibrary
 {
     class AddButton : Button
     {
-        string imagePath = "F:\\Uni Class Stuff\\Part IV\\7th Semester\\Visual Programming\\Project\\FilmLibrary\\images\\add-button.png";
+        //string imagePath = "F:\\Uni Class Stuff\\Part IV\\7th Semester\\Visual Programming\\Project\\FilmLibrary\\images\\add-button.png";
 
         public AddButton()
         {
             this.Text = "";
-            this.BackgroundImage = new Bitmap(imagePath);
+            this.BackgroundImage = (Image)Properties.Resources.ResourceManager.GetObject("add");
             this.BackgroundImageLayout = ImageLayout.Stretch;
             this.FlatStyle = FlatStyle.Flat;
             this.FlatAppearance.BorderSize = 0;

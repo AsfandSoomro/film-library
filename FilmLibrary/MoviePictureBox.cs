@@ -12,7 +12,7 @@ namespace FilmLibrary
 {
     class MoviePictureBox : PictureBox
     {
-        private static string DefaultMovieImagePath = @"F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\Project\FilmLibrary\images\Braveheart.jpg";
+        //private static string DefaultMovieImagePath = @"F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\Project\FilmLibrary\images\Braveheart.jpg";
         public Image OriginalImage;
         public int movie_id;
         public DataRow movie;
@@ -26,7 +26,7 @@ namespace FilmLibrary
             this.Cursor = Cursors.Hand;
             if (this.OriginalImage == null)
             {
-                this.Image = new Bitmap(DefaultMovieImagePath);
+                this.Image = (Image)Properties.Resources.ResourceManager.GetObject("BraveHheart");
                 this.OriginalImage = this.Image;
             }
 
@@ -52,8 +52,11 @@ namespace FilmLibrary
         // Default Mouse Hover Event
         private void MoviePictureBox_MouseEnter(object sender, EventArgs e)
         {
-            this.BorderStyle = BorderStyle.Fixed3D;
-            this.Image = Utils.ZoomIn((Bitmap)this.Image, 80);
+            if (this.Image != null)
+            {
+                this.BorderStyle = BorderStyle.Fixed3D;
+                this.Image = Utils.ZoomIn((Bitmap)this.Image, 80);
+            }
 
             try
             {
@@ -69,8 +72,11 @@ namespace FilmLibrary
         // Default Mouse Leave Event
         private void MoviePictureBox_MouseLeave(object sender, EventArgs e)
         {
-            this.Image = OriginalImage;
-            this.BorderStyle = BorderStyle.FixedSingle;
+            if (this.Image != null)
+            {
+                this.Image = OriginalImage;
+                this.BorderStyle = BorderStyle.FixedSingle;
+            }
 
             try
             {

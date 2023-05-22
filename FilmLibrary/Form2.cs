@@ -60,6 +60,13 @@ namespace FilmLibrary
 
             this.isSideBarVisible = true;
             this.originalSideBarWidth = panelSideBar.Width;
+
+            string userStatus = user["status"].ToString();
+            if (userStatus == "admin" || userStatus == "owner")
+            {
+                flpManage.Enabled = true;
+                flpManage.Visible = true;
+            }
         }
 
         private void Form2_Resize(object sender, EventArgs e)
@@ -98,6 +105,8 @@ namespace FilmLibrary
             else if (Form2.currentMainPage == "Manage - Add Movie")
                 Helpers.ArrangeMainPanelControls(this);
             else if (Form2.currentMainPage == "Manage - Update Movie")
+                Helpers.ArrangeMainPanelControls(this);
+            else if (Form2.currentMainPage == "Profile")
                 Helpers.ArrangeMainPanelControls(this);
         }
 

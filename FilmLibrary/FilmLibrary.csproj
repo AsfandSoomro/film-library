@@ -167,6 +167,12 @@
     <Compile Include="UCProfileMenu.Designer.cs">
       <DependentUpon>UCProfileMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCProfilePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCProfilePage.Designer.cs">
+      <DependentUpon>UCProfilePage.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCSearchedMovie.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -251,6 +257,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UCAddMovie.resx">
       <DependentUpon>UCAddMovie.cs</DependentUpon>
@@ -272,6 +279,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCProfileMenu.resx">
       <DependentUpon>UCProfileMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCProfilePage.resx">
+      <DependentUpon>UCProfilePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCSearchedMovie.resx">
       <DependentUpon>UCSearchedMovie.cs</DependentUpon>
@@ -328,6 +338,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\add.png" />
+    <None Include="Resources\star.png" />
+    <None Include="Resources\remove.png" />
+    <None Include="Resources\Braveheart.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

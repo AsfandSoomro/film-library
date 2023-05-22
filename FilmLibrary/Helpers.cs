@@ -34,6 +34,24 @@ namespace FilmLibrary
             container.Height = newSize.Height;
         }
 
+        public static void ShowProfilePage(Form form)
+        {
+            Form2.currentMainPage = "Profile";
+            UpdateMainPageHeading(form);
+
+            UCProfileMenu menu = form.Controls.Find("ucProfileMenu", true).FirstOrDefault() as UCProfileMenu;
+            menu.Visible = false;
+
+            Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
+            Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
+
+            UCProfilePage uc = new UCProfilePage();
+            uc.Dock = DockStyle.Fill;
+            mainPanel.Controls.Clear();
+            Utils.DisposeControlsInPanel(mainPanel);
+            mainPanel.Controls.Add(uc);
+        }
+
         public static void ShowMovies(Form form, string query)
         {
             Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
@@ -43,6 +61,7 @@ namespace FilmLibrary
             UCMovies uc = new UCMovies(query);
             uc.Dock = DockStyle.Fill;
             mainPanel.Controls.Clear();
+            Utils.DisposeControlsInPanel(mainPanel);
             mainPanel.Controls.Add(uc);
         }
 
@@ -68,6 +87,7 @@ namespace FilmLibrary
             UCDashboard uc = new UCDashboard(); 
             uc.Dock = DockStyle.Fill;
             mainPanel.Controls.Clear();
+            Utils.DisposeControlsInPanel(mainPanel);
             mainPanel.Controls.Add(uc);
         }
 
@@ -82,6 +102,7 @@ namespace FilmLibrary
             UCMovies uc = new UCMovies("SELECT @LIMIT movie_id, cover FROM Movies WHERE @CONDITIONS");
             uc.Dock = DockStyle.Fill;
             mainPanel.Controls.Clear();
+            Utils.DisposeControlsInPanel(mainPanel);
             mainPanel.Controls.Add(uc);
         }
 
@@ -95,8 +116,10 @@ namespace FilmLibrary
 
             DataTable movies = await Task.Run(() => Queries.GetDataTable("Movies", String.Format("SELECT movie_id, cover, title, release_year FROM Movies WHERE LOWER(title) LIKE '{0}%'", searchQuery.ToLower())));
             UCSearchedMoviesAll uc = new UCSearchedMoviesAll(movies);
+            uc.BringToFront();
             uc.Dock = DockStyle.Fill;
             mainPanel.Controls.Clear();
+            Utils.DisposeControlsInPanel(mainPanel);
             mainPanel.Controls.Add(uc);
         }
 
@@ -108,6 +131,7 @@ namespace FilmLibrary
             UCWatchlistInfoHeading uc = new UCWatchlistInfoHeading(watchlist);
             uc.Dock = DockStyle.Top;
             mainPanel.Controls.Clear();
+            Utils.DisposeControlsInPanel(mainPanel);
             mainPanel.Controls.Add(uc);
         }
 
@@ -122,6 +146,7 @@ namespace FilmLibrary
             UCCreateWatchlist uc = new UCCreateWatchlist(user_id);
             uc.Dock = DockStyle.Fill;
             mainPanel.Controls.Clear();
+            Utils.DisposeControlsInPanel(mainPanel);
             mainPanel.Controls.Add(uc);
         }
 
@@ -136,6 +161,7 @@ namespace FilmLibrary
             UCUpdateWatchlist uc = new UCUpdateWatchlist(watchlist);
             uc.Dock = DockStyle.Fill;
             mainPanel.Controls.Clear();
+            Utils.DisposeControlsInPanel(mainPanel);
             mainPanel.Controls.Add(uc);
         }
 
@@ -161,6 +187,7 @@ namespace FilmLibrary
             uc.Dock = DockStyle.Fill;
             foreach (Control control in mainPanel.Controls) control.Dispose();
             mainPanel.Controls.Clear();
+            Utils.DisposeControlsInPanel(mainPanel);
             mainPanel.Controls.Add(uc);
         }
 
@@ -293,6 +320,7 @@ namespace FilmLibrary
             UCAddMovie uc = new UCAddMovie();
             uc.Dock = DockStyle.Fill;
             mainPanel.Controls.Clear();
+            Utils.DisposeControlsInPanel(mainPanel);
             mainPanel.Controls.Add(uc);
         }
 
@@ -307,6 +335,7 @@ namespace FilmLibrary
             UCUpdateMovie uc = new UCUpdateMovie();
             uc.Dock = DockStyle.Fill;
             mainPanel.Controls.Clear();
+            Utils.DisposeControlsInPanel(mainPanel);
             mainPanel.Controls.Add(uc);
         }
 

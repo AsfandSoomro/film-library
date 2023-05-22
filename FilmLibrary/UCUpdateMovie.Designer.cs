@@ -100,6 +100,7 @@ namespace FilmLibrary
             this.btnRemoveCover.Size = new System.Drawing.Size(22, 22);
             this.btnRemoveCover.TabIndex = 55;
             this.btnRemoveCover.UseVisualStyleBackColor = true;
+            this.btnRemoveCover.Visible = false;
             this.btnRemoveCover.Click += new System.EventHandler(this.btnRemoveCover_Click);
             // 
             // label2

@@ -98,6 +98,7 @@ namespace FilmLibrary
             this.pbCover.Image = Utils.ByteToImage((Byte[])this.movie["cover"]);
             this.pbCover.SizeMode = PictureBoxSizeMode.StretchImage;
             this.btnRemoveCover.Enabled = true;
+            this.btnRemoveCover.Visible = true;
         }
 
         private void txtMovieId_KeyUp(object sender, KeyEventArgs e)

@@ -41,6 +41,8 @@ namespace FilmLibrary
             this.panelBtnSearch = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.lineDesign1 = new System.Windows.Forms.Panel();
+            this.lineDesign2 = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
             this.flpSearchedMoviesContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.panelSearchedMovie = new System.Windows.Forms.Panel();
@@ -233,6 +235,8 @@ namespace FilmLibrary
             // 
             this.panelContainer.BackColor = System.Drawing.Color.Transparent;
             this.panelContainer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelContainer.Controls.Add(this.lineDesign1);
+            this.panelContainer.Controls.Add(this.lineDesign2);
             this.panelContainer.Controls.Add(this.panelMain);
             this.panelContainer.Controls.Add(this.panelSideBar);
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -241,6 +245,24 @@ namespace FilmLibrary
             this.panelContainer.Size = new System.Drawing.Size(969, 626);
             this.panelContainer.TabIndex = 3;
             this.panelContainer.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelContainer_MouseDown);
+            // 
+            // lineDesign1
+            // 
+            this.lineDesign1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(125)))), ((int)(((byte)(166)))));
+            this.lineDesign1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lineDesign1.Location = new System.Drawing.Point(200, 0);
+            this.lineDesign1.Name = "lineDesign1";
+            this.lineDesign1.Size = new System.Drawing.Size(769, 2);
+            this.lineDesign1.TabIndex = 20;
+            // 
+            // lineDesign2
+            // 
+            this.lineDesign2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(125)))), ((int)(((byte)(166)))));
+            this.lineDesign2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lineDesign2.Location = new System.Drawing.Point(198, 0);
+            this.lineDesign2.Name = "lineDesign2";
+            this.lineDesign2.Size = new System.Drawing.Size(2, 626);
+            this.lineDesign2.TabIndex = 19;
             // 
             // panelMain
             // 
@@ -443,10 +465,12 @@ namespace FilmLibrary
             this.flpManage.Controls.Add(this.panelManageMoviesContainer);
             this.flpManage.Cursor = System.Windows.Forms.Cursors.Default;
             this.flpManage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flpManage.Enabled = false;
             this.flpManage.Location = new System.Drawing.Point(0, 749);
             this.flpManage.Name = "flpManage";
             this.flpManage.Size = new System.Drawing.Size(181, 190);
             this.flpManage.TabIndex = 3;
+            this.flpManage.Visible = false;
             this.flpManage.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flpManage_MouseDown);
             // 
             // lblManage
@@ -966,11 +990,12 @@ namespace FilmLibrary
             // 
             // ucProfileMenu
             // 
+            this.ucProfileMenu.AutoSize = true;
             this.ucProfileMenu.BackColor = System.Drawing.Color.Transparent;
             this.ucProfileMenu.Location = new System.Drawing.Point(760, 68);
             this.ucProfileMenu.Name = "ucProfileMenu";
-            this.ucProfileMenu.Size = new System.Drawing.Size(176, 169);
-            this.ucProfileMenu.TabIndex = 19;
+            this.ucProfileMenu.Size = new System.Drawing.Size(176, 243);
+            this.ucProfileMenu.TabIndex = 18;
             this.ucProfileMenu.Visible = false;
             // 
             // Form2
@@ -1024,6 +1049,7 @@ namespace FilmLibrary
             this.panelPublicWatchlistsContainer.ResumeLayout(false);
             this.panelGenresContainer.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1079,11 +1105,13 @@ namespace FilmLibrary
         private System.Windows.Forms.Panel panelGenresContainer;
         private GenreButton btnGenre;
         private System.Windows.Forms.Button btnDashboard;
-        private UCProfileMenu ucProfileMenu;
         private System.Windows.Forms.Button btnManageMovies;
         private System.Windows.Forms.Panel panelManageMoviesContainer;
         private SideBarSubCategoryButton btnDeleteMovie;
         private SideBarSubCategoryButton btnUpdateMovie;
         private SideBarSubCategoryButton btnAddMovie;
+        private System.Windows.Forms.Panel lineDesign1;
+        private System.Windows.Forms.Panel lineDesign2;
+        private UCProfileMenu ucProfileMenu;
     }
 }

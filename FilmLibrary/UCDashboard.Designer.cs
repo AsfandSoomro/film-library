@@ -65,18 +65,18 @@ namespace FilmLibrary
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.timerUpdateCovers = new System.Windows.Forms.Timer(this.components);
-            this.pbCoverSmall1 = new FilmLibrary.MoviePictureBox();
-            this.pbCoverSmall2 = new FilmLibrary.MoviePictureBox();
-            this.pbCoverSmall3 = new FilmLibrary.MoviePictureBox();
-            this.pbCoverSmall5 = new FilmLibrary.MoviePictureBox();
-            this.pbCoverSmall6 = new FilmLibrary.MoviePictureBox();
-            this.pbCoverSmall4 = new FilmLibrary.MoviePictureBox();
-            this.pbCoverSmall9 = new FilmLibrary.MoviePictureBox();
-            this.pbCoverSmall8 = new FilmLibrary.MoviePictureBox();
-            this.pbCoverSmall7 = new FilmLibrary.MoviePictureBox();
             this.pbCoverSmall12 = new FilmLibrary.MoviePictureBox();
             this.pbCoverSmall11 = new FilmLibrary.MoviePictureBox();
             this.pbCoverSmall10 = new FilmLibrary.MoviePictureBox();
+            this.pbCoverSmall9 = new FilmLibrary.MoviePictureBox();
+            this.pbCoverSmall8 = new FilmLibrary.MoviePictureBox();
+            this.pbCoverSmall7 = new FilmLibrary.MoviePictureBox();
+            this.pbCoverSmall5 = new FilmLibrary.MoviePictureBox();
+            this.pbCoverSmall6 = new FilmLibrary.MoviePictureBox();
+            this.pbCoverSmall4 = new FilmLibrary.MoviePictureBox();
+            this.pbCoverSmall3 = new FilmLibrary.MoviePictureBox();
+            this.pbCoverSmall2 = new FilmLibrary.MoviePictureBox();
+            this.pbCoverSmall1 = new FilmLibrary.MoviePictureBox();
             this.panelContainer.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -93,18 +93,18 @@ namespace FilmLibrary
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelContainer
@@ -486,112 +486,14 @@ namespace FilmLibrary
             // 
             // timerUpdateCovers
             // 
-            this.timerUpdateCovers.Interval = 5000;
+            this.timerUpdateCovers.Interval = 10000;
             this.timerUpdateCovers.Tick += new System.EventHandler(this.timerUpdateCovers_Tick);
-            // 
-            // pbCoverSmall1
-            // 
-            this.pbCoverSmall1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbCoverSmall1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbCoverSmall1.Location = new System.Drawing.Point(76, 204);
-            this.pbCoverSmall1.Name = "pbCoverSmall1";
-            this.pbCoverSmall1.Size = new System.Drawing.Size(30, 45);
-            this.pbCoverSmall1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCoverSmall1.TabIndex = 23;
-            this.pbCoverSmall1.TabStop = false;
-            // 
-            // pbCoverSmall2
-            // 
-            this.pbCoverSmall2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbCoverSmall2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbCoverSmall2.Location = new System.Drawing.Point(128, 204);
-            this.pbCoverSmall2.Name = "pbCoverSmall2";
-            this.pbCoverSmall2.Size = new System.Drawing.Size(30, 45);
-            this.pbCoverSmall2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCoverSmall2.TabIndex = 24;
-            this.pbCoverSmall2.TabStop = false;
-            // 
-            // pbCoverSmall3
-            // 
-            this.pbCoverSmall3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbCoverSmall3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbCoverSmall3.Location = new System.Drawing.Point(101, 218);
-            this.pbCoverSmall3.Name = "pbCoverSmall3";
-            this.pbCoverSmall3.Size = new System.Drawing.Size(30, 45);
-            this.pbCoverSmall3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCoverSmall3.TabIndex = 25;
-            this.pbCoverSmall3.TabStop = false;
-            // 
-            // pbCoverSmall5
-            // 
-            this.pbCoverSmall5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbCoverSmall5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbCoverSmall5.Location = new System.Drawing.Point(623, 218);
-            this.pbCoverSmall5.Name = "pbCoverSmall5";
-            this.pbCoverSmall5.Size = new System.Drawing.Size(30, 45);
-            this.pbCoverSmall5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCoverSmall5.TabIndex = 28;
-            this.pbCoverSmall5.TabStop = false;
-            // 
-            // pbCoverSmall6
-            // 
-            this.pbCoverSmall6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbCoverSmall6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbCoverSmall6.Location = new System.Drawing.Point(650, 204);
-            this.pbCoverSmall6.Name = "pbCoverSmall6";
-            this.pbCoverSmall6.Size = new System.Drawing.Size(30, 45);
-            this.pbCoverSmall6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCoverSmall6.TabIndex = 27;
-            this.pbCoverSmall6.TabStop = false;
-            // 
-            // pbCoverSmall4
-            // 
-            this.pbCoverSmall4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbCoverSmall4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbCoverSmall4.Location = new System.Drawing.Point(598, 204);
-            this.pbCoverSmall4.Name = "pbCoverSmall4";
-            this.pbCoverSmall4.Size = new System.Drawing.Size(30, 45);
-            this.pbCoverSmall4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCoverSmall4.TabIndex = 26;
-            this.pbCoverSmall4.TabStop = false;
-            // 
-            // pbCoverSmall9
-            // 
-            this.pbCoverSmall9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbCoverSmall9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbCoverSmall9.Location = new System.Drawing.Point(101, 454);
-            this.pbCoverSmall9.Name = "pbCoverSmall9";
-            this.pbCoverSmall9.Size = new System.Drawing.Size(30, 45);
-            this.pbCoverSmall9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCoverSmall9.TabIndex = 31;
-            this.pbCoverSmall9.TabStop = false;
-            // 
-            // pbCoverSmall8
-            // 
-            this.pbCoverSmall8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbCoverSmall8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbCoverSmall8.Location = new System.Drawing.Point(128, 471);
-            this.pbCoverSmall8.Name = "pbCoverSmall8";
-            this.pbCoverSmall8.Size = new System.Drawing.Size(30, 45);
-            this.pbCoverSmall8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCoverSmall8.TabIndex = 30;
-            this.pbCoverSmall8.TabStop = false;
-            // 
-            // pbCoverSmall7
-            // 
-            this.pbCoverSmall7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbCoverSmall7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbCoverSmall7.Location = new System.Drawing.Point(76, 471);
-            this.pbCoverSmall7.Name = "pbCoverSmall7";
-            this.pbCoverSmall7.Size = new System.Drawing.Size(30, 45);
-            this.pbCoverSmall7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCoverSmall7.TabIndex = 29;
-            this.pbCoverSmall7.TabStop = false;
             // 
             // pbCoverSmall12
             // 
             this.pbCoverSmall12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbCoverSmall12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbCoverSmall12.Image = ((System.Drawing.Image)(resources.GetObject("pbCoverSmall12.Image")));
             this.pbCoverSmall12.Location = new System.Drawing.Point(624, 454);
             this.pbCoverSmall12.Name = "pbCoverSmall12";
             this.pbCoverSmall12.Size = new System.Drawing.Size(30, 45);
@@ -603,6 +505,7 @@ namespace FilmLibrary
             // 
             this.pbCoverSmall11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbCoverSmall11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbCoverSmall11.Image = ((System.Drawing.Image)(resources.GetObject("pbCoverSmall11.Image")));
             this.pbCoverSmall11.Location = new System.Drawing.Point(651, 471);
             this.pbCoverSmall11.Name = "pbCoverSmall11";
             this.pbCoverSmall11.Size = new System.Drawing.Size(30, 45);
@@ -614,12 +517,121 @@ namespace FilmLibrary
             // 
             this.pbCoverSmall10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbCoverSmall10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbCoverSmall10.Image = ((System.Drawing.Image)(resources.GetObject("pbCoverSmall10.Image")));
             this.pbCoverSmall10.Location = new System.Drawing.Point(599, 471);
             this.pbCoverSmall10.Name = "pbCoverSmall10";
             this.pbCoverSmall10.Size = new System.Drawing.Size(30, 45);
             this.pbCoverSmall10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbCoverSmall10.TabIndex = 32;
             this.pbCoverSmall10.TabStop = false;
+            // 
+            // pbCoverSmall9
+            // 
+            this.pbCoverSmall9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbCoverSmall9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbCoverSmall9.Image = ((System.Drawing.Image)(resources.GetObject("pbCoverSmall9.Image")));
+            this.pbCoverSmall9.Location = new System.Drawing.Point(101, 454);
+            this.pbCoverSmall9.Name = "pbCoverSmall9";
+            this.pbCoverSmall9.Size = new System.Drawing.Size(30, 45);
+            this.pbCoverSmall9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCoverSmall9.TabIndex = 31;
+            this.pbCoverSmall9.TabStop = false;
+            // 
+            // pbCoverSmall8
+            // 
+            this.pbCoverSmall8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbCoverSmall8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbCoverSmall8.Image = ((System.Drawing.Image)(resources.GetObject("pbCoverSmall8.Image")));
+            this.pbCoverSmall8.Location = new System.Drawing.Point(128, 471);
+            this.pbCoverSmall8.Name = "pbCoverSmall8";
+            this.pbCoverSmall8.Size = new System.Drawing.Size(30, 45);
+            this.pbCoverSmall8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCoverSmall8.TabIndex = 30;
+            this.pbCoverSmall8.TabStop = false;
+            // 
+            // pbCoverSmall7
+            // 
+            this.pbCoverSmall7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbCoverSmall7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbCoverSmall7.Image = ((System.Drawing.Image)(resources.GetObject("pbCoverSmall7.Image")));
+            this.pbCoverSmall7.Location = new System.Drawing.Point(76, 471);
+            this.pbCoverSmall7.Name = "pbCoverSmall7";
+            this.pbCoverSmall7.Size = new System.Drawing.Size(30, 45);
+            this.pbCoverSmall7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCoverSmall7.TabIndex = 29;
+            this.pbCoverSmall7.TabStop = false;
+            // 
+            // pbCoverSmall5
+            // 
+            this.pbCoverSmall5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbCoverSmall5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbCoverSmall5.Image = ((System.Drawing.Image)(resources.GetObject("pbCoverSmall5.Image")));
+            this.pbCoverSmall5.Location = new System.Drawing.Point(623, 218);
+            this.pbCoverSmall5.Name = "pbCoverSmall5";
+            this.pbCoverSmall5.Size = new System.Drawing.Size(30, 45);
+            this.pbCoverSmall5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCoverSmall5.TabIndex = 28;
+            this.pbCoverSmall5.TabStop = false;
+            // 
+            // pbCoverSmall6
+            // 
+            this.pbCoverSmall6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbCoverSmall6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbCoverSmall6.Image = ((System.Drawing.Image)(resources.GetObject("pbCoverSmall6.Image")));
+            this.pbCoverSmall6.Location = new System.Drawing.Point(650, 204);
+            this.pbCoverSmall6.Name = "pbCoverSmall6";
+            this.pbCoverSmall6.Size = new System.Drawing.Size(30, 45);
+            this.pbCoverSmall6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCoverSmall6.TabIndex = 27;
+            this.pbCoverSmall6.TabStop = false;
+            // 
+            // pbCoverSmall4
+            // 
+            this.pbCoverSmall4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbCoverSmall4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbCoverSmall4.Image = ((System.Drawing.Image)(resources.GetObject("pbCoverSmall4.Image")));
+            this.pbCoverSmall4.Location = new System.Drawing.Point(598, 204);
+            this.pbCoverSmall4.Name = "pbCoverSmall4";
+            this.pbCoverSmall4.Size = new System.Drawing.Size(30, 45);
+            this.pbCoverSmall4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCoverSmall4.TabIndex = 26;
+            this.pbCoverSmall4.TabStop = false;
+            // 
+            // pbCoverSmall3
+            // 
+            this.pbCoverSmall3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbCoverSmall3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbCoverSmall3.Image = ((System.Drawing.Image)(resources.GetObject("pbCoverSmall3.Image")));
+            this.pbCoverSmall3.Location = new System.Drawing.Point(101, 218);
+            this.pbCoverSmall3.Name = "pbCoverSmall3";
+            this.pbCoverSmall3.Size = new System.Drawing.Size(30, 45);
+            this.pbCoverSmall3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCoverSmall3.TabIndex = 25;
+            this.pbCoverSmall3.TabStop = false;
+            // 
+            // pbCoverSmall2
+            // 
+            this.pbCoverSmall2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbCoverSmall2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbCoverSmall2.Image = ((System.Drawing.Image)(resources.GetObject("pbCoverSmall2.Image")));
+            this.pbCoverSmall2.Location = new System.Drawing.Point(128, 204);
+            this.pbCoverSmall2.Name = "pbCoverSmall2";
+            this.pbCoverSmall2.Size = new System.Drawing.Size(30, 45);
+            this.pbCoverSmall2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCoverSmall2.TabIndex = 24;
+            this.pbCoverSmall2.TabStop = false;
+            // 
+            // pbCoverSmall1
+            // 
+            this.pbCoverSmall1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbCoverSmall1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbCoverSmall1.Image = ((System.Drawing.Image)(resources.GetObject("pbCoverSmall1.Image")));
+            this.pbCoverSmall1.Location = new System.Drawing.Point(76, 204);
+            this.pbCoverSmall1.Name = "pbCoverSmall1";
+            this.pbCoverSmall1.Size = new System.Drawing.Size(30, 45);
+            this.pbCoverSmall1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCoverSmall1.TabIndex = 23;
+            this.pbCoverSmall1.TabStop = false;
             // 
             // UCDashboard
             // 
@@ -653,18 +665,18 @@ namespace FilmLibrary
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall1)).EndInit();
             this.ResumeLayout(false);
 
         }

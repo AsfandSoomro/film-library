@@ -26,7 +26,7 @@ namespace FilmLibrary
             this.totalMovies = (await Task.Run(() => Queries.GetCountRows("Movies")));
             lblMovies.Text = this.totalMovies.ToString();
             lblUsers.Text = (await Task.Run(() => Queries.GetCountRows("Users", "status = 'user'"))).ToString();
-            lblAdmins.Text = (await Task.Run(() => Queries.GetCountRows("Users", "status = 'admin'"))).ToString();
+            lblAdmins.Text = (await Task.Run(() => Queries.GetCountRows("Users", "status != 'user'"))).ToString();
             lblWatchlists.Text = (await Task.Run(() => Queries.GetCountRows("Watchlists"))).ToString();
             lblPubWatchlists.Text = (await Task.Run(() => Queries.GetCountRows("Watchlists", "visibility = 'public'"))).ToString();
             lblPrivateWatchlists.Text = (await Task.Run(() => Queries.GetCountRows("Watchlists", "visibility = 'private'"))).ToString();

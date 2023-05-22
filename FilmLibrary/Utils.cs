@@ -29,6 +29,19 @@ namespace FilmLibrary
             control.Location = new Point((form.ClientSize.Width - control.Size.Width) / 2, control.Size.Height);
         }
 
+        public static void CenterControlX(Control control, Panel panel)
+        {
+            control.Location = new Point((panel.ClientSize.Width - control.Size.Width) / 2, control.Size.Height);
+        }
+
+        public static void DisposeControlsInPanel(Panel panel)
+        {
+            foreach (Control control in panel.Controls)
+            {
+                control.Dispose();
+            }
+        }
+
         public static byte[] ImageToByte(Image img)
         {
             ImageConverter converter = new ImageConverter();
