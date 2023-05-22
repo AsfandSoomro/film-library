@@ -33,7 +33,7 @@ namespace FilmLibrary
             lblMoviesAddedToWatchlists.Text = (await Task.Run(() => Queries.GetCountRows("Watchlists_Movies"))).ToString();
 
             UpdateCovers();
-            timerUpdateCovers.Enabled = true;
+            //timerUpdateCovers.Enabled = true;
         }
 
         private void timerUpdateCovers_Tick(object sender, EventArgs e)

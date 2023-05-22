@@ -19,6 +19,7 @@ namespace FilmLibrary
 
         private bool isSideBarVisible;
         private int originalSideBarWidth;
+        private int sideBarAnimateSpeed = 5;
 
         public static string currentMainPage;
 
@@ -346,12 +347,12 @@ namespace FilmLibrary
 
         private void AnimateSideBarIncrease()
         {
-            panelSideBar.Width += 5;
+            panelSideBar.Width += this.sideBarAnimateSpeed;
         }
 
         private void AnimateSideBarDecrease()
         {
-            panelSideBar.Width -= 5;
+            panelSideBar.Width -= this.sideBarAnimateSpeed;
         }
 
         private void UpdateProfileMenuLocation()
