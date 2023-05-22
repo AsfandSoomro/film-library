@@ -12,6 +12,8 @@ namespace FilmLibrary
 {
     public partial class UCDashboard : UserControl
     {
+        int totalMovies;
+
         public UCDashboard()
         {
             InitializeComponent();
@@ -21,8 +23,8 @@ namespace FilmLibrary
         {
             Helpers.ArrangeMainPanelControls(this.FindForm());
 
-            int totalMovies = (await Task.Run(() => Queries.GetCountRows("Movies")));
-            lblMovies.Text = totalMovies.ToString();
+            this.totalMovies = (await Task.Run(() => Queries.GetCountRows("Movies")));
+            lblMovies.Text = this.totalMovies.ToString();
             lblUsers.Text = (await Task.Run(() => Queries.GetCountRows("Users", "status = 'user'"))).ToString();
             lblAdmins.Text = (await Task.Run(() => Queries.GetCountRows("Users", "status = 'admin'"))).ToString();
             lblWatchlists.Text = (await Task.Run(() => Queries.GetCountRows("Watchlists"))).ToString();
@@ -30,15 +32,28 @@ namespace FilmLibrary
             lblPrivateWatchlists.Text = (await Task.Run(() => Queries.GetCountRows("Watchlists", "visibility = 'private'"))).ToString();
             lblMoviesAddedToWatchlists.Text = (await Task.Run(() => Queries.GetCountRows("Watchlists_Movies"))).ToString();
 
+            UpdateCovers();
+            timerUpdateCovers.Enabled = true;
+        }
+
+        private void timerUpdateCovers_Tick(object sender, EventArgs e)
+        {
+            UpdateCovers();
+        }
+
+        private async void UpdateCovers()
+        {
             Random rand = new Random();
             int randomId = rand.Next(0, totalMovies - 12 - 1);
-            DataTable covers = (await Task.Run(() => Queries.GetDataTable("Movies", String.Format("SELECT TOP 12 cover FROM Movies WHERE movie_id > {0}", randomId))));
-            
+            DataTable movies = (await Task.Run(() => Queries.GetDataTable("Movies", String.Format("SELECT TOP 12 movie_id, cover FROM Movies WHERE movie_id > {0}", randomId))));
+
             int i = 1;
-            foreach(DataRow cover in covers.Rows)
+            foreach (DataRow movie in movies.Rows)
             {
-                PictureBox pb = (PictureBox)this.Controls.Find("pbCoverSmall" + i, true)[0];
-                pb.Image = Utils.ByteToImage((Byte[])cover["cover"]);
+                MoviePictureBox pb = (MoviePictureBox)this.Controls.Find("pbCoverSmall" + i, true)[0];
+                pb.OriginalImage = Utils.ByteToImage((Byte[])movie["cover"]);
+                pb.Image = pb.OriginalImage;
+                pb.movie_id = (int)movie["movie_id"];
 
                 i++;
             }

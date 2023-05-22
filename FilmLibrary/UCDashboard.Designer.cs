@@ -29,11 +29,9 @@ namespace FilmLibrary
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCDashboard));
             this.panelContainer = new System.Windows.Forms.Panel();
-            this.pbCoverSmall3 = new System.Windows.Forms.PictureBox();
-            this.pbCoverSmall2 = new System.Windows.Forms.PictureBox();
-            this.pbCoverSmall1 = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -47,8 +45,8 @@ namespace FilmLibrary
             this.panel5 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.lblPubWatchlists = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.lblPubWatchlists = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.lblWatchlists = new System.Windows.Forms.Label();
@@ -65,20 +63,21 @@ namespace FilmLibrary
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblMovies = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pbCoverSmall6 = new System.Windows.Forms.PictureBox();
-            this.pbCoverSmall5 = new System.Windows.Forms.PictureBox();
-            this.pbCoverSmall4 = new System.Windows.Forms.PictureBox();
-            this.pbCoverSmall7 = new System.Windows.Forms.PictureBox();
-            this.pbCoverSmall9 = new System.Windows.Forms.PictureBox();
-            this.pbCoverSmall8 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pbCoverSmall10 = new System.Windows.Forms.PictureBox();
-            this.pbCoverSmall12 = new System.Windows.Forms.PictureBox();
-            this.pbCoverSmall11 = new System.Windows.Forms.PictureBox();
+            this.timerUpdateCovers = new System.Windows.Forms.Timer(this.components);
+            this.pbCoverSmall1 = new FilmLibrary.MoviePictureBox();
+            this.pbCoverSmall2 = new FilmLibrary.MoviePictureBox();
+            this.pbCoverSmall3 = new FilmLibrary.MoviePictureBox();
+            this.pbCoverSmall5 = new FilmLibrary.MoviePictureBox();
+            this.pbCoverSmall6 = new FilmLibrary.MoviePictureBox();
+            this.pbCoverSmall4 = new FilmLibrary.MoviePictureBox();
+            this.pbCoverSmall9 = new FilmLibrary.MoviePictureBox();
+            this.pbCoverSmall8 = new FilmLibrary.MoviePictureBox();
+            this.pbCoverSmall7 = new FilmLibrary.MoviePictureBox();
+            this.pbCoverSmall12 = new FilmLibrary.MoviePictureBox();
+            this.pbCoverSmall11 = new FilmLibrary.MoviePictureBox();
+            this.pbCoverSmall10 = new FilmLibrary.MoviePictureBox();
             this.panelContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall1)).BeginInit();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panel6.SuspendLayout();
@@ -93,29 +92,32 @@ namespace FilmLibrary
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall10)).BeginInit();
             this.SuspendLayout();
             // 
             // panelContainer
             // 
             this.panelContainer.AutoScroll = true;
-            this.panelContainer.Controls.Add(this.pbCoverSmall10);
             this.panelContainer.Controls.Add(this.pbCoverSmall12);
             this.panelContainer.Controls.Add(this.pbCoverSmall11);
-            this.panelContainer.Controls.Add(this.pbCoverSmall7);
+            this.panelContainer.Controls.Add(this.pbCoverSmall10);
             this.panelContainer.Controls.Add(this.pbCoverSmall9);
             this.panelContainer.Controls.Add(this.pbCoverSmall8);
-            this.panelContainer.Controls.Add(this.pbCoverSmall6);
+            this.panelContainer.Controls.Add(this.pbCoverSmall7);
             this.panelContainer.Controls.Add(this.pbCoverSmall5);
+            this.panelContainer.Controls.Add(this.pbCoverSmall6);
             this.panelContainer.Controls.Add(this.pbCoverSmall4);
             this.panelContainer.Controls.Add(this.pbCoverSmall3);
             this.panelContainer.Controls.Add(this.pbCoverSmall2);
@@ -134,33 +136,6 @@ namespace FilmLibrary
             this.panelContainer.Size = new System.Drawing.Size(771, 626);
             this.panelContainer.TabIndex = 2;
             // 
-            // pbCoverSmall3
-            // 
-            this.pbCoverSmall3.Location = new System.Drawing.Point(101, 217);
-            this.pbCoverSmall3.Name = "pbCoverSmall3";
-            this.pbCoverSmall3.Size = new System.Drawing.Size(30, 45);
-            this.pbCoverSmall3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCoverSmall3.TabIndex = 13;
-            this.pbCoverSmall3.TabStop = false;
-            // 
-            // pbCoverSmall2
-            // 
-            this.pbCoverSmall2.Location = new System.Drawing.Point(128, 204);
-            this.pbCoverSmall2.Name = "pbCoverSmall2";
-            this.pbCoverSmall2.Size = new System.Drawing.Size(30, 45);
-            this.pbCoverSmall2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCoverSmall2.TabIndex = 12;
-            this.pbCoverSmall2.TabStop = false;
-            // 
-            // pbCoverSmall1
-            // 
-            this.pbCoverSmall1.Location = new System.Drawing.Point(76, 204);
-            this.pbCoverSmall1.Name = "pbCoverSmall1";
-            this.pbCoverSmall1.Size = new System.Drawing.Size(30, 45);
-            this.pbCoverSmall1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCoverSmall1.TabIndex = 11;
-            this.pbCoverSmall1.TabStop = false;
-            // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(125)))), ((int)(((byte)(166)))));
@@ -168,7 +143,7 @@ namespace FilmLibrary
             this.panel7.Controls.Add(this.pictureBox7);
             this.panel7.Controls.Add(this.lblMoviesAddedToWatchlists);
             this.panel7.Controls.Add(this.label4);
-            this.panel7.Location = new System.Drawing.Point(57, 705);
+            this.panel7.Location = new System.Drawing.Point(298, 705);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(163, 114);
             this.panel7.TabIndex = 10;
@@ -304,17 +279,6 @@ namespace FilmLibrary
             this.pictureBox5.TabIndex = 2;
             this.pictureBox5.TabStop = false;
             // 
-            // lblPubWatchlists
-            // 
-            this.lblPubWatchlists.AutoSize = true;
-            this.lblPubWatchlists.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPubWatchlists.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(26)))), ((int)(((byte)(40)))));
-            this.lblPubWatchlists.Location = new System.Drawing.Point(26, 61);
-            this.lblPubWatchlists.Name = "lblPubWatchlists";
-            this.lblPubWatchlists.Size = new System.Drawing.Size(65, 29);
-            this.lblPubWatchlists.TabIndex = 3;
-            this.lblPubWatchlists.Text = "0000";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -325,6 +289,17 @@ namespace FilmLibrary
             this.label6.Size = new System.Drawing.Size(98, 19);
             this.label6.TabIndex = 2;
             this.label6.Text = "Total Public";
+            // 
+            // lblPubWatchlists
+            // 
+            this.lblPubWatchlists.AutoSize = true;
+            this.lblPubWatchlists.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPubWatchlists.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(26)))), ((int)(((byte)(40)))));
+            this.lblPubWatchlists.Location = new System.Drawing.Point(26, 61);
+            this.lblPubWatchlists.Name = "lblPubWatchlists";
+            this.lblPubWatchlists.Size = new System.Drawing.Size(65, 29);
+            this.lblPubWatchlists.TabIndex = 3;
+            this.lblPubWatchlists.Text = "0000";
             // 
             // panel4
             // 
@@ -499,60 +474,6 @@ namespace FilmLibrary
             this.label2.TabIndex = 2;
             this.label2.Text = "Total Movies";
             // 
-            // pbCoverSmall6
-            // 
-            this.pbCoverSmall6.Location = new System.Drawing.Point(620, 204);
-            this.pbCoverSmall6.Name = "pbCoverSmall6";
-            this.pbCoverSmall6.Size = new System.Drawing.Size(30, 45);
-            this.pbCoverSmall6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCoverSmall6.TabIndex = 16;
-            this.pbCoverSmall6.TabStop = false;
-            // 
-            // pbCoverSmall5
-            // 
-            this.pbCoverSmall5.Location = new System.Drawing.Point(647, 195);
-            this.pbCoverSmall5.Name = "pbCoverSmall5";
-            this.pbCoverSmall5.Size = new System.Drawing.Size(30, 45);
-            this.pbCoverSmall5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCoverSmall5.TabIndex = 15;
-            this.pbCoverSmall5.TabStop = false;
-            // 
-            // pbCoverSmall4
-            // 
-            this.pbCoverSmall4.Location = new System.Drawing.Point(595, 195);
-            this.pbCoverSmall4.Name = "pbCoverSmall4";
-            this.pbCoverSmall4.Size = new System.Drawing.Size(30, 45);
-            this.pbCoverSmall4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCoverSmall4.TabIndex = 14;
-            this.pbCoverSmall4.TabStop = false;
-            // 
-            // pbCoverSmall7
-            // 
-            this.pbCoverSmall7.Location = new System.Drawing.Point(101, 449);
-            this.pbCoverSmall7.Name = "pbCoverSmall7";
-            this.pbCoverSmall7.Size = new System.Drawing.Size(30, 45);
-            this.pbCoverSmall7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCoverSmall7.TabIndex = 19;
-            this.pbCoverSmall7.TabStop = false;
-            // 
-            // pbCoverSmall9
-            // 
-            this.pbCoverSmall9.Location = new System.Drawing.Point(128, 463);
-            this.pbCoverSmall9.Name = "pbCoverSmall9";
-            this.pbCoverSmall9.Size = new System.Drawing.Size(30, 45);
-            this.pbCoverSmall9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCoverSmall9.TabIndex = 18;
-            this.pbCoverSmall9.TabStop = false;
-            // 
-            // pbCoverSmall8
-            // 
-            this.pbCoverSmall8.Location = new System.Drawing.Point(76, 463);
-            this.pbCoverSmall8.Name = "pbCoverSmall8";
-            this.pbCoverSmall8.Size = new System.Drawing.Size(30, 45);
-            this.pbCoverSmall8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCoverSmall8.TabIndex = 17;
-            this.pbCoverSmall8.TabStop = false;
-            // 
             // pictureBox9
             // 
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
@@ -563,32 +484,142 @@ namespace FilmLibrary
             this.pictureBox9.TabIndex = 5;
             this.pictureBox9.TabStop = false;
             // 
-            // pbCoverSmall10
+            // timerUpdateCovers
             // 
-            this.pbCoverSmall10.Location = new System.Drawing.Point(620, 463);
-            this.pbCoverSmall10.Name = "pbCoverSmall10";
-            this.pbCoverSmall10.Size = new System.Drawing.Size(30, 45);
-            this.pbCoverSmall10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCoverSmall10.TabIndex = 22;
-            this.pbCoverSmall10.TabStop = false;
+            this.timerUpdateCovers.Interval = 5000;
+            this.timerUpdateCovers.Tick += new System.EventHandler(this.timerUpdateCovers_Tick);
+            // 
+            // pbCoverSmall1
+            // 
+            this.pbCoverSmall1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbCoverSmall1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbCoverSmall1.Location = new System.Drawing.Point(76, 204);
+            this.pbCoverSmall1.Name = "pbCoverSmall1";
+            this.pbCoverSmall1.Size = new System.Drawing.Size(30, 45);
+            this.pbCoverSmall1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCoverSmall1.TabIndex = 23;
+            this.pbCoverSmall1.TabStop = false;
+            // 
+            // pbCoverSmall2
+            // 
+            this.pbCoverSmall2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbCoverSmall2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbCoverSmall2.Location = new System.Drawing.Point(128, 204);
+            this.pbCoverSmall2.Name = "pbCoverSmall2";
+            this.pbCoverSmall2.Size = new System.Drawing.Size(30, 45);
+            this.pbCoverSmall2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCoverSmall2.TabIndex = 24;
+            this.pbCoverSmall2.TabStop = false;
+            // 
+            // pbCoverSmall3
+            // 
+            this.pbCoverSmall3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbCoverSmall3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbCoverSmall3.Location = new System.Drawing.Point(101, 218);
+            this.pbCoverSmall3.Name = "pbCoverSmall3";
+            this.pbCoverSmall3.Size = new System.Drawing.Size(30, 45);
+            this.pbCoverSmall3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCoverSmall3.TabIndex = 25;
+            this.pbCoverSmall3.TabStop = false;
+            // 
+            // pbCoverSmall5
+            // 
+            this.pbCoverSmall5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbCoverSmall5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbCoverSmall5.Location = new System.Drawing.Point(623, 218);
+            this.pbCoverSmall5.Name = "pbCoverSmall5";
+            this.pbCoverSmall5.Size = new System.Drawing.Size(30, 45);
+            this.pbCoverSmall5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCoverSmall5.TabIndex = 28;
+            this.pbCoverSmall5.TabStop = false;
+            // 
+            // pbCoverSmall6
+            // 
+            this.pbCoverSmall6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbCoverSmall6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbCoverSmall6.Location = new System.Drawing.Point(650, 204);
+            this.pbCoverSmall6.Name = "pbCoverSmall6";
+            this.pbCoverSmall6.Size = new System.Drawing.Size(30, 45);
+            this.pbCoverSmall6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCoverSmall6.TabIndex = 27;
+            this.pbCoverSmall6.TabStop = false;
+            // 
+            // pbCoverSmall4
+            // 
+            this.pbCoverSmall4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbCoverSmall4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbCoverSmall4.Location = new System.Drawing.Point(598, 204);
+            this.pbCoverSmall4.Name = "pbCoverSmall4";
+            this.pbCoverSmall4.Size = new System.Drawing.Size(30, 45);
+            this.pbCoverSmall4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCoverSmall4.TabIndex = 26;
+            this.pbCoverSmall4.TabStop = false;
+            // 
+            // pbCoverSmall9
+            // 
+            this.pbCoverSmall9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbCoverSmall9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbCoverSmall9.Location = new System.Drawing.Point(101, 454);
+            this.pbCoverSmall9.Name = "pbCoverSmall9";
+            this.pbCoverSmall9.Size = new System.Drawing.Size(30, 45);
+            this.pbCoverSmall9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCoverSmall9.TabIndex = 31;
+            this.pbCoverSmall9.TabStop = false;
+            // 
+            // pbCoverSmall8
+            // 
+            this.pbCoverSmall8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbCoverSmall8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbCoverSmall8.Location = new System.Drawing.Point(128, 471);
+            this.pbCoverSmall8.Name = "pbCoverSmall8";
+            this.pbCoverSmall8.Size = new System.Drawing.Size(30, 45);
+            this.pbCoverSmall8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCoverSmall8.TabIndex = 30;
+            this.pbCoverSmall8.TabStop = false;
+            // 
+            // pbCoverSmall7
+            // 
+            this.pbCoverSmall7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbCoverSmall7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbCoverSmall7.Location = new System.Drawing.Point(76, 471);
+            this.pbCoverSmall7.Name = "pbCoverSmall7";
+            this.pbCoverSmall7.Size = new System.Drawing.Size(30, 45);
+            this.pbCoverSmall7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCoverSmall7.TabIndex = 29;
+            this.pbCoverSmall7.TabStop = false;
             // 
             // pbCoverSmall12
             // 
-            this.pbCoverSmall12.Location = new System.Drawing.Point(647, 476);
+            this.pbCoverSmall12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbCoverSmall12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbCoverSmall12.Location = new System.Drawing.Point(624, 454);
             this.pbCoverSmall12.Name = "pbCoverSmall12";
             this.pbCoverSmall12.Size = new System.Drawing.Size(30, 45);
             this.pbCoverSmall12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCoverSmall12.TabIndex = 21;
+            this.pbCoverSmall12.TabIndex = 34;
             this.pbCoverSmall12.TabStop = false;
             // 
             // pbCoverSmall11
             // 
-            this.pbCoverSmall11.Location = new System.Drawing.Point(595, 476);
+            this.pbCoverSmall11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbCoverSmall11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbCoverSmall11.Location = new System.Drawing.Point(651, 471);
             this.pbCoverSmall11.Name = "pbCoverSmall11";
             this.pbCoverSmall11.Size = new System.Drawing.Size(30, 45);
             this.pbCoverSmall11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCoverSmall11.TabIndex = 20;
+            this.pbCoverSmall11.TabIndex = 33;
             this.pbCoverSmall11.TabStop = false;
+            // 
+            // pbCoverSmall10
+            // 
+            this.pbCoverSmall10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbCoverSmall10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbCoverSmall10.Location = new System.Drawing.Point(599, 471);
+            this.pbCoverSmall10.Name = "pbCoverSmall10";
+            this.pbCoverSmall10.Size = new System.Drawing.Size(30, 45);
+            this.pbCoverSmall10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCoverSmall10.TabIndex = 32;
+            this.pbCoverSmall10.TabStop = false;
             // 
             // UCDashboard
             // 
@@ -600,9 +631,6 @@ namespace FilmLibrary
             this.Size = new System.Drawing.Size(771, 626);
             this.Load += new System.EventHandler(this.UCDashboard_Load);
             this.panelContainer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall1)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
@@ -624,16 +652,19 @@ namespace FilmLibrary
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoverSmall10)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -671,18 +702,19 @@ namespace FilmLibrary
         private System.Windows.Forms.PictureBox pictureBox7;
         public System.Windows.Forms.Label lblMoviesAddedToWatchlists;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pbCoverSmall2;
-        private System.Windows.Forms.PictureBox pbCoverSmall1;
-        private System.Windows.Forms.PictureBox pbCoverSmall3;
-        private System.Windows.Forms.PictureBox pbCoverSmall7;
-        private System.Windows.Forms.PictureBox pbCoverSmall9;
-        private System.Windows.Forms.PictureBox pbCoverSmall8;
-        private System.Windows.Forms.PictureBox pbCoverSmall6;
-        private System.Windows.Forms.PictureBox pbCoverSmall5;
-        private System.Windows.Forms.PictureBox pbCoverSmall4;
         private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.PictureBox pbCoverSmall10;
-        private System.Windows.Forms.PictureBox pbCoverSmall12;
-        private System.Windows.Forms.PictureBox pbCoverSmall11;
+        private System.Windows.Forms.Timer timerUpdateCovers;
+        private MoviePictureBox pbCoverSmall1;
+        private MoviePictureBox pbCoverSmall3;
+        private MoviePictureBox pbCoverSmall2;
+        private MoviePictureBox pbCoverSmall9;
+        private MoviePictureBox pbCoverSmall8;
+        private MoviePictureBox pbCoverSmall7;
+        private MoviePictureBox pbCoverSmall5;
+        private MoviePictureBox pbCoverSmall6;
+        private MoviePictureBox pbCoverSmall4;
+        private MoviePictureBox pbCoverSmall12;
+        private MoviePictureBox pbCoverSmall11;
+        private MoviePictureBox pbCoverSmall10;
     }
 }

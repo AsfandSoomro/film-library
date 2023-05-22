@@ -13,9 +13,9 @@ namespace FilmLibrary
     class MoviePictureBox : PictureBox
     {
         private static string DefaultMovieImagePath = @"F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\Project\FilmLibrary\images\Braveheart.jpg";
-        private Image OriginalImage;
-        private int movie_id;
-        private DataRow movie;
+        public Image OriginalImage;
+        public int movie_id;
+        public DataRow movie;
 
         public MoviePictureBox()
         {
@@ -55,8 +55,15 @@ namespace FilmLibrary
             this.BorderStyle = BorderStyle.Fixed3D;
             this.Image = Utils.ZoomIn((Bitmap)this.Image, 80);
 
-            UCMovie parentUc = (UCMovie)Utils.GetParentUserControl(this);
-            parentUc.MouseEntered();
+            try
+            {
+                UCMovie parentUc = (UCMovie)Utils.GetParentUserControl(this);
+                parentUc.MouseEntered();
+            }
+            catch(Exception)
+            {
+                ;
+            }
         }
 
         // Default Mouse Leave Event
@@ -65,8 +72,15 @@ namespace FilmLibrary
             this.Image = OriginalImage;
             this.BorderStyle = BorderStyle.FixedSingle;
 
-            UCMovie parentUc = (UCMovie)Utils.GetParentUserControl(this);
-            parentUc.MouseLeft();
+            try
+            {
+                UCMovie parentUc = (UCMovie)Utils.GetParentUserControl(this);
+                parentUc.MouseLeft();
+            }
+            catch (Exception)
+            {
+                ;
+            }
         }
 
         // Default Mouse Click Event
