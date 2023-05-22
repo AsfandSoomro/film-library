@@ -296,6 +296,20 @@ namespace FilmLibrary
             mainPanel.Controls.Add(uc);
         }
 
+        public static void ShowManageUpdateMoviePage(Form form)
+        {
+            Form2.currentMainPage = "Manage - Update Movie";
+            UpdateMainPageHeading(form);
+
+            Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
+            Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
+
+            UCUpdateMovie uc = new UCUpdateMovie();
+            uc.Dock = DockStyle.Fill;
+            mainPanel.Controls.Clear();
+            mainPanel.Controls.Add(uc);
+        }
+
         public static void LogoutUser(Form form2)
         {
             form2.Hide();

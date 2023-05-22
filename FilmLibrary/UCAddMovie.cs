@@ -88,8 +88,15 @@ namespace FilmLibrary
             }
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private async void btnAdd_Click(object sender, EventArgs e)
         {
+            // Check if movie already exists 
+            int count = await Queries.GetCountRows("Movies", String.Format("title = '{0}' AND release_year = {1}", txtTitle.Text, cbYear.SelectedItem.ToString()));
+            if(count >= 0)
+            {
+                MessageBox.Show("Movie already exists with same title and release_year.", "Move Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             string query = @"INSERT INTO Movies(imdb_id, title, plot_outline, release_year, rating, votes, cover, budget, cumulative_worldwide_gross) VALUES (@imdb_id, @title, @plot_outline, @release_year, @rating, @votes, @cover, @budget, @cumulative_worldwide_gross);";
 
             using (SqlConnection conn = new SqlConnection(Program.MyConnectionString))
@@ -121,7 +128,7 @@ namespace FilmLibrary
                     command.Parameters.AddWithValue("@plot_outline", DBNull.Value);
 
                 // Release year
-                command.Parameters.AddWithValue("@release_year", (int)cbYear.SelectedItem);
+                command.Parameters.AddWithValue("@release_year", Convert.ToInt32(cbYear.SelectedItem.ToString()));
 
                 // Rating
                 if(numRating.Value >= (decimal)0.0)
@@ -143,10 +150,17 @@ namespace FilmLibrary
                 }
 
                 // Cover
-                if (this.isImageUploaded)
-                    command.Parameters.AddWithValue("@cover", Utils.ImageToByte(pbCover.Image));
-                else
-                    command.Parameters.AddWithValue("@cover", DBNull.Value);
+                try
+                {
+                    if (this.isImageUploaded)
+                        command.Parameters.AddWithValue("@cover", Utils.ImageToByte(pbCover.Image));
+                    else
+                        command.Parameters.AddWithValue("@cover", DBNull.Value);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Something unexpected happen with cover.", "File Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
                 // Budget
                 if (txtBudget.Text != txtBudget.OriginalText && !String.IsNullOrEmpty(txtBudget.Text))

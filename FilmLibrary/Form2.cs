@@ -97,6 +97,8 @@ namespace FilmLibrary
                 Helpers.ArrangeMainPanelControls(this);
             else if (Form2.currentMainPage == "Manage - Add Movie")
                 Helpers.ArrangeMainPanelControls(this);
+            else if (Form2.currentMainPage == "Manage - Update Movie")
+                Helpers.ArrangeMainPanelControls(this);
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
@@ -174,6 +176,14 @@ namespace FilmLibrary
             if (Form2.currentMainPage != "Manage - Add Movie")
             {
                 Helpers.ShowManageAddMoviePage(this);
+            }
+        }
+
+        private void btnUpdateMovie_Click(object sender, EventArgs e)
+        {
+            if (Form2.currentMainPage != "Manage - Update Movie")
+            {
+                Helpers.ShowManageUpdateMoviePage(this);
             }
         }
 

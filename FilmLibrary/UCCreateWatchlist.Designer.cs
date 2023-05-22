@@ -37,6 +37,8 @@ namespace FilmLibrary
             this.rbPrivate = new System.Windows.Forms.RadioButton();
             this.rbPublic = new System.Windows.Forms.RadioButton();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbCover)).BeginInit();
             this.panelContainer.SuspendLayout();
             this.SuspendLayout();
@@ -128,6 +130,8 @@ namespace FilmLibrary
             // panelContainer
             // 
             this.panelContainer.AutoScroll = true;
+            this.panelContainer.Controls.Add(this.label1);
+            this.panelContainer.Controls.Add(this.label2);
             this.panelContainer.Controls.Add(this.pbCover);
             this.panelContainer.Controls.Add(this.rbPublic);
             this.panelContainer.Controls.Add(this.txtTitle);
@@ -138,6 +142,28 @@ namespace FilmLibrary
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Size = new System.Drawing.Size(809, 626);
             this.panelContainer.TabIndex = 12;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(213, 421);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(15, 20);
+            this.label2.TabIndex = 55;
+            this.label2.Text = "*";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(213, 461);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(15, 20);
+            this.label1.TabIndex = 56;
+            this.label1.Text = "*";
             // 
             // UCCreateWatchlist
             // 
@@ -164,5 +190,7 @@ namespace FilmLibrary
         private System.Windows.Forms.RadioButton rbPrivate;
         private System.Windows.Forms.RadioButton rbPublic;
         private System.Windows.Forms.Panel panelContainer;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
