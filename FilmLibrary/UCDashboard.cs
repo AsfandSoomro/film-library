@@ -43,19 +43,26 @@ namespace FilmLibrary
 
         private async void UpdateCovers()
         {
-            Random rand = new Random();
-            int randomId = rand.Next(0, totalMovies - 12 - 1);
-            DataTable movies = (await Task.Run(() => Queries.GetDataTable("Movies", String.Format("SELECT TOP 12 movie_id, cover FROM Movies WHERE movie_id > {0}", randomId))));
-
-            int i = 1;
-            foreach (DataRow movie in movies.Rows)
+            try
             {
-                MoviePictureBox pb = (MoviePictureBox)this.Controls.Find("pbCoverSmall" + i, true)[0];
-                pb.OriginalImage = Utils.ByteToImage((Byte[])movie["cover"]);
-                pb.Image = pb.OriginalImage;
-                pb.movie_id = (int)movie["movie_id"];
+                Random rand = new Random();
+                int randomId = rand.Next(0, totalMovies - 12 - 1);
+                DataTable movies = (await Task.Run(() => Queries.GetDataTable("Movies", String.Format("SELECT TOP 12 movie_id, cover FROM Movies WHERE movie_id > {0}", randomId))));
 
-                i++;
+                int i = 1;
+                foreach (DataRow movie in movies.Rows)
+                {
+                    MoviePictureBox pb = (MoviePictureBox)this.Controls.Find("pbCoverSmall" + i, true)[0];
+                    pb.OriginalImage = Utils.ByteToImage((Byte[])movie["cover"]);
+                    pb.Image = pb.OriginalImage;
+                    pb.movie_id = (int)movie["movie_id"];
+
+                    i++;
+                }
+            }
+            catch(Exception)
+            {
+                ;
             }
         }
     }
