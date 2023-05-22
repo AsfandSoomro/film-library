@@ -30,7 +30,7 @@ namespace FilmLibrary
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCWatchlistInfoHeading));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelContainer = new System.Windows.Forms.Panel();
             this.btnEdit = new System.Windows.Forms.Button();
             this.lblVisibility = new System.Windows.Forms.Label();
             this.lblMoviesCount = new System.Windows.Forms.Label();
@@ -38,26 +38,26 @@ namespace FilmLibrary
             this.lblCreatedBy = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pbCover = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
+            this.panelContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCover)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // panelContainer
             // 
-            this.panel1.AutoSize = true;
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.btnEdit);
-            this.panel1.Controls.Add(this.lblVisibility);
-            this.panel1.Controls.Add(this.lblMoviesCount);
-            this.panel1.Controls.Add(this.lblCreationDate);
-            this.panel1.Controls.Add(this.lblCreatedBy);
-            this.panel1.Controls.Add(this.lblTitle);
-            this.panel1.Controls.Add(this.pbCover);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(771, 168);
-            this.panel1.TabIndex = 0;
+            this.panelContainer.AutoSize = true;
+            this.panelContainer.BackColor = System.Drawing.Color.Transparent;
+            this.panelContainer.Controls.Add(this.btnEdit);
+            this.panelContainer.Controls.Add(this.lblVisibility);
+            this.panelContainer.Controls.Add(this.lblMoviesCount);
+            this.panelContainer.Controls.Add(this.lblCreationDate);
+            this.panelContainer.Controls.Add(this.lblCreatedBy);
+            this.panelContainer.Controls.Add(this.lblTitle);
+            this.panelContainer.Controls.Add(this.pbCover);
+            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContainer.Location = new System.Drawing.Point(0, 0);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(771, 168);
+            this.panelContainer.TabIndex = 0;
             // 
             // btnEdit
             // 
@@ -156,12 +156,12 @@ namespace FilmLibrary
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelContainer);
             this.Name = "UCWatchlistInfoHeading";
             this.Size = new System.Drawing.Size(771, 168);
             this.Load += new System.EventHandler(this.UCWatchlistInfoHeading_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelContainer.ResumeLayout(false);
+            this.panelContainer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCover)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -170,7 +170,7 @@ namespace FilmLibrary
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelContainer;
         private System.Windows.Forms.PictureBox pbCover;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblMoviesCount;

@@ -30,11 +30,21 @@ namespace FilmLibrary
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCStartPage));
+            this.pbPosters = new System.Windows.Forms.PictureBox();
             this.lblWelcome2 = new System.Windows.Forms.Label();
             this.lblWelcome = new System.Windows.Forms.Label();
-            this.pbPosters = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbPosters)).BeginInit();
             this.SuspendLayout();
+            // 
+            // pbPosters
+            // 
+            this.pbPosters.Image = ((System.Drawing.Image)(resources.GetObject("pbPosters.Image")));
+            this.pbPosters.Location = new System.Drawing.Point(0, 3);
+            this.pbPosters.Name = "pbPosters";
+            this.pbPosters.Size = new System.Drawing.Size(970, 413);
+            this.pbPosters.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbPosters.TabIndex = 3;
+            this.pbPosters.TabStop = false;
             // 
             // lblWelcome2
             // 
@@ -67,16 +77,6 @@ namespace FilmLibrary
             this.lblWelcome.TabIndex = 1;
             this.lblWelcome.Text = "Welcome to Asfand\'s Film Library";
             // 
-            // pbPosters
-            // 
-            this.pbPosters.Image = ((System.Drawing.Image)(resources.GetObject("pbPosters.Image")));
-            this.pbPosters.Location = new System.Drawing.Point(0, 3);
-            this.pbPosters.Name = "pbPosters";
-            this.pbPosters.Size = new System.Drawing.Size(970, 413);
-            this.pbPosters.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbPosters.TabIndex = 3;
-            this.pbPosters.TabStop = false;
-            // 
             // UCStartPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -96,8 +96,9 @@ namespace FilmLibrary
         }
 
         #endregion
+
+        private System.Windows.Forms.PictureBox pbPosters;
         private System.Windows.Forms.Label lblWelcome2;
         private System.Windows.Forms.Label lblWelcome;
-        private System.Windows.Forms.PictureBox pbPosters;
     }
 }

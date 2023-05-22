@@ -152,9 +152,9 @@ namespace FilmLibrary
             this.lblWriter.Location = new System.Drawing.Point(3, 0);
             this.lblWriter.Name = "lblWriter";
             this.lblWriter.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblWriter.Size = new System.Drawing.Size(61, 20);
+            this.lblWriter.Size = new System.Drawing.Size(45, 20);
             this.lblWriter.TabIndex = 3;
-            this.lblWriter.Text = "Name";
+            this.lblWriter.Text = "N/A";
             // 
             // gbCast
             // 
@@ -187,9 +187,9 @@ namespace FilmLibrary
             this.lblCast.Location = new System.Drawing.Point(3, 0);
             this.lblCast.Name = "lblCast";
             this.lblCast.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblCast.Size = new System.Drawing.Size(61, 20);
+            this.lblCast.Size = new System.Drawing.Size(45, 20);
             this.lblCast.TabIndex = 8;
-            this.lblCast.Text = "Name";
+            this.lblCast.Text = "N/A";
             // 
             // gbProducers
             // 
@@ -222,9 +222,9 @@ namespace FilmLibrary
             this.lblProducer.Location = new System.Drawing.Point(3, 0);
             this.lblProducer.Name = "lblProducer";
             this.lblProducer.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblProducer.Size = new System.Drawing.Size(61, 20);
+            this.lblProducer.Size = new System.Drawing.Size(45, 20);
             this.lblProducer.TabIndex = 3;
-            this.lblProducer.Text = "Name";
+            this.lblProducer.Text = "N/A";
             // 
             // pbStar
             // 

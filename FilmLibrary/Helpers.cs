@@ -20,8 +20,7 @@ namespace FilmLibrary
 
         public static void ArrangeMainPanelControls(Form form)
         {
-            Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
-            Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
+            Panel mainPanel = form.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
 
             Panel container = (Panel)mainPanel.Controls.Find("panelContainer", true)[0];
 
@@ -100,10 +99,12 @@ namespace FilmLibrary
             Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
 
             UCMovies uc = new UCMovies("SELECT @LIMIT movie_id, cover FROM Movies WHERE @CONDITIONS");
+            uc.BringToFront();
             uc.Dock = DockStyle.Fill;
             mainPanel.Controls.Clear();
             Utils.DisposeControlsInPanel(mainPanel);
             mainPanel.Controls.Add(uc);
+
         }
 
         public async static void ShowSearchedMovies(Form form, string searchQuery)
