@@ -10,7 +10,8 @@ namespace FilmLibrary
     static class Program
     {
         public const string DatabasePath = "F:\\Uni Class Stuff\\Part IV\\7th Semester\\Visual Programming\\Project\\FilmLibrary\\FilmLibrary\\Database1.mdf";
-        public const string MyConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"" + DatabasePath + "\";Integrated Security=True";
+        public const string DatabasePathLaptop = "E:\\Visual Studio\\Project_FilmLibrary\\FilmLibrary\\FilmLibrary\\Database1.mdf";
+        public const string MyConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"" + DatabasePathLaptop + "\";Integrated Security=True";
         
         [STAThread]
         static void Main()

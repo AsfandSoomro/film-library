@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace FilmLibrary
 {
@@ -31,8 +32,8 @@ namespace FilmLibrary
             if (movie["release_year"] != DBNull.Value) this.lblYear.Text = "(" + (int)movie["release_year"] + ")";
             if (movie["plot_outline"] != DBNull.Value) this.lblPlot.Text = (string)movie["plot_outline"];
             if(movie["rating"] != DBNull.Value) this.lblRating.Text = (decimal)movie["rating"] + " / 10";
-            if(movie["budget"] != DBNull.Value) this.lblBudget.Text = (Convert.ToInt64(movie["budget"])).ToString("C");
-            if(movie["cumulative_worldwide_gross"] != DBNull.Value) this.lblBoxOffice.Text = (Convert.ToInt64(movie["cumulative_worldwide_gross"])).ToString("C");
+            if(movie["budget"] != DBNull.Value) this.lblBudget.Text = (Convert.ToInt64(movie["budget"])).ToString("C", CultureInfo.CreateSpecificCulture("en-US"));
+            if(movie["cumulative_worldwide_gross"] != DBNull.Value) this.lblBoxOffice.Text = (Convert.ToInt64(movie["cumulative_worldwide_gross"])).ToString("C", CultureInfo.CreateSpecificCulture("en-US"));
 
             this.FillGenres();
             this.FillCountries();

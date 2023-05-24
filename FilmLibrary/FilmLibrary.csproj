@@ -15,7 +15,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <PublishUrl>F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\Project\Publish_FilmLibrary\</PublishUrl>
+    <PublishUrl>E:\Visual Studio\Project_FilmLibrary\Publish_FilmLibrary\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -25,7 +25,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -162,6 +162,12 @@
     <Compile Include="UCDashboard.Designer.cs">
       <DependentUpon>UCDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCDeleteMovie.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCDeleteMovie.Designer.cs">
+      <DependentUpon>UCDeleteMovie.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCMovie.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -286,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCDashboard.resx">
       <DependentUpon>UCDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCDeleteMovie.resx">
+      <DependentUpon>UCDeleteMovie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCMovie.resx">
       <DependentUpon>UCMovie.cs</DependentUpon>

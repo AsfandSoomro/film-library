@@ -107,6 +107,8 @@ namespace FilmLibrary
                 Helpers.ArrangeMainPanelControls(this);
             else if (Form2.currentMainPage == "Manage - Update Movie")
                 Helpers.ArrangeMainPanelControls(this);
+            else if (Form2.currentMainPage == "Manage - Delete Movie")
+                Helpers.ArrangeMainPanelControls(this);
             else if (Form2.currentMainPage == "Profile")
                 Helpers.ArrangeMainPanelControls(this);
         }
@@ -194,6 +196,14 @@ namespace FilmLibrary
             if (Form2.currentMainPage != "Manage - Update Movie")
             {
                 Helpers.ShowManageUpdateMoviePage(this);
+            }
+        }
+
+        private void btnDeleteMovie_Click(object sender, EventArgs e)
+        {
+            if (Form2.currentMainPage != "Manage - Update Movie")
+            {
+                Helpers.ShowManageDeleteMoviePage(this);
             }
         }
 

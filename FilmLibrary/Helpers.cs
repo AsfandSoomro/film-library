@@ -340,6 +340,21 @@ namespace FilmLibrary
             mainPanel.Controls.Add(uc);
         }
 
+        public static void ShowManageDeleteMoviePage(Form form)
+        {
+            Form2.currentMainPage = "Manage - Delete Movie";
+            UpdateMainPageHeading(form);
+
+            Panel containerPanel = form.Controls.Find("panelContainer", true).FirstOrDefault() as Panel;
+            Panel mainPanel = containerPanel.Controls.Find("panelMain", true).FirstOrDefault() as Panel;
+
+            UCDeleteMovie uc = new UCDeleteMovie();
+            uc.Dock = DockStyle.Fill;
+            mainPanel.Controls.Clear();
+            Utils.DisposeControlsInPanel(mainPanel);
+            mainPanel.Controls.Add(uc);
+        }
+
         public static void LogoutUser(Form form2)
         {
             form2.Hide();
